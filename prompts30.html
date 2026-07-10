@@ -1,0 +1,481 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>イーロン流プロンプト30選</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+<style>:root{--brand:#1C3461;--brand-deep:#16284A;--brand-soft:rgba(28,52,97,.08);--brand-line:rgba(28,52,97,.22);--accent:#5BBCD4;--accent-deep:#2C7A93;--accent-soft:rgba(91,188,212,.16);--bg:#F7FAFC;--paper:#FFFFFF;--ink:#1C3461;--ink-mid:#4A6080;--ink-sub:#8098B4;--line:rgba(28,52,97,.12);--head:'Noto Sans JP'}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',-apple-system,'Hiragino Sans',sans-serif;line-height:1.7;}
+.doc{max-width:920px;margin:0 auto;background:var(--paper);box-shadow:0 0 60px rgba(0,0,0,.10);min-height:100vh;}
+.hero{position:relative;background:linear-gradient(160deg,var(--brand-soft),var(--bg) 70%);padding:44px 46px 34px;border-bottom:3px solid var(--brand-line);overflow:hidden;}
+.hero .chan{display:inline-flex;align-items:center;gap:11px;margin-bottom:14px;}
+.hero .chan img{width:46px;height:46px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.16);}
+.hero .chan b{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:16px;}
+.hero .chan b small{display:block;font-size:11px;color:var(--ink-mid);font-weight:500;}
+h1{font-family:var(--head);font-weight:900;font-size:32px;color:var(--ink);line-height:1.25;}
+h1 .hl{color:var(--brand-deep);}
+.hero p.sub{font-size:16px;color:var(--ink-mid);font-weight:700;margin-top:12px;max-width:680px;}
+section{padding:32px 46px;border-bottom:1px solid var(--line);}
+.h2{font-family:var(--head);font-weight:900;font-size:22px;color:var(--ink);margin-bottom:6px;}
+.catnav{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 4px;}
+.catnav a{font-size:12.5px;font-weight:700;color:var(--brand-deep);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;}
+.catnav a:hover{border-color:var(--brand);}
+.cat{font-family:var(--head);font-weight:900;font-size:18px;color:var(--brand-deep);margin:26px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--brand-line);}
+.icard{background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:13px;padding:16px 18px;margin-bottom:13px;}
+.ititle{font-family:var(--head);font-weight:900;font-size:16.5px;color:var(--ink);}
+.imeta{font-size:12.5px;color:var(--ink-mid);margin:4px 0 9px;}
+pre.prompt{background:var(--ink);color:#ECECEA;border-radius:10px;padding:14px 16px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.6;max-height:260px;overflow-y:auto;}
+.btns{margin-top:10px;display:flex;gap:9px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:7px;background:var(--accent);border:2px solid var(--accent-deep);color:var(--ink);border-radius:999px;padding:9px 20px;font-family:var(--head);font-weight:900;font-size:13.5px;cursor:pointer;text-decoration:none;}
+.btn.sm{padding:7px 16px;font-size:12.5px;}
+.btn.ghost{background:var(--paper);border:1.5px solid var(--line);color:var(--brand-deep);}
+.linkcard{display:flex;justify-content:space-between;align-items:center;gap:16px;border:2px solid var(--brand);border-radius:14px;padding:18px 22px;margin-bottom:13px;background:var(--bg);}
+.linkcard .lt{font-family:var(--head);font-weight:900;font-size:18px;color:var(--ink);}
+.linkcard .ld{font-size:13px;color:var(--ink-mid);margin-top:3px;}
+.linkcard .cnt{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:14px;background:var(--brand-soft);border-radius:999px;padding:4px 12px;display:inline-block;margin-bottom:6px;}
+.recv{background:var(--brand-soft);border:1.5px solid var(--brand-line);border-radius:13px;padding:18px 22px;}
+.recv ol{margin-left:20px;font-size:14.5px;} .recv li{margin-bottom:6px;}
+.note{background:var(--accent-soft);border:1.5px solid var(--accent);border-radius:12px;padding:14px 18px;font-size:13.5px;color:var(--ink);margin-top:14px;}
+footer{background:var(--ink);color:#EBEBE7;padding:26px 46px;font-size:13px;}
+</style></head><body><svg style="display:none">
+  <symbol id="kawaru-logo" viewBox="0 0 406 93">
+    <rect x="6.67572e-06" y="13.4815" width="7.93029" height="74.5447" fill="currentColor"/>
+    <path d="M18.2397 52.7235L24.2772 47.5817L57.8911 88.0582L48.3318 88.0582L18.2397 52.7235Z" fill="#5BBCD4"/>
+    <path d="M34.8933 49.5514L40.9308 44.4096L77.2278 88.0366L67.4075 88.0262L34.8933 49.5514Z" fill="#5BBCD4"/>
+    <rect x="57.1908" y="2.92276" width="7.93029" height="83.5485" transform="rotate(42.3764 57.1908 2.92276)" fill="currentColor"/>
+    <rect x="59.4772" width="7.93029" height="22.2048" fill="currentColor"/>
+    <rect x="44.4096" y="7.9303" width="7.93029" height="22.9978" transform="rotate(-90 44.4096 7.9303)" fill="currentColor"/>
+    <path d="M110.882 61.3999L110.204 47.3281L135.413 20.7649H148.958L126.233 45.2211L119.46 52.4451L110.882 61.3999ZM99.9703 73.4399V20.7649H112.086V73.4399H99.9703ZM136.015 73.4399L117.278 50.4886L125.254 41.8349L150.237 73.4399H136.015ZM181.053 73.4399V65.5386L180.301 63.8079V49.6609C180.301 47.1525 179.523 45.196 177.968 43.7914C176.463 42.3867 174.13 41.6844 170.97 41.6844C168.813 41.6844 166.681 42.0355 164.574 42.7379C162.517 43.39 160.761 44.293 159.306 45.4469L155.092 37.2446C157.299 35.6895 159.958 34.4855 163.069 33.6326C166.179 32.7798 169.339 32.3534 172.55 32.3534C178.721 32.3534 183.512 33.8082 186.923 36.7179C190.334 39.6275 192.04 44.1676 192.04 50.3381V73.4399H181.053ZM168.712 74.0419C165.552 74.0419 162.843 73.5151 160.585 72.4616C158.328 71.358 156.597 69.878 155.393 68.0219C154.189 66.1657 153.587 64.0838 153.587 61.7761C153.587 59.3681 154.164 57.2611 155.318 55.4551C156.522 53.6491 158.403 52.2445 160.962 51.2411C163.52 50.1876 166.856 49.6609 170.97 49.6609H181.731V56.5086H172.249C169.49 56.5086 167.584 56.9601 166.53 57.8631C165.527 58.7661 165.025 59.8949 165.025 61.2494C165.025 62.7544 165.602 63.9584 166.756 64.8614C167.96 65.7142 169.59 66.1406 171.647 66.1406C173.604 66.1406 175.359 65.6891 176.915 64.7861C178.47 63.833 179.599 62.4534 180.301 60.6474L182.107 66.0654C181.254 68.674 179.699 70.6556 177.441 72.0101C175.184 73.3646 172.274 74.0419 168.712 74.0419ZM213.443 73.4399L198.844 32.9554H209.906L222.021 67.7961H216.754L229.396 32.9554H239.329L251.594 67.7961H246.327L258.818 32.9554H269.203L254.529 73.4399H243.166L232.406 43.5656H235.867L224.73 73.4399H213.443ZM300.427 73.4399V65.5386L299.675 63.8079V49.6609C299.675 47.1525 298.897 45.196 297.342 43.7914C295.837 42.3867 293.504 41.6844 290.344 41.6844C288.187 41.6844 286.055 42.0355 283.948 42.7379C281.891 43.39 280.135 44.293 278.68 45.4469L274.466 37.2446C276.674 35.6895 279.332 34.4855 282.443 33.6326C285.553 32.7798 288.714 32.3534 291.924 32.3534C298.095 32.3534 302.886 33.8082 306.297 36.7179C309.708 39.6275 311.414 44.1676 311.414 50.3381V73.4399H300.427ZM288.086 74.0419C284.926 74.0419 282.217 73.5151 279.959 72.4616C277.702 71.358 275.971 69.878 274.767 68.0219C273.563 66.1657 272.961 64.0838 272.961 61.7761C272.961 59.3681 273.538 57.2611 274.692 55.4551C275.896 53.6491 277.777 52.2445 280.336 51.2411C282.894 50.1876 286.23 49.6609 290.344 49.6609H301.105V56.5086H291.623C288.864 56.5086 286.958 56.9601 285.904 57.8631C284.901 58.7661 284.399 59.8949 284.399 61.2494C284.399 62.7544 284.976 63.9584 286.13 64.8614C287.334 65.7142 288.964 66.1406 291.021 66.1406C292.978 66.1406 294.734 65.6891 296.289 64.7861C297.844 63.833 298.973 62.4534 299.675 60.6474L301.481 66.0654C300.628 68.674 299.073 70.6556 296.815 72.0101C294.558 73.3646 291.648 74.0419 288.086 74.0419ZM324.296 73.4399V32.9554H335.508V44.3934L333.928 41.0824C335.132 38.2229 337.063 36.0657 339.722 34.6109C342.381 33.1059 345.617 32.3534 349.429 32.3534V43.1894C348.928 43.1392 348.476 43.1141 348.075 43.1141C347.674 43.064 347.247 43.0389 346.796 43.0389C343.585 43.0389 340.976 43.967 338.97 45.8231C337.013 47.6291 336.035 50.4635 336.035 54.3264V73.4399H324.296ZM376.043 74.0419C372.681 74.0419 369.671 73.3897 367.013 72.0854C364.404 70.781 362.372 68.7995 360.917 66.1406C359.462 63.4316 358.735 59.9952 358.735 55.8314V32.9554H370.474V54.1006C370.474 57.4618 371.176 59.945 372.581 61.5504C374.036 63.1055 376.068 63.8831 378.676 63.8831C380.482 63.8831 382.088 63.5069 383.492 62.7544C384.897 61.9517 386.001 60.7477 386.803 59.1424C387.606 57.4869 388.007 55.43 388.007 52.9719V32.9554H399.746V73.4399H388.609V62.3029L390.641 65.5386C389.287 68.348 387.28 70.48 384.621 71.9349C382.012 73.3395 379.153 74.0419 376.043 74.0419Z" fill="currentColor"/>
+  </symbol>
+</svg><div class="doc">
+<div class="hero"><div class="chan"><svg width="120" height="27" style="color:var(--brand);flex-shrink:0"><use href="#kawaru-logo"/></svg><b>AIエージェント<small>Kawaru</small></b></div><h1>🎁 <span class="hl">イーロン流プロンプト30選</span></h1><p class="sub">第一原理・並列・反復・自動化を依頼文に。/goal・/loop 入り。</p>
+<div class="btns" style="margin-top:14px;"><a class="btn ghost" href="./present.html">← プレゼント一覧へ</a><button class="btn" onclick="downloadText('pfull','elon-prompts-30.md',this)">⬇ 全30件まとめてDL（.md）</button></div>
+<div class="catnav"><a href="#c0">第一原理で考える</a><a href="#c1">マルチエージェントで並列化</a><a href="#c2">高速反復・検証</a><a href="#c3">情報収集と要約</a><a href="#c4">意思決定・優先順位</a><a href="#c5">自動化・仕組み化</a></div></div>
+<section><div class="cat" id="c0">第一原理で考える</div>
+<div class="icard">
+  <div class="ititle">1. 前提を疑って要件を分解する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 新しい機能や施策に着手する前</div>
+  <pre class="prompt" id="p1">このタスクについて、まず「本当に必要な条件は何か」を、ユーザーの本質的なニーズまで分解して洗い出してください。次に、慣習や過去のやり方を理由にしている要素だけをリストアップし、それぞれ本当に必要かを問い直してから、最小構成の実装案を提案してください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p1',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">2. コストの内訳を最小単位まで分解する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 開発・制作のコストが膨らんでいると感じる時</div>
+  <pre class="prompt" id="p2">このプロジェクトのコスト構造（時間・工数・外部サービス費用など）を、これ以上分解できない最小の要素まで洗い出してください。各要素について削れる理由・削れない理由を明示し、合計を圧縮できる組み合わせを3パターン提案してください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p2',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">3. 制約条件を「本当の制約」と「思い込み」に仕分ける</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 「これは無理」と感じる壁にぶつかった時</div>
+  <pre class="prompt" id="p3">いま「できない理由」としてあがっている制約を一つずつ挙げてください。それぞれについて、技術的に動かせない制約なのか、単なる慣習・ルール・思い込みなのかを判定し、後者だけを対象にした回避策を考えてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p3',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">4. ゼロベースで仕様を作り直す</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 既存の仕様や運用が複雑になりすぎたと感じる時</div>
+  <pre class="prompt" id="p4">既存の仕様書やコードを一度読み込んだ上で、過去の経緯を無視してゼロから設計し直すとしたら何が最小構成になるかを提案してください。現行仕様との差分を一覧にして、削れる機能・残すべき機能を理由付きで示してください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p4',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">5. 「なぜ」を5回掘り下げて根本原因を特定する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 不具合や非効率の原因がはっきりしない時</div>
+  <pre class="prompt" id="p5">この問題について「なぜそうなっているのか」を5段階掘り下げてください。各段階で得られた答えを次の問いの出発点にし、最後にたどり着いた根本原因と、それに対する対処案を提示してください。表面的な対症療法は最後に補足として分けてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p5',this)">📋 コピー</button></div>
+</div><div class="cat" id="c1">マルチエージェントで並列化</div>
+<div class="icard">
+  <div class="ititle">6. 複数の専門家視点を並列で走らせる</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 一つの企画を多角的にチェックしたい時</div>
+  <pre class="prompt" id="p6">このプロンプトの資料/企画案について、「エンジニア視点」「マーケター視点」「ユーザー視点」の3つの専門家役をsubagentとして並列で走らせ、それぞれの立場から改善点を洗い出してください。最後に3つの意見を統合し、優先順位付きの改善リストにまとめてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p6',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">7. 賛成派と反対派を戦わせて検証する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 判断に迷う意思決定をする時</div>
+  <pre class="prompt" id="p7">この案について、賛成の立場で最大限擁護するsubagentと、反対の立場で最大限反論するsubagentを並列で走らせてください。両者の主張を突き合わせた上で、どちらの論点が具体的な根拠に基づいているかを整理し、最終判断の材料にできる形でまとめてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p7',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">8. /goal で大規模コードベースを自律調査する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 未知のリポジトリの全体像を短時間で把握したい時</div>
+  <pre class="prompt" id="p8">/goal 対象のリポジトリ全体を調査し、ディレクトリ構成・主要な処理の流れ・外部依存・改善の余地がありそうな箇所をレポートにまとめる。各主要ディレクトリはsubagentを並列で割り当てて調査させ、最後に自分（メインエージェント）が結果を統合してREADME形式の調査レポートを1本にまとめる。ゴール達成、またはターン上限に達したら停止する。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p8',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">9. /goal で複数タスクを自律的に並走させる</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 独立した複数のタスクを一気に片付けたい時</div>
+  <pre class="prompt" id="p9">/goal 次の3つのタスクを並列のsubagentに割り振って進める。
+1) 既存のテストコードのカバレッジが薄い箇所を洗い出す
+2) READMEの記述と実際のコードの挙動が食い違っている箇所を洗い出す
+3) 未使用の依存関係・デッドコードを洗い出す
+各subagentの結果は個別に報告させ、最後に重複や矛盾がないかを自分で確認してから一つのレポートにまとめる。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p9',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">10. 実装役とレビュー役を分離する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 自分が書いたコードや文章を客観的にチェックしたい時</div>
+  <pre class="prompt" id="p10">まず実装/執筆担当として成果物を作成してください。その後、別の視点を持つレビュー担当subagentを立ち上げ、実装の中身を一切知らない状態から独立してレビューさせてください。最後に指摘事項のうち対応すべきものだけを反映し、対応しなかった指摘とその理由も一覧にしてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p10',this)">📋 コピー</button></div>
+</div><div class="cat" id="c2">高速反復・検証</div>
+<div class="icard">
+  <div class="ititle">11. 最小単位で作って検証を繰り返す</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 大きな機能をいきなり作り込みたくなった時</div>
+  <pre class="prompt" id="p11">この機能を、動作確認できる最小の単位に分割してください。最初の単位だけを実装し、動作確認の方法を提示してから、次に進む前に私の確認を挟んでください。以降も同じ手順で1単位ずつ進めてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p11',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">12. /loop で自動テストの結果を定期監視する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 実装を進めながらテストの壊れを早期に検知したい時</div>
+  <pre class="prompt" id="p12">/loop 5m テストスイートを実行し、失敗しているテストがあれば原因を特定して修正案を提示する。テストが全て通っている場合は「異常なし」とだけ報告する。修正を加えた場合は次のループで再度テストを実行して結果を確認する。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p12',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">13. 失敗の記録を次の試行に反映させる</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 同じような失敗を繰り返している時</div>
+  <pre class="prompt" id="p13">直近の実装や検証でうまくいかなかった点を洗い出し、原因を一つずつ整理してください。次に、同じ失敗を繰り返さないための具体的なチェック項目をリスト化し、以降の作業ではそのチェックリストを都度確認してから進めてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p13',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">14. Plan Modeで計画→実行→検証を1サイクルにする</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 影響範囲が大きい変更に着手する前</div>
+  <pre class="prompt" id="p14">Plan Modeで、この変更の計画（変更箇所・想定リスク・検証方法）をまず提示してください。私が承認したら実行に移り、実行後は提示した検証方法に沿って実際に動作確認した結果を報告してください。検証できていない場合は「完了」と言わないでください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p14',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">15. /loop でビルド・デプロイの状態を定期確認する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: デプロイ後にエラーが出ていないか継続的に見ておきたい時</div>
+  <pre class="prompt" id="p15">/loop 10m ビルドとデプロイのログを確認し、新しいエラーや警告が出ていないかチェックする。前回のループから変化がなければ「変化なし」とだけ報告し、新しいエラーが出ていれば原因の切り分けまで行って報告する。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p15',this)">📋 コピー</button></div>
+</div><div class="cat" id="c3">情報収集と要約</div>
+<div class="icard">
+  <div class="ititle">16. 複数ソースを並列で調べて突き合わせる</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 一つのトピックについて情報の正確性を確かめたい時</div>
+  <pre class="prompt" id="p16">このトピックについて、複数の情報源を並列のsubagentで調べさせてください。各subagentには根拠となった情報源も併記させ、最後に共通して言える内容と、情報源によって食い違っている点を分けて整理してください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p16',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">17. 長文ドキュメントを要点だけに圧縮する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 長いドキュメントや議事録を短時間で把握したい時</div>
+  <pre class="prompt" id="p17">この文章を、結論・背景・次のアクションの3つに分けて要約してください。分量は全体の1割程度を目安にし、固有名詞や数値は原文のまま引用してください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p17',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">18. 競合や類似事例を比較整理する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 自分たちの立ち位置を客観的に把握したい時</div>
+  <pre class="prompt" id="p18">このジャンルの類似する取り組みをいくつか調べ、それぞれの特徴・強み・弱みを表形式で整理してください。最後に、自分たちが差別化できそうなポイントを根拠付きで提案してください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p18',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">19. 打ち合わせメモから決定事項とToDoを抽出する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: ミーティング後にすぐタスク化したい時</div>
+  <pre class="prompt" id="p19">この打ち合わせメモから、決定事項・保留事項・ToDo（担当者と期限が分かる場合は併記）の3つに分けて抽出してください。曖昧なまま終わっている論点があれば、別枠で「要確認事項」として挙げてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p19',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">20. /loop で最新情報を定期的に拾って要約する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 特定分野の動向を継続的に追いたい時</div>
+  <pre class="prompt" id="p20">/loop 1h この分野の新しい動きがないか調べ、前回チェック時から変化があった点だけを3行以内で要約して報告する。変化がなければ「動きなし」とだけ報告し、無理に情報を作らない。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p20',this)">📋 コピー</button></div>
+</div><div class="cat" id="c4">意思決定・優先順位</div>
+<div class="icard">
+  <div class="ititle">21. インパクトと工数でタスクを仕分ける</div>
+  <div class="imeta">対象: 両方 ｜ 場面: やることが多すぎて何から手をつけるか迷う時</div>
+  <pre class="prompt" id="p21">いまあるタスクを「インパクトの大きさ」と「かかる工数」の2軸でマトリクスに分類してください。インパクトが大きく工数が小さいものから順に並べ替え、着手順の提案として出してください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p21',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">22. トレードオフを言語化して選択肢を比較する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 複数の選択肢のどれを選ぶか決めきれない時</div>
+  <pre class="prompt" id="p22">この選択肢について、それぞれのメリット・デメリット・見送った場合に失うものを表にしてください。判断基準として何を優先するか（速さ／品質／コストなど）を先に確認した上で、その基準に沿った推奨案を1つ提示してください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p22',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">23. 進める前にリスクを洗い出す</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 後戻りしにくい判断をする前</div>
+  <pre class="prompt" id="p23">この計画を実行した場合に起こりうる失敗パターンを洗い出してください。それぞれについて発生しやすさと影響の大きさを見積もり、対策が必要なものから順に並べてください。対策が難しいリスクは実行前に私に判断を仰ぐ形にしてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p23',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">24. 意思決定の理由を記録に残す</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 後で「なぜこの判断をしたか」を振り返れるようにしたい時</div>
+  <pre class="prompt" id="p24">今回の判断について、選んだ選択肢・却下した選択肢・判断の決め手になった理由を簡潔に記録してください。この記録は後から見返した時に、当時の前提条件が変わっていないかを確認できる形にしてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p24',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">25. 撤退基準を先に決めておく</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 新しい取り組みを始める時</div>
+  <pre class="prompt" id="p25">この取り組みについて、どの状態になったら継続し、どの状態になったら中止するかの基準を、始める前に数値や期限で具体化してください。基準があいまいな項目があれば、判断できる形に言い換えてから提示してください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p25',this)">📋 コピー</button></div>
+</div><div class="cat" id="c5">自動化・仕組み化</div>
+<div class="icard">
+  <div class="ititle">26. /goal でCLAUDE.mdを実態に合わせて棚卸しする</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 運用ルールがコードの実態とズレてきたと感じる時</div>
+  <pre class="prompt" id="p26">/goal CLAUDE.md に書かれているルールと、実際のコード・運用の実態を突き合わせて、食い違っている箇所・すでに形骸化している箇所・書かれていないのに毎回同じ指示を出している箇所を洗い出す。洗い出した内容をもとに、CLAUDE.md の該当箇所を更新する案を提示し、私の承認を得てから反映する。ゴール達成で停止する。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p26',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">27. 繰り返している作業をスキル化する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 同じ手順を何度も指示している時</div>
+  <pre class="prompt" id="p27">直近で私が繰り返し依頼している作業の手順を振り返り、共通する型を抽出してください。その型を再利用できる形（手順書やスキルの雛形）に落とし込み、次回から短い指示だけで同じ品質の結果を再現できるようにしてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p27',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">28. /goal で長時間の自律実行に任せる</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 明確なゴールはあるが、途中の細かい判断は任せたい時</div>
+  <pre class="prompt" id="p28">/goal 〈ここに達成したいゴールを具体的に書く。例: このリポジトリのテストカバレッジを主要モジュールで底上げする〉。進め方は任せるが、破壊的な操作（削除・force push・外部への公開など）の前には一度立ち止まって確認を取ること。ゴール達成、または一定のターン数に達したら状況を報告して停止する。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p28',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">29. /loop で定期実行フローを組み立てる</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 決まったチェックや集計を毎回手動でやるのが面倒な時</div>
+  <pre class="prompt" id="p29">/loop 30m 〈ここに定期的にやりたい作業を書く。例: 特定フォルダに新しいファイルが増えていないか確認し、増えていれば内容を要約して報告する〉。作業内容に変化がない回は簡潔に「変化なし」とだけ報告し、変化があった回だけ詳細を報告する形にしてください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p29',this)">📋 コピー</button></div>
+</div>
+<div class="icard">
+  <div class="ititle">30. MCP連携をまとめて設計する</div>
+  <div class="imeta">対象: 両方 ｜ 場面: 複数の外部サービスをまたぐ作業を効率化したい時</div>
+  <pre class="prompt" id="p30">この作業で使っている外部サービスとの連携（MCP経由のものを含む）を洗い出し、手作業で行っている接続部分をリストアップしてください。それぞれについて、自動化できる部分とユーザーの確認が必要な部分（取り消せない操作など）を分けて、安全に自動化する設計案を提示してください。</pre>
+  <div class="btns"><button class="btn sm" onclick="copyPrompt('p30',this)">📋 コピー</button></div>
+</div></section>
+<footer>AIエージェント ／ 🎁 このプレゼントは自由にお使いください。</footer>
+</div>
+<pre id="pfull" style="display:none;"># 🎁 イーロン・マスクが使っているプロンプト30選
+
+第一原理思考・マルチエージェント・高速反復というイーロン・マスク流の働き方を、Claude Code や Grok Build にそのまま貼れる依頼文に落とし込みました。全30本、6カテゴリで整理しています。
+
+**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをダウンロードしてください。
+
+**使い方**: Claude Code / Grok Build の入力欄に貼るだけで使えます。
+
+## 第一原理で考える
+
+### 1. 前提を疑って要件を分解する
+対象: 両方 ｜ 場面: 新しい機能や施策に着手する前
+
+```text
+このタスクについて、まず「本当に必要な条件は何か」を、ユーザーの本質的なニーズまで分解して洗い出してください。次に、慣習や過去のやり方を理由にしている要素だけをリストアップし、それぞれ本当に必要かを問い直してから、最小構成の実装案を提案してください。
+```
+
+### 2. コストの内訳を最小単位まで分解する
+対象: 両方 ｜ 場面: 開発・制作のコストが膨らんでいると感じる時
+
+```text
+このプロジェクトのコスト構造（時間・工数・外部サービス費用など）を、これ以上分解できない最小の要素まで洗い出してください。各要素について削れる理由・削れない理由を明示し、合計を圧縮できる組み合わせを3パターン提案してください。
+```
+
+### 3. 制約条件を「本当の制約」と「思い込み」に仕分ける
+対象: 両方 ｜ 場面: 「これは無理」と感じる壁にぶつかった時
+
+```text
+いま「できない理由」としてあがっている制約を一つずつ挙げてください。それぞれについて、技術的に動かせない制約なのか、単なる慣習・ルール・思い込みなのかを判定し、後者だけを対象にした回避策を考えてください。
+```
+
+### 4. ゼロベースで仕様を作り直す
+対象: 両方 ｜ 場面: 既存の仕様や運用が複雑になりすぎたと感じる時
+
+```text
+既存の仕様書やコードを一度読み込んだ上で、過去の経緯を無視してゼロから設計し直すとしたら何が最小構成になるかを提案してください。現行仕様との差分を一覧にして、削れる機能・残すべき機能を理由付きで示してください。
+```
+
+### 5. 「なぜ」を5回掘り下げて根本原因を特定する
+対象: 両方 ｜ 場面: 不具合や非効率の原因がはっきりしない時
+
+```text
+この問題について「なぜそうなっているのか」を5段階掘り下げてください。各段階で得られた答えを次の問いの出発点にし、最後にたどり着いた根本原因と、それに対する対処案を提示してください。表面的な対症療法は最後に補足として分けてください。
+```
+
+## マルチエージェントで並列化
+
+### 6. 複数の専門家視点を並列で走らせる
+対象: 両方 ｜ 場面: 一つの企画を多角的にチェックしたい時
+
+```text
+このプロンプトの資料/企画案について、「エンジニア視点」「マーケター視点」「ユーザー視点」の3つの専門家役をsubagentとして並列で走らせ、それぞれの立場から改善点を洗い出してください。最後に3つの意見を統合し、優先順位付きの改善リストにまとめてください。
+```
+
+### 7. 賛成派と反対派を戦わせて検証する
+対象: 両方 ｜ 場面: 判断に迷う意思決定をする時
+
+```text
+この案について、賛成の立場で最大限擁護するsubagentと、反対の立場で最大限反論するsubagentを並列で走らせてください。両者の主張を突き合わせた上で、どちらの論点が具体的な根拠に基づいているかを整理し、最終判断の材料にできる形でまとめてください。
+```
+
+### 8. /goal で大規模コードベースを自律調査する
+対象: 両方 ｜ 場面: 未知のリポジトリの全体像を短時間で把握したい時
+
+```text
+/goal 対象のリポジトリ全体を調査し、ディレクトリ構成・主要な処理の流れ・外部依存・改善の余地がありそうな箇所をレポートにまとめる。各主要ディレクトリはsubagentを並列で割り当てて調査させ、最後に自分（メインエージェント）が結果を統合してREADME形式の調査レポートを1本にまとめる。ゴール達成、またはターン上限に達したら停止する。
+```
+
+### 9. /goal で複数タスクを自律的に並走させる
+対象: 両方 ｜ 場面: 独立した複数のタスクを一気に片付けたい時
+
+```text
+/goal 次の3つのタスクを並列のsubagentに割り振って進める。
+1) 既存のテストコードのカバレッジが薄い箇所を洗い出す
+2) READMEの記述と実際のコードの挙動が食い違っている箇所を洗い出す
+3) 未使用の依存関係・デッドコードを洗い出す
+各subagentの結果は個別に報告させ、最後に重複や矛盾がないかを自分で確認してから一つのレポートにまとめる。
+```
+
+### 10. 実装役とレビュー役を分離する
+対象: 両方 ｜ 場面: 自分が書いたコードや文章を客観的にチェックしたい時
+
+```text
+まず実装/執筆担当として成果物を作成してください。その後、別の視点を持つレビュー担当subagentを立ち上げ、実装の中身を一切知らない状態から独立してレビューさせてください。最後に指摘事項のうち対応すべきものだけを反映し、対応しなかった指摘とその理由も一覧にしてください。
+```
+
+## 高速反復・検証
+
+### 11. 最小単位で作って検証を繰り返す
+対象: 両方 ｜ 場面: 大きな機能をいきなり作り込みたくなった時
+
+```text
+この機能を、動作確認できる最小の単位に分割してください。最初の単位だけを実装し、動作確認の方法を提示してから、次に進む前に私の確認を挟んでください。以降も同じ手順で1単位ずつ進めてください。
+```
+
+### 12. /loop で自動テストの結果を定期監視する
+対象: 両方 ｜ 場面: 実装を進めながらテストの壊れを早期に検知したい時
+
+```text
+/loop 5m テストスイートを実行し、失敗しているテストがあれば原因を特定して修正案を提示する。テストが全て通っている場合は「異常なし」とだけ報告する。修正を加えた場合は次のループで再度テストを実行して結果を確認する。
+```
+
+### 13. 失敗の記録を次の試行に反映させる
+対象: 両方 ｜ 場面: 同じような失敗を繰り返している時
+
+```text
+直近の実装や検証でうまくいかなかった点を洗い出し、原因を一つずつ整理してください。次に、同じ失敗を繰り返さないための具体的なチェック項目をリスト化し、以降の作業ではそのチェックリストを都度確認してから進めてください。
+```
+
+### 14. Plan Modeで計画→実行→検証を1サイクルにする
+対象: 両方 ｜ 場面: 影響範囲が大きい変更に着手する前
+
+```text
+Plan Modeで、この変更の計画（変更箇所・想定リスク・検証方法）をまず提示してください。私が承認したら実行に移り、実行後は提示した検証方法に沿って実際に動作確認した結果を報告してください。検証できていない場合は「完了」と言わないでください。
+```
+
+### 15. /loop でビルド・デプロイの状態を定期確認する
+対象: 両方 ｜ 場面: デプロイ後にエラーが出ていないか継続的に見ておきたい時
+
+```text
+/loop 10m ビルドとデプロイのログを確認し、新しいエラーや警告が出ていないかチェックする。前回のループから変化がなければ「変化なし」とだけ報告し、新しいエラーが出ていれば原因の切り分けまで行って報告する。
+```
+
+## 情報収集と要約
+
+### 16. 複数ソースを並列で調べて突き合わせる
+対象: 両方 ｜ 場面: 一つのトピックについて情報の正確性を確かめたい時
+
+```text
+このトピックについて、複数の情報源を並列のsubagentで調べさせてください。各subagentには根拠となった情報源も併記させ、最後に共通して言える内容と、情報源によって食い違っている点を分けて整理してください。
+```
+
+### 17. 長文ドキュメントを要点だけに圧縮する
+対象: 両方 ｜ 場面: 長いドキュメントや議事録を短時間で把握したい時
+
+```text
+この文章を、結論・背景・次のアクションの3つに分けて要約してください。分量は全体の1割程度を目安にし、固有名詞や数値は原文のまま引用してください。
+```
+
+### 18. 競合や類似事例を比較整理する
+対象: 両方 ｜ 場面: 自分たちの立ち位置を客観的に把握したい時
+
+```text
+このジャンルの類似する取り組みをいくつか調べ、それぞれの特徴・強み・弱みを表形式で整理してください。最後に、自分たちが差別化できそうなポイントを根拠付きで提案してください。
+```
+
+### 19. 打ち合わせメモから決定事項とToDoを抽出する
+対象: 両方 ｜ 場面: ミーティング後にすぐタスク化したい時
+
+```text
+この打ち合わせメモから、決定事項・保留事項・ToDo（担当者と期限が分かる場合は併記）の3つに分けて抽出してください。曖昧なまま終わっている論点があれば、別枠で「要確認事項」として挙げてください。
+```
+
+### 20. /loop で最新情報を定期的に拾って要約する
+対象: 両方 ｜ 場面: 特定分野の動向を継続的に追いたい時
+
+```text
+/loop 1h この分野の新しい動きがないか調べ、前回チェック時から変化があった点だけを3行以内で要約して報告する。変化がなければ「動きなし」とだけ報告し、無理に情報を作らない。
+```
+
+## 意思決定・優先順位
+
+### 21. インパクトと工数でタスクを仕分ける
+対象: 両方 ｜ 場面: やることが多すぎて何から手をつけるか迷う時
+
+```text
+いまあるタスクを「インパクトの大きさ」と「かかる工数」の2軸でマトリクスに分類してください。インパクトが大きく工数が小さいものから順に並べ替え、着手順の提案として出してください。
+```
+
+### 22. トレードオフを言語化して選択肢を比較する
+対象: 両方 ｜ 場面: 複数の選択肢のどれを選ぶか決めきれない時
+
+```text
+この選択肢について、それぞれのメリット・デメリット・見送った場合に失うものを表にしてください。判断基準として何を優先するか（速さ／品質／コストなど）を先に確認した上で、その基準に沿った推奨案を1つ提示してください。
+```
+
+### 23. 進める前にリスクを洗い出す
+対象: 両方 ｜ 場面: 後戻りしにくい判断をする前
+
+```text
+この計画を実行した場合に起こりうる失敗パターンを洗い出してください。それぞれについて発生しやすさと影響の大きさを見積もり、対策が必要なものから順に並べてください。対策が難しいリスクは実行前に私に判断を仰ぐ形にしてください。
+```
+
+### 24. 意思決定の理由を記録に残す
+対象: 両方 ｜ 場面: 後で「なぜこの判断をしたか」を振り返れるようにしたい時
+
+```text
+今回の判断について、選んだ選択肢・却下した選択肢・判断の決め手になった理由を簡潔に記録してください。この記録は後から見返した時に、当時の前提条件が変わっていないかを確認できる形にしてください。
+```
+
+### 25. 撤退基準を先に決めておく
+対象: 両方 ｜ 場面: 新しい取り組みを始める時
+
+```text
+この取り組みについて、どの状態になったら継続し、どの状態になったら中止するかの基準を、始める前に数値や期限で具体化してください。基準があいまいな項目があれば、判断できる形に言い換えてから提示してください。
+```
+
+## 自動化・仕組み化
+
+### 26. /goal でCLAUDE.mdを実態に合わせて棚卸しする
+対象: 両方 ｜ 場面: 運用ルールがコードの実態とズレてきたと感じる時
+
+```text
+/goal CLAUDE.md に書かれているルールと、実際のコード・運用の実態を突き合わせて、食い違っている箇所・すでに形骸化している箇所・書かれていないのに毎回同じ指示を出している箇所を洗い出す。洗い出した内容をもとに、CLAUDE.md の該当箇所を更新する案を提示し、私の承認を得てから反映する。ゴール達成で停止する。
+```
+
+### 27. 繰り返している作業をスキル化する
+対象: 両方 ｜ 場面: 同じ手順を何度も指示している時
+
+```text
+直近で私が繰り返し依頼している作業の手順を振り返り、共通する型を抽出してください。その型を再利用できる形（手順書やスキルの雛形）に落とし込み、次回から短い指示だけで同じ品質の結果を再現できるようにしてください。
+```
+
+### 28. /goal で長時間の自律実行に任せる
+対象: 両方 ｜ 場面: 明確なゴールはあるが、途中の細かい判断は任せたい時
+
+```text
+/goal 〈ここに達成したいゴールを具体的に書く。例: このリポジトリのテストカバレッジを主要モジュールで底上げする〉。進め方は任せるが、破壊的な操作（削除・force push・外部への公開など）の前には一度立ち止まって確認を取ること。ゴール達成、または一定のターン数に達したら状況を報告して停止する。
+```
+
+### 29. /loop で定期実行フローを組み立てる
+対象: 両方 ｜ 場面: 決まったチェックや集計を毎回手動でやるのが面倒な時
+
+```text
+/loop 30m 〈ここに定期的にやりたい作業を書く。例: 特定フォルダに新しいファイルが増えていないか確認し、増えていれば内容を要約して報告する〉。作業内容に変化がない回は簡潔に「変化なし」とだけ報告し、変化があった回だけ詳細を報告する形にしてください。
+```
+
+### 30. MCP連携をまとめて設計する
+対象: 両方 ｜ 場面: 複数の外部サービスをまたぐ作業を効率化したい時
+
+```text
+この作業で使っている外部サービスとの連携（MCP経由のものを含む）を洗い出し、手作業で行っている接続部分をリストアップしてください。それぞれについて、自動化できる部分とユーザーの確認が必要な部分（取り消せない操作など）を分けて、安全に自動化する設計案を提示してください。
+```
+</pre>
+<script>
+function copyTextWithFallback(text){
+  function fallback(){try{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();return ok;}catch(e){return false;}}
+  if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(text).then(()=>true).catch(fallback);}
+  return Promise.resolve(fallback());
+}
+function showCopyResult(btn,ok){const o=btn.textContent;btn.textContent=ok?'✔ コピーしました！':'✖ コピー不可 ↓ DLを';setTimeout(()=>{btn.textContent=o;},ok?1600:3200);}
+async function copyPrompt(id,btn){const ok=await copyTextWithFallback(document.getElementById(id).textContent);showCopyResult(btn,ok);}
+function downloadText(id,fn,btn){try{const t=document.getElementById(id).textContent;const b=new Blob([t],{type:'text/plain;charset=utf-8'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=fn;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);}catch(e){if(btn){const o=btn.textContent;btn.textContent='✖ 保存不可';setTimeout(()=>{btn.textContent=o;},3000);}}}
+</script></body></html>

@@ -1,33 +1,60 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ゆとりくんが使うプロンプト100選</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
-<style>:root{--brand:#1C3461;--brand-deep:#16284A;--brand-soft:rgba(28,52,97,.08);--brand-line:rgba(28,52,97,.22);--accent:#5BBCD4;--accent-deep:#2C7A93;--accent-soft:rgba(91,188,212,.16);--bg:#F7FAFC;--paper:#FFFFFF;--ink:#1C3461;--ink-mid:#4A6080;--ink-sub:#8098B4;--line:rgba(28,52,97,.12);--head:'Noto Sans JP'}*{{box-sizing:border-box;margin:0;padding:0;}}
-body{{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',-apple-system,'Hiragino Sans',sans-serif;line-height:1.7;}}
-.doc{{max-width:920px;margin:0 auto;background:var(--paper);box-shadow:0 0 60px rgba(0,0,0,.10);min-height:100vh;}}
-.hero{{position:relative;background:linear-gradient(160deg,var(--brand-soft),var(--bg) 70%);padding:44px 46px 34px;border-bottom:3px solid var(--brand-line);}}
-.chan{{display:inline-flex;align-items:center;gap:11px;margin-bottom:14px;}}
-.chan img{{width:46px;height:46px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.16);}}
-.chan b{{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:16px;}}
-.chan b small{{display:block;font-size:11px;color:var(--ink-mid);font-weight:500;}}
-h1{{font-family:var(--head);font-weight:900;font-size:31px;color:var(--ink);line-height:1.25;}} h1 .hl{{color:var(--brand-deep);}}
-.hero p.sub{{font-size:16px;color:var(--ink-mid);font-weight:700;margin-top:12px;max-width:700px;}}
-section{{padding:30px 46px;border-bottom:1px solid var(--line);}}
-.h2{{font-family:var(--head);font-weight:900;font-size:21px;color:var(--ink);margin-bottom:8px;}}
-.cat{{font-family:var(--head);font-weight:900;font-size:18px;color:var(--brand-deep);margin:26px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--brand-line);}}
-.catnav{{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 2px;}}
-.catnav a{{font-size:12.5px;font-weight:700;color:var(--brand-deep);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;}}
-.icard{{background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:13px;padding:15px 18px;margin-bottom:12px;}}
-.ititle{{font-family:var(--head);font-weight:900;font-size:16px;color:var(--ink);}}
-.imeta{{font-size:12.5px;color:var(--ink-mid);margin:4px 0 9px;}}
-pre.prompt{{background:var(--ink);color:#ECECEA;border-radius:10px;padding:14px 16px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.6;max-height:280px;overflow-y:auto;}}
-.btns{{margin-top:10px;display:flex;gap:9px;flex-wrap:wrap;}}
-.btn{{display:inline-flex;align-items:center;gap:7px;background:var(--accent);border:2px solid var(--accent-deep);color:var(--ink);border-radius:999px;padding:9px 20px;font-family:var(--head);font-weight:900;font-size:13.5px;cursor:pointer;text-decoration:none;}}
-.btn.sm{{padding:7px 15px;font-size:12.5px;}} .btn.ghost{{background:var(--paper);border:1.5px solid var(--line);color:var(--brand-deep);}}
-.linkcard{{display:flex;justify-content:space-between;align-items:center;gap:16px;border:2px solid var(--brand);border-radius:14px;padding:18px 22px;margin-bottom:13px;background:var(--bg);}}
-.linkcard .lt{{font-family:var(--head);font-weight:900;font-size:18px;color:var(--ink);}} .linkcard .ld{{font-size:13px;color:var(--ink-mid);margin-top:3px;}}
-.linkcard .cnt{{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:13px;background:var(--brand-soft);border-radius:999px;padding:4px 12px;display:inline-block;margin-bottom:6px;}}
-.recv{{background:var(--brand-soft);border:1.5px solid var(--brand-line);border-radius:13px;padding:18px 22px;}} .recv ol{{margin-left:20px;font-size:14.5px;}} .recv li{{margin-bottom:6px;}}
-.note{{background:var(--accent-soft);border:1.5px solid var(--accent);border-radius:12px;padding:14px 18px;font-size:13.5px;color:var(--ink);margin-top:14px;}}
-footer{{background:var(--ink);color:#EBEBE7;padding:26px 46px;font-size:13px;}}</style></head><body><svg style="display:none">
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ゆとりくん</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet"><style>:root{--brand:#1C3461;--brand-deep:#16284A;--brand-soft:rgba(28,52,97,.08);--brand-line:rgba(28,52,97,.22);--accent:#5BBCD4;--accent-deep:#2C7A93;--accent-soft:rgba(91,188,212,.16);--bg:#F7FAFC;--paper:#FFFFFF;--ink:#1C3461;--ink-mid:#4A6080;--ink-sub:#8098B4;--line:rgba(28,52,97,.12);--head:'Noto Sans JP'}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--canvas,var(--bg));color:var(--ink);font-family:'Noto Sans JP',-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.75;}
+.doc{max-width:940px;margin:0 auto;background:var(--paper);box-shadow:0 0 70px rgba(0,0,0,.13);min-height:100vh;position:relative;overflow:hidden;}
+.hero{position:relative;background:linear-gradient(155deg,var(--brand-soft),var(--bg) 72%);padding:46px 52px 38px;border-bottom:3px solid var(--brand-line);overflow:hidden;}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--brand) 0%,var(--brand-deep) 52%,var(--accent) 100%);}
+.coin{position:absolute;width:150px;height:150px;border-radius:50%;background:var(--accent);opacity:.12;top:-46px;right:-34px;}
+.dots{position:absolute;bottom:24px;right:50px;display:grid;grid-template-columns:repeat(4,6px);gap:7px;opacity:.4;}
+.dots span{width:6px;height:6px;border-radius:50%;background:var(--brand);}
+.chan{position:relative;display:inline-flex;align-items:center;gap:11px;margin-bottom:16px;}
+.chan img{width:48px;height:48px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.18);}
+.chan b{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:16px;line-height:1.2;}
+.chan b small{display:block;font-size:11px;color:var(--ink-mid);font-weight:500;letter-spacing:.3px;}
+.eyebrow{position:relative;display:inline-flex;align-items:center;gap:9px;font-family:var(--head);font-weight:900;color:var(--brand-deep);letter-spacing:2px;font-size:13px;margin-bottom:12px;}
+.eyebrow::before,.eyebrow::after{content:'';width:18px;height:2px;background:var(--brand-line);border-radius:2px;}
+h1{position:relative;font-family:var(--head);font-weight:900;font-size:33px;color:var(--ink);line-height:1.24;}
+h1 .hl{color:var(--brand-deep);}
+.sub{position:relative;font-size:16px;color:var(--ink-mid);font-weight:700;margin-top:14px;max-width:720px;}
+.meta{position:relative;margin-top:20px;display:flex;gap:9px;flex-wrap:wrap;}
+.meta span{background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:6px 15px;font-size:13px;font-weight:700;color:var(--ink-mid);}
+.meta span.k{background:var(--accent-soft);border-color:var(--accent);color:var(--ink);}
+section{padding:34px 52px;border-bottom:1px solid var(--line);}
+.h2{display:flex;align-items:center;gap:11px;font-family:var(--head);font-weight:900;font-size:22px;color:var(--ink);margin-bottom:18px;}
+.h2 .n{width:32px;height:32px;border-radius:9px;background:var(--brand-soft);color:var(--brand-deep);font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.steps{list-style:none;}
+.steps li{position:relative;padding:12px 16px 12px 54px;margin-bottom:10px;background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:12px;font-size:15px;font-weight:600;color:var(--ink);}
+.steps li .sn{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:var(--accent);color:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:900;font-size:14px;box-shadow:0 2px 0 var(--accent-deep);}
+.note{background:var(--accent-soft);border:1.5px solid var(--accent);border-radius:13px;padding:15px 20px;font-size:14px;color:var(--ink);margin-top:16px;line-height:1.7;}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;background:var(--brand-soft);color:var(--brand-deep);border-radius:5px;padding:1px 6px;}
+.gift{display:flex;align-items:center;gap:20px;background:var(--bg);border:1.5px solid var(--line);border-left:6px solid var(--brand);border-radius:18px;padding:20px 24px;margin-bottom:15px;box-shadow:0 4px 16px rgba(0,0,0,.05);transition:transform .16s,box-shadow .16s,border-color .16s;}
+.gift:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.11);border-color:var(--brand);}
+.gift .gbadge{width:66px;height:66px;border-radius:50%;background:var(--brand-soft);border:2px solid var(--brand);color:var(--brand-deep);font-family:var(--head);font-weight:900;font-size:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.gift .gbody{flex:1;min-width:0;}
+.gift .gt{font-family:var(--head);font-weight:900;font-size:19px;color:var(--ink);line-height:1.3;}
+.gift .gd{font-size:13.5px;color:var(--ink-mid);margin-top:4px;}
+.gift .cnt{display:inline-flex;align-items:center;gap:5px;font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:12.5px;background:var(--brand-soft);border-radius:999px;padding:3px 13px;margin-top:9px;}
+.btn{display:inline-flex;align-items:center;gap:7px;background:var(--accent);border:2px solid var(--accent-deep);color:var(--ink);border-radius:999px;padding:11px 24px;font-family:var(--head);font-weight:900;font-size:14px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:filter .15s;}
+.btn:hover{filter:brightness(.97);}
+.btn.sm{padding:8px 18px;font-size:12.5px;}
+.btn.ghost{background:var(--paper);border:1.5px solid var(--line);color:var(--brand-deep);}
+.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--paper);border-bottom:1.5px solid var(--line);padding:11px 52px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.topbar .tt{font-family:var(--head);font-weight:900;font-size:15px;color:var(--brand-deep);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.catnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;position:relative;}
+.catnav a{font-size:12.5px;font-weight:700;color:var(--brand-deep);text-decoration:none;background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:6px 13px;}
+.catnav a:hover{border-color:var(--brand);background:var(--brand-soft);}
+.cat{display:flex;align-items:center;gap:11px;font-family:var(--head);font-weight:900;font-size:19px;color:var(--brand-deep);margin:32px 0 15px;padding-bottom:9px;border-bottom:2px solid var(--brand-line);scroll-margin-top:70px;}
+.cat .cn{width:30px;height:30px;border-radius:8px;background:var(--brand);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.icard{background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:14px;padding:16px 18px 15px;margin-bottom:13px;transition:box-shadow .15s,border-color .15s;}
+.icard:hover{border-color:var(--brand);box-shadow:0 5px 16px rgba(0,0,0,.07);}
+.icard .ititle{font-family:var(--head);font-weight:900;font-size:16.5px;color:var(--ink);}
+.icard .imeta{font-size:12.5px;color:var(--ink-mid);margin:5px 0 11px;padding-left:11px;border-left:2px solid var(--brand-line);}
+pre.prompt{background:var(--ink);color:#EDEDEA;border-radius:11px;padding:15px 17px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.65;}
+.btns{margin-top:11px;display:flex;gap:9px;flex-wrap:wrap;}
+footer{background:var(--ink);color:#E7E7E3;padding:30px 52px;font-size:13px;}
+footer .fl{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-family:var(--head);font-weight:900;font-size:15px;color:#fff;}
+@media(max-width:640px){.hero,section,.topbar,footer{padding-left:22px;padding-right:22px;}h1{font-size:26px;}.gift{flex-wrap:wrap;}}
+</style></head><body><svg style="display:none">
   <symbol id="kawaru-logo" viewBox="0 0 406 93">
     <rect x="6.67572e-06" y="13.4815" width="7.93029" height="74.5447" fill="currentColor"/>
     <path d="M18.2397 52.7235L24.2772 47.5817L57.8911 88.0582L48.3318 88.0582L18.2397 52.7235Z" fill="#5BBCD4"/>
@@ -37,271 +64,265 @@ footer{{background:var(--ink);color:#EBEBE7;padding:26px 46px;font-size:13px;}}<
     <rect x="44.4096" y="7.9303" width="7.93029" height="22.9978" transform="rotate(-90 44.4096 7.9303)" fill="currentColor"/>
     <path d="M110.882 61.3999L110.204 47.3281L135.413 20.7649H148.958L126.233 45.2211L119.46 52.4451L110.882 61.3999ZM99.9703 73.4399V20.7649H112.086V73.4399H99.9703ZM136.015 73.4399L117.278 50.4886L125.254 41.8349L150.237 73.4399H136.015ZM181.053 73.4399V65.5386L180.301 63.8079V49.6609C180.301 47.1525 179.523 45.196 177.968 43.7914C176.463 42.3867 174.13 41.6844 170.97 41.6844C168.813 41.6844 166.681 42.0355 164.574 42.7379C162.517 43.39 160.761 44.293 159.306 45.4469L155.092 37.2446C157.299 35.6895 159.958 34.4855 163.069 33.6326C166.179 32.7798 169.339 32.3534 172.55 32.3534C178.721 32.3534 183.512 33.8082 186.923 36.7179C190.334 39.6275 192.04 44.1676 192.04 50.3381V73.4399H181.053ZM168.712 74.0419C165.552 74.0419 162.843 73.5151 160.585 72.4616C158.328 71.358 156.597 69.878 155.393 68.0219C154.189 66.1657 153.587 64.0838 153.587 61.7761C153.587 59.3681 154.164 57.2611 155.318 55.4551C156.522 53.6491 158.403 52.2445 160.962 51.2411C163.52 50.1876 166.856 49.6609 170.97 49.6609H181.731V56.5086H172.249C169.49 56.5086 167.584 56.9601 166.53 57.8631C165.527 58.7661 165.025 59.8949 165.025 61.2494C165.025 62.7544 165.602 63.9584 166.756 64.8614C167.96 65.7142 169.59 66.1406 171.647 66.1406C173.604 66.1406 175.359 65.6891 176.915 64.7861C178.47 63.833 179.599 62.4534 180.301 60.6474L182.107 66.0654C181.254 68.674 179.699 70.6556 177.441 72.0101C175.184 73.3646 172.274 74.0419 168.712 74.0419ZM213.443 73.4399L198.844 32.9554H209.906L222.021 67.7961H216.754L229.396 32.9554H239.329L251.594 67.7961H246.327L258.818 32.9554H269.203L254.529 73.4399H243.166L232.406 43.5656H235.867L224.73 73.4399H213.443ZM300.427 73.4399V65.5386L299.675 63.8079V49.6609C299.675 47.1525 298.897 45.196 297.342 43.7914C295.837 42.3867 293.504 41.6844 290.344 41.6844C288.187 41.6844 286.055 42.0355 283.948 42.7379C281.891 43.39 280.135 44.293 278.68 45.4469L274.466 37.2446C276.674 35.6895 279.332 34.4855 282.443 33.6326C285.553 32.7798 288.714 32.3534 291.924 32.3534C298.095 32.3534 302.886 33.8082 306.297 36.7179C309.708 39.6275 311.414 44.1676 311.414 50.3381V73.4399H300.427ZM288.086 74.0419C284.926 74.0419 282.217 73.5151 279.959 72.4616C277.702 71.358 275.971 69.878 274.767 68.0219C273.563 66.1657 272.961 64.0838 272.961 61.7761C272.961 59.3681 273.538 57.2611 274.692 55.4551C275.896 53.6491 277.777 52.2445 280.336 51.2411C282.894 50.1876 286.23 49.6609 290.344 49.6609H301.105V56.5086H291.623C288.864 56.5086 286.958 56.9601 285.904 57.8631C284.901 58.7661 284.399 59.8949 284.399 61.2494C284.399 62.7544 284.976 63.9584 286.13 64.8614C287.334 65.7142 288.964 66.1406 291.021 66.1406C292.978 66.1406 294.734 65.6891 296.289 64.7861C297.844 63.833 298.973 62.4534 299.675 60.6474L301.481 66.0654C300.628 68.674 299.073 70.6556 296.815 72.0101C294.558 73.3646 291.648 74.0419 288.086 74.0419ZM324.296 73.4399V32.9554H335.508V44.3934L333.928 41.0824C335.132 38.2229 337.063 36.0657 339.722 34.6109C342.381 33.1059 345.617 32.3534 349.429 32.3534V43.1894C348.928 43.1392 348.476 43.1141 348.075 43.1141C347.674 43.064 347.247 43.0389 346.796 43.0389C343.585 43.0389 340.976 43.967 338.97 45.8231C337.013 47.6291 336.035 50.4635 336.035 54.3264V73.4399H324.296ZM376.043 74.0419C372.681 74.0419 369.671 73.3897 367.013 72.0854C364.404 70.781 362.372 68.7995 360.917 66.1406C359.462 63.4316 358.735 59.9952 358.735 55.8314V32.9554H370.474V54.1006C370.474 57.4618 371.176 59.945 372.581 61.5504C374.036 63.1055 376.068 63.8831 378.676 63.8831C380.482 63.8831 382.088 63.5069 383.492 62.7544C384.897 61.9517 386.001 60.7477 386.803 59.1424C387.606 57.4869 388.007 55.43 388.007 52.9719V32.9554H399.746V73.4399H388.609V62.3029L390.641 65.5386C389.287 68.348 387.28 70.48 384.621 71.9349C382.012 73.3395 379.153 74.0419 376.043 74.0419Z" fill="currentColor"/>
   </symbol>
-</svg><div class="doc">
-<div class="hero"><div class="chan"><svg width="120" height="27" style="color:var(--brand);flex-shrink:0"><use href="#kawaru-logo"/></svg><b>AIエージェント<small>Kawaru</small></b></div><h1>🎁 <span class="hl">ゆとりくんが使うプロンプト100選</span></h1><p class="sub">自己解剖・直感分析から、ブランド・SNS・経営まで。</p>
-<div class="btns" style="margin-top:14px;"><a class="btn ghost" href="./present.html">← プレゼント一覧へ</a><button class="btn" onclick="downloadText('pfull','yutori-prompts-100.md',this)">⬇ 全100本まとめてDL（.md）</button></div>
-<div class="catnav"><a href="#c0">自己解剖・直感分析</a><a href="#c1">内省・意思決定・メンタル</a><a href="#c2">ブランド構築・コンセプト設計</a><a href="#c3">SNS・発信・Z世代マーケティング</a><a href="#c4">クリエイティブ・デザイン・世界観づくり</a><a href="#c5">商品企画・EC・在庫/販売</a><a href="#c6">採用・組織・カルチャー・チーム</a><a href="#c7">経営・数字・投資家対応・上場企業運営</a><a href="#c8">顧客理解・コミュニティ</a><a href="#c9">学び・インプット・自己成長</a></div></div>
-<section><div class="cat" id="c0">自己解剖・直感分析</div>
-<div class="icard"><div class="ititle">1. 保存画像から無意識を読む直感カルテ</div><div class="imeta">場面: スマホの保存画像フォルダを見返して、自分でも気づいていない好みの傾向を知りたいとき</div><pre class="prompt" id="p1">あなたは直感分析エージェントです。これから私が最近スマホに保存した画像を何枚か貼ります。肩書きや職業は一切考慮せず、一人の人間として見てください。画像に共通する色・構図・雰囲気・被写体の傾向から、私が今無意識に惹かれているものは何か、逆に避けているものは何かを言語化してください。最後に、私の今の気分を一言で表すとしたら何か、直感カルテとしてまとめてください。
+</svg><div class="doc"><div class="topbar"><a class="btn ghost sm" href="./present.html">← プレゼント一覧</a><span class="tt">🎁 ゆとりくん</span><button class="btn sm" onclick="downloadText('pfull','yutori-prompts-100.md',this)">⬇ 全100本DL</button></div><div class="hero"><span class="coin"></span><span class="dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><div class="chan"><svg width="120" height="27" style="color:var(--brand);flex-shrink:0"><use href="#kawaru-logo"/></svg><b>AIエージェント<small>Kawaru</small></b></div><div class="eyebrow">PROMPT 100</div><h1><span class="hl">ゆとりくん</span>が使う<br>プロンプト100選</h1><p class="sub">自己解剖・直感分析から、ブランド・SNS・経営まで。自分の内面をAIに読ませる使い方が中心。</p><div class="catnav"><a href="#c0">自己解剖・直感分析</a><a href="#c1">内省・意思決定・メンタル</a><a href="#c2">ブランド構築・コンセプト設計</a><a href="#c3">SNS・発信・Z世代マーケティング</a><a href="#c4">クリエイティブ・デザイン・世界観づくり</a><a href="#c5">商品企画・EC・在庫/販売</a><a href="#c6">採用・組織・カルチャー・チーム</a><a href="#c7">経営・数字・投資家対応・上場企業運営</a><a href="#c8">顧客理解・コミュニティ</a><a href="#c9">学び・インプット・自己成長</a></div></div><section><div class="cat" id="c0"><span class="cn">1</span>自己解剖・直感分析</div>
+<div class="icard"><div class="ititle">1. 保存画像から無意識を読む直感カルテ</div><div class="imeta">スマホの保存画像フォルダを見返して、自分でも気づいていない好みの傾向を知りたいとき</div><pre class="prompt" id="p1">あなたは直感分析エージェントです。これから私が最近スマホに保存した画像を何枚か貼ります。肩書きや職業は一切考慮せず、一人の人間として見てください。画像に共通する色・構図・雰囲気・被写体の傾向から、私が今無意識に惹かれているものは何か、逆に避けているものは何かを言語化してください。最後に、私の今の気分を一言で表すとしたら何か、直感カルテとしてまとめてください。
 
-[画像を貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p1',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">2. 最近よく聴く曲から今の気分を読む</div><div class="imeta">場面: プレイリストの並びが最近変わったと感じて、その理由を知りたいとき</div><pre class="prompt" id="p2">直感分析エージェントとして、これから私が最近よく聴いている曲のタイトルとアーティストを並べます。曲調・歌詞のテーマ・テンポの傾向から、私が今どんな気分でいるのか、何を欲しているのかを分析してください。褒める必要はなく、率直な観察だけで構いません。
+[画像を貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p1',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">2. 最近よく聴く曲から今の気分を読む</div><div class="imeta">プレイリストの並びが最近変わったと感じて、その理由を知りたいとき</div><pre class="prompt" id="p2">直感分析エージェントとして、これから私が最近よく聴いている曲のタイトルとアーティストを並べます。曲調・歌詞のテーマ・テンポの傾向から、私が今どんな気分でいるのか、何を欲しているのかを分析してください。褒める必要はなく、率直な観察だけで構いません。
 
-[曲リストを貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p2',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">3. YouTube視聴履歴から避けている課題を探る</div><div class="imeta">場面: 最近同じジャンルの動画ばかり見ている自覚があり、その理由を知りたいとき</div><pre class="prompt" id="p3">直感分析エージェントとして振る舞ってください。これから私が最近見たYouTube動画のタイトルを時系列で貼ります。視聴傾向の変化から、私が今向き合っている問題、逆に目を逸らしている問題を推測し、根拠となる動画のパターンも添えて教えてください。
+[曲リストを貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p2',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">3. YouTube視聴履歴から避けている課題を探る</div><div class="imeta">最近同じジャンルの動画ばかり見ている自覚があり、その理由を知りたいとき</div><pre class="prompt" id="p3">直感分析エージェントとして振る舞ってください。これから私が最近見たYouTube動画のタイトルを時系列で貼ります。視聴傾向の変化から、私が今向き合っている問題、逆に目を逸らしている問題を推測し、根拠となる動画のパターンも添えて教えてください。
 
-[視聴履歴を貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p3',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">4. 生年月日から自分のOSを分析する</div><div class="imeta">場面: 自分の意思決定の癖や向き不向きを、性格診断ではなく行動パターンとして整理したいとき</div><pre class="prompt" id="p4">私の生年月日は[生年月日]です。算命学・四柱推命の観点から見た私の基本的な性質と、意思決定や人間関係での癖を教えてください。当たり外れではなく、「私はこういう時にこう動きやすい」という行動パターンとして言語化してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p4',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">5. MBTIと直感診断を掛け合わせて盲点を洗う</div><div class="imeta">場面: 自己認識と実際の行動のズレを確認したいとき</div><pre class="prompt" id="p5">私のMBTIは[タイプ]です。このタイプが陥りやすい思考の盲点と、意思決定で見落としがちなポイントを教えてください。その上で、直近1ヶ月の私の行動として[最近の出来事を箇条書きで]を伝えるので、タイプの傾向と実際の行動が一致している部分・ズレている部分を分析してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p5',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">6. 直感分析エージェントによるフル診断</div><div class="imeta">場面: 定期的に自分の内面を棚卸ししたいとき(月1回など)</div><pre class="prompt" id="p6">あなたは直感分析エージェントです。これから3つの素材を渡します。①最近保存した画像、②最近よく聴く曲、③最近見た動画のタイトル。肩書きは考慮せず、一人の人間として素材だけから分析してください。読み取ってほしいのは、私が今無意識に求めているもの、避けている課題、そして次に向かいたがっている方向の3点です。最後に直感カルテとして箇条書きでまとめてください。
+[視聴履歴を貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p3',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">4. 生年月日から自分のOSを分析する</div><div class="imeta">自分の意思決定の癖や向き不向きを、性格診断ではなく行動パターンとして整理したいとき</div><pre class="prompt" id="p4">私の生年月日は[生年月日]です。算命学・四柱推命の観点から見た私の基本的な性質と、意思決定や人間関係での癖を教えてください。当たり外れではなく、「私はこういう時にこう動きやすい」という行動パターンとして言語化してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p4',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">5. MBTIと直感診断を掛け合わせて盲点を洗う</div><div class="imeta">自己認識と実際の行動のズレを確認したいとき</div><pre class="prompt" id="p5">私のMBTIは[タイプ]です。このタイプが陥りやすい思考の盲点と、意思決定で見落としがちなポイントを教えてください。その上で、直近1ヶ月の私の行動として[最近の出来事を箇条書きで]を伝えるので、タイプの傾向と実際の行動が一致している部分・ズレている部分を分析してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p5',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">6. 直感分析エージェントによるフル診断</div><div class="imeta">定期的に自分の内面を棚卸ししたいとき(月1回など)</div><pre class="prompt" id="p6">あなたは直感分析エージェントです。これから3つの素材を渡します。①最近保存した画像、②最近よく聴く曲、③最近見た動画のタイトル。肩書きは考慮せず、一人の人間として素材だけから分析してください。読み取ってほしいのは、私が今無意識に求めているもの、避けている課題、そして次に向かいたがっている方向の3点です。最後に直感カルテとして箇条書きでまとめてください。
 
-[素材を貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p6',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">7. 直感カルテから今週の行動を1つだけ決める</div><div class="imeta">場面: 分析結果を実際の行動に落とし込みたいとき</div><pre class="prompt" id="p7">これが先週作った直感カルテです。
+[素材を貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p6',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">7. 直感カルテから今週の行動を1つだけ決める</div><div class="imeta">分析結果を実際の行動に落とし込みたいとき</div><pre class="prompt" id="p7">これが先週作った直感カルテです。
 
 [直感カルテの内容を貼る]
 
-このカルテの内容を踏まえて、今週私が実際に取れる行動を1つだけ提案してください。大きな決断ではなく、今日中にできる小さな一歩にしてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p7',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">8. 保存画像の変化を過去と比較する</div><div class="imeta">場面: 半年前と今で自分の関心がどう変わったかを客観視したいとき</div><pre class="prompt" id="p8">直感分析エージェントとして、2つの時期の保存画像を比較してください。①半年前によく保存していた画像の傾向、②最近保存している画像の傾向、をそれぞれ貼ります。この2つを比べて、私の興味関心がどう変化したか、その変化が示している可能性のある心境の変化を教えてください。
+このカルテの内容を踏まえて、今週私が実際に取れる行動を1つだけ提案してください。大きな決断ではなく、今日中にできる小さな一歩にしてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p7',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">8. 保存画像の変化を過去と比較する</div><div class="imeta">半年前と今で自分の関心がどう変わったかを客観視したいとき</div><pre class="prompt" id="p8">直感分析エージェントとして、2つの時期の保存画像を比較してください。①半年前によく保存していた画像の傾向、②最近保存している画像の傾向、をそれぞれ貼ります。この2つを比べて、私の興味関心がどう変化したか、その変化が示している可能性のある心境の変化を教えてください。
 
-[画像2セットを貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p8',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">9. 無意識に避けている会話テーマを探す</div><div class="imeta">場面: 人と話すときに毎回避けている話題がある気がするとき</div><pre class="prompt" id="p9">最近の検索履歴やメモの傾向を貼ります。私が話題として触れていないテーマ、質問していないジャンルがあれば教えてください。あえて避けているように見えるものがあれば、それも指摘してください。
+[画像2セットを貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p8',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">9. 無意識に避けている会話テーマを探す</div><div class="imeta">人と話すときに毎回避けている話題がある気がするとき</div><pre class="prompt" id="p9">最近の検索履歴やメモの傾向を貼ります。私が話題として触れていないテーマ、質問していないジャンルがあれば教えてください。あえて避けているように見えるものがあれば、それも指摘してください。
 
-[履歴やメモを貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p9',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">10. 直感分析の結果を自分の中で検証する</div><div class="imeta">場面: 分析結果が的を射ているかを、人に見せる前に自分で確認したいとき</div><pre class="prompt" id="p10">直感分析エージェントとして出した先ほどの分析結果について、私から率直な感想を伝えます。
+[履歴やメモを貼る]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p9',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">10. 直感分析の結果を自分の中で検証する</div><div class="imeta">分析結果が的を射ているかを、人に見せる前に自分で確認したいとき</div><pre class="prompt" id="p10">直感分析エージェントとして出した先ほどの分析結果について、私から率直な感想を伝えます。
 
 [感想を書く]
 
-このズレも踏まえて、分析をどう修正すべきか、私が言語化できていない部分を一緒に埋め直してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p10',this)">📋 コピー</button></div></div><div class="cat" id="c1">内省・意思決定・メンタル</div>
-<div class="icard"><div class="ititle">11. 迷っている決断を言語化して整理する</div><div class="imeta">場面: 決断を先延ばしにしていて、自分でも理由がはっきりしないとき</div><pre class="prompt" id="p11">今、私は[決断の内容]で迷っています。メリット・デメリットの整理ではなく、なぜ私がこれだけ迷っているのか、その理由を一緒に言語化してください。質問を重ねながら、私の本音を引き出してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p11',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">12. 本音と建前を切り分ける壁打ち</div><div class="imeta">場面: 会議やSNSで言ったことと本心がズレている気がするとき</div><pre class="prompt" id="p12">最近こう発言しました。
+このズレも踏まえて、分析をどう修正すべきか、私が言語化できていない部分を一緒に埋め直してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p10',this)">📋 このプロンプトをコピー</button></div></div><div class="cat" id="c1"><span class="cn">2</span>内省・意思決定・メンタル</div>
+<div class="icard"><div class="ititle">11. 迷っている決断を言語化して整理する</div><div class="imeta">決断を先延ばしにしていて、自分でも理由がはっきりしないとき</div><pre class="prompt" id="p11">今、私は[決断の内容]で迷っています。メリット・デメリットの整理ではなく、なぜ私がこれだけ迷っているのか、その理由を一緒に言語化してください。質問を重ねながら、私の本音を引き出してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p11',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">12. 本音と建前を切り分ける壁打ち</div><div class="imeta">会議やSNSで言ったことと本心がズレている気がするとき</div><pre class="prompt" id="p12">最近こう発言しました。
 
 [発言内容]
 
-この発言のうち、本心からの部分と、その場を収めるための建前だった部分を分けて考えたいです。質問しながら私の本音を引き出してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p12',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">13. 燃え尽きのサインを早期に見つける</div><div class="imeta">場面: なんとなくやる気が落ちているが、原因がはっきりしないとき</div><pre class="prompt" id="p13">最近の自分の状態を伝えます。
+この発言のうち、本心からの部分と、その場を収めるための建前だった部分を分けて考えたいです。質問しながら私の本音を引き出してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p12',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">13. 燃え尽きのサインを早期に見つける</div><div class="imeta">なんとなくやる気が落ちているが、原因がはっきりしないとき</div><pre class="prompt" id="p13">最近の自分の状態を伝えます。
 
 [最近の睡眠・気分・仕事量などをメモ]
 
-これは燃え尽きの初期サインに当てはまりますか。当てはまる場合、今すぐ削れるタスクや休ませるべき領域を具体的に教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p13',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">14. 決断疲れしているときの優先順位づけ</div><div class="imeta">場面: 決めることが多すぎて何から手をつけていいかわからないとき</div><pre class="prompt" id="p14">今抱えている決断事項を全部書き出します。
+これは燃え尽きの初期サインに当てはまりますか。当てはまる場合、今すぐ削れるタスクや休ませるべき領域を具体的に教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p13',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">14. 決断疲れしているときの優先順位づけ</div><div class="imeta">決めることが多すぎて何から手をつけていいかわからないとき</div><pre class="prompt" id="p14">今抱えている決断事項を全部書き出します。
 
 [箇条書きで列挙]
 
-この中で、今日中に決めるべきもの、今週中でいいもの、来月以降でいいものに分けてください。判断基準も添えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p14',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">15. 感情のログを取って自分のパターンを知る</div><div class="imeta">場面: イライラや不安が続いているとき、そのトリガーを特定したいとき</div><pre class="prompt" id="p15">ここ1週間の出来事と、その時の感情を時系列でメモします。
+この中で、今日中に決めるべきもの、今週中でいいもの、来月以降でいいものに分けてください。判断基準も添えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p14',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">15. 感情のログを取って自分のパターンを知る</div><div class="imeta">イライラや不安が続いているとき、そのトリガーを特定したいとき</div><pre class="prompt" id="p15">ここ1週間の出来事と、その時の感情を時系列でメモします。
 
 [出来事と感情を貼る]
 
-感情が大きく動いたタイミングに共通するトリガーがあれば教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p15',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">16. 一人反省会のファシリテーター役</div><div class="imeta">場面: 大きな意思決定の後、振り返りを一人でやりたいとき</div><pre class="prompt" id="p16">[決断や出来事]について振り返りをしたいです。あなたはファシリテーター役として、私に質問を投げかけながら、うまくいった点・改善点・次にやるとしたら変えることを一緒に整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p16',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">17. 焦りの正体を分解する</div><div class="imeta">場面: 周囲と比較して焦りを感じているが、何に焦っているか曖昧なとき</div><pre class="prompt" id="p17">最近、漠然とした焦りを感じています。何と比べて焦っているのか、その焦りは今すぐ動くべきものか、それとも時間が解決するものかを、質問しながら一緒に整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p17',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">18. 休むことへの罪悪感を扱う</div><div class="imeta">場面: 休みを取っても仕事のことが頭から離れないとき</div><pre class="prompt" id="p18">休みを取っているのに、休んだ気がしません。何が休むことを妨げているのか、罪悪感の正体を一緒に言語化してください。そのうえで、今の状況で現実的にできる休み方を提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p18',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">19. 自分の判断基準を言語化する</div><div class="imeta">場面: いつも直感で決めているが、その基準を言葉にしたいとき</div><pre class="prompt" id="p19">過去に自分が下した決断をいくつか振り返ります。
+感情が大きく動いたタイミングに共通するトリガーがあれば教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p15',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">16. 一人反省会のファシリテーター役</div><div class="imeta">大きな意思決定の後、振り返りを一人でやりたいとき</div><pre class="prompt" id="p16">[決断や出来事]について振り返りをしたいです。あなたはファシリテーター役として、私に質問を投げかけながら、うまくいった点・改善点・次にやるとしたら変えることを一緒に整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p16',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">17. 焦りの正体を分解する</div><div class="imeta">周囲と比較して焦りを感じているが、何に焦っているか曖昧なとき</div><pre class="prompt" id="p17">最近、漠然とした焦りを感じています。何と比べて焦っているのか、その焦りは今すぐ動くべきものか、それとも時間が解決するものかを、質問しながら一緒に整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p17',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">18. 休むことへの罪悪感を扱う</div><div class="imeta">休みを取っても仕事のことが頭から離れないとき</div><pre class="prompt" id="p18">休みを取っているのに、休んだ気がしません。何が休むことを妨げているのか、罪悪感の正体を一緒に言語化してください。そのうえで、今の状況で現実的にできる休み方を提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p18',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">19. 自分の判断基準を言語化する</div><div class="imeta">いつも直感で決めているが、その基準を言葉にしたいとき</div><pre class="prompt" id="p19">過去に自分が下した決断をいくつか振り返ります。
 
 [決断の例を複数書く]
 
-これらに共通する判断基準があれば言語化してください。私が無意識に大事にしている価値観を教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p19',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">20. 一人で抱えている不安を書き出して整理する</div><div class="imeta">場面: 誰にも相談できていない不安があるとき</div><pre class="prompt" id="p20">今、誰にも話していない不安があります。書き出しながら整理したいので、質問を返しながら聞いてください。
+これらに共通する判断基準があれば言語化してください。私が無意識に大事にしている価値観を教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p19',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">20. 一人で抱えている不安を書き出して整理する</div><div class="imeta">誰にも相談できていない不安があるとき</div><pre class="prompt" id="p20">今、誰にも話していない不安があります。書き出しながら整理したいので、質問を返しながら聞いてください。
 
-[不安の内容を書き始める]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p20',this)">📋 コピー</button></div></div><div class="cat" id="c2">ブランド構築・コンセプト設計</div>
-<div class="icard"><div class="ititle">21. ブランドの核となる一文を言語化する</div><div class="imeta">場面: 新しいブランドを立ち上げる前に、軸となるコンセプト文を固めたいとき</div><pre class="prompt" id="p21">新しいブランドを考えています。ターゲットは[ターゲット像]、扱う商品は[商品カテゴリ]です。このブランドが「何のために存在するのか」を一文で表すコンセプト文を、5パターン考えてください。それぞれ狙いの違いも説明してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p21',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">22. ブランドの世界観を対義語で定義する</div><div class="imeta">場面: ブランドらしさを言葉にできず、デザインの指示に迷うとき</div><pre class="prompt" id="p22">[ブランド名/仮称]の世界観を、対になる言葉のペアで定義したいです。例えば「きれいめ⇔ラフ」のような軸を10個提案し、このブランドがそれぞれの軸のどちら寄りかを教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p22',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">23. 競合ブランドとの違いを一言で言えるようにする</div><div class="imeta">場面: 人に説明するとき、競合との違いをうまく言えないと感じるとき</div><pre class="prompt" id="p23">私たちのブランドと、近いポジションにある競合ブランドの違いを整理したいです。ブランドの特徴は[特徴を箇条書き]です。この情報から、他と混同されない一言の違いを作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p23',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">24. ブランドストーリーの骨格を作る</div><div class="imeta">場面: LPやプレスリリース用にブランドストーリーを書く前の骨組みが欲しいとき</div><pre class="prompt" id="p24">ブランドの立ち上げ背景は[背景をメモ]です。この情報をもとに、起承転結のあるブランドストーリーの骨格を箇条書きで作ってください。感情を煽る表現は使わず、事実ベースで構成してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p24',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">25. ブランド拡張の是非を検討する</div><div class="imeta">場面: 新しいカテゴリに商品ラインを広げるか迷っているとき</div><pre class="prompt" id="p25">今のブランドは[現在の商品カテゴリ]を扱っています。新しく[検討中のカテゴリ]への拡張を考えていますが、ブランドの一貫性が崩れないか判断したいです。拡張のメリットとブランド毀損リスクの両方を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p25',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">26. ネーミング案を大量に出して絞り込む</div><div class="imeta">場面: 新ブランドやシリーズの名前を決める段階</div><pre class="prompt" id="p26">新しいブランド/シリーズの名前を考えています。コンセプトは[コンセプト]、ターゲットは[ターゲット]です。この方向性に合う名前の候補を20個出し、それぞれ狙った印象の違いも一言添えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p26',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">27. ブランドの「らしくない」を定義する</div><div class="imeta">場面: やってはいけないことを明文化してチームと共有したいとき</div><pre class="prompt" id="p27">このブランドの世界観は[特徴をメモ]です。逆に「このブランドらしくない」と言えるデザイン・言葉遣い・企画の傾向を10個リストアップしてください。判断に迷ったときのチェックリストとして使いたいです。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p27',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">28. ロゴやビジュアルの方向性を言語化する</div><div class="imeta">場面: デザイナーに発注する前に、頭の中のイメージを言葉にしたいとき</div><pre class="prompt" id="p28">新しいロゴのイメージを言葉にしたいです。参考にしたい雰囲気は[参考イメージの説明や画像]です。この方向性を、デザイナーに伝わる言葉でオリエン資料用に整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p28',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">29. ブランドのターゲット像を解像度高く描く</div><div class="imeta">場面: ペルソナ設定が曖昧なまま企画が進んでいると感じるとき</div><pre class="prompt" id="p29">今のブランドのメイン顧客層について、年齢や性別だけでなく、普段どんなSNSを見て、何にお金を使い、何に悩んでいそうかまで含めた人物像を作ってください。手元にある顧客データは[データやメモ]です。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p29',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">30. ブランドコンセプトを社内向けに1枚で説明する</div><div class="imeta">場面: 新しく入るメンバーにブランドの軸を素早く共有したいとき</div><pre class="prompt" id="p30">このブランドのコンセプト、ターゲット、大事にしていることを、初めて聞く人でも1分で理解できる1枚のメモにまとめてください。元になる情報は[箇条書きで渡す]です。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p30',this)">📋 コピー</button></div></div><div class="cat" id="c3">SNS・発信・Z世代マーケティング</div>
-<div class="icard"><div class="ititle">31. 投稿の温度感をZ世代向けに調整する</div><div class="imeta">場面: 書いた投稿文が説明的すぎる、または堅すぎると感じるとき</div><pre class="prompt" id="p31">この投稿文を書きました。
+[不安の内容を書き始める]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p20',this)">📋 このプロンプトをコピー</button></div></div><div class="cat" id="c2"><span class="cn">3</span>ブランド構築・コンセプト設計</div>
+<div class="icard"><div class="ititle">21. ブランドの核となる一文を言語化する</div><div class="imeta">新しいブランドを立ち上げる前に、軸となるコンセプト文を固めたいとき</div><pre class="prompt" id="p21">新しいブランドを考えています。ターゲットは[ターゲット像]、扱う商品は[商品カテゴリ]です。このブランドが「何のために存在するのか」を一文で表すコンセプト文を、5パターン考えてください。それぞれ狙いの違いも説明してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p21',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">22. ブランドの世界観を対義語で定義する</div><div class="imeta">ブランドらしさを言葉にできず、デザインの指示に迷うとき</div><pre class="prompt" id="p22">[ブランド名/仮称]の世界観を、対になる言葉のペアで定義したいです。例えば「きれいめ⇔ラフ」のような軸を10個提案し、このブランドがそれぞれの軸のどちら寄りかを教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p22',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">23. 競合ブランドとの違いを一言で言えるようにする</div><div class="imeta">人に説明するとき、競合との違いをうまく言えないと感じるとき</div><pre class="prompt" id="p23">私たちのブランドと、近いポジションにある競合ブランドの違いを整理したいです。ブランドの特徴は[特徴を箇条書き]です。この情報から、他と混同されない一言の違いを作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p23',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">24. ブランドストーリーの骨格を作る</div><div class="imeta">LPやプレスリリース用にブランドストーリーを書く前の骨組みが欲しいとき</div><pre class="prompt" id="p24">ブランドの立ち上げ背景は[背景をメモ]です。この情報をもとに、起承転結のあるブランドストーリーの骨格を箇条書きで作ってください。感情を煽る表現は使わず、事実ベースで構成してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p24',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">25. ブランド拡張の是非を検討する</div><div class="imeta">新しいカテゴリに商品ラインを広げるか迷っているとき</div><pre class="prompt" id="p25">今のブランドは[現在の商品カテゴリ]を扱っています。新しく[検討中のカテゴリ]への拡張を考えていますが、ブランドの一貫性が崩れないか判断したいです。拡張のメリットとブランド毀損リスクの両方を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p25',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">26. ネーミング案を大量に出して絞り込む</div><div class="imeta">新ブランドやシリーズの名前を決める段階</div><pre class="prompt" id="p26">新しいブランド/シリーズの名前を考えています。コンセプトは[コンセプト]、ターゲットは[ターゲット]です。この方向性に合う名前の候補を20個出し、それぞれ狙った印象の違いも一言添えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p26',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">27. ブランドの「らしくない」を定義する</div><div class="imeta">やってはいけないことを明文化してチームと共有したいとき</div><pre class="prompt" id="p27">このブランドの世界観は[特徴をメモ]です。逆に「このブランドらしくない」と言えるデザイン・言葉遣い・企画の傾向を10個リストアップしてください。判断に迷ったときのチェックリストとして使いたいです。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p27',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">28. ロゴやビジュアルの方向性を言語化する</div><div class="imeta">デザイナーに発注する前に、頭の中のイメージを言葉にしたいとき</div><pre class="prompt" id="p28">新しいロゴのイメージを言葉にしたいです。参考にしたい雰囲気は[参考イメージの説明や画像]です。この方向性を、デザイナーに伝わる言葉でオリエン資料用に整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p28',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">29. ブランドのターゲット像を解像度高く描く</div><div class="imeta">ペルソナ設定が曖昧なまま企画が進んでいると感じるとき</div><pre class="prompt" id="p29">今のブランドのメイン顧客層について、年齢や性別だけでなく、普段どんなSNSを見て、何にお金を使い、何に悩んでいそうかまで含めた人物像を作ってください。手元にある顧客データは[データやメモ]です。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p29',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">30. ブランドコンセプトを社内向けに1枚で説明する</div><div class="imeta">新しく入るメンバーにブランドの軸を素早く共有したいとき</div><pre class="prompt" id="p30">このブランドのコンセプト、ターゲット、大事にしていることを、初めて聞く人でも1分で理解できる1枚のメモにまとめてください。元になる情報は[箇条書きで渡す]です。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p30',this)">📋 このプロンプトをコピー</button></div></div><div class="cat" id="c3"><span class="cn">4</span>SNS・発信・Z世代マーケティング</div>
+<div class="icard"><div class="ititle">31. 投稿の温度感をZ世代向けに調整する</div><div class="imeta">書いた投稿文が説明的すぎる、または堅すぎると感じるとき</div><pre class="prompt" id="p31">この投稿文を書きました。
 
 [投稿文を貼る]
 
-内容は変えずに、10代後半〜20代前半が読んでも自然に感じる言葉選びに調整してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p31',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">32. 反応が良かった投稿の共通点を分析する</div><div class="imeta">場面: 自社や競合の反応が良かった投稿を振り返って、次に活かしたいとき</div><pre class="prompt" id="p32">反応が良かった投稿をいくつか貼ります。
+内容は変えずに、10代後半〜20代前半が読んでも自然に感じる言葉選びに調整してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p31',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">32. 反応が良かった投稿の共通点を分析する</div><div class="imeta">自社や競合の反応が良かった投稿を振り返って、次に活かしたいとき</div><pre class="prompt" id="p32">反応が良かった投稿をいくつか貼ります。
 
 [投稿内容や数値を貼る]
 
-これらに共通する要素(切り口・見せ方・投稿タイミングなど)を分析し、次に活かせるパターンとして整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p32',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">33. コメント欄の反応から本音を読み取る</div><div class="imeta">場面: 投稿へのコメントが多いが、何を意味しているか整理したいとき</div><pre class="prompt" id="p33">この投稿についたコメントを貼ります。
+これらに共通する要素(切り口・見せ方・投稿タイミングなど)を分析し、次に活かせるパターンとして整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p32',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">33. コメント欄の反応から本音を読み取る</div><div class="imeta">投稿へのコメントが多いが、何を意味しているか整理したいとき</div><pre class="prompt" id="p33">この投稿についたコメントを貼ります。
 
 [コメントを複数貼る]
 
-コメント全体を見て、フォロワーが本当に感じていること、期待していることを分類して教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p33',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">34. 週次の発信テーマをカレンダー化する</div><div class="imeta">場面: 毎回投稿ネタを考えるのに時間がかかっているとき</div><pre class="prompt" id="p34">来週1週間分の発信テーマを考えたいです。ブランドの直近の動き(新作・イベント・裏側など)は[箇条書きで渡す]です。曜日ごとにテーマを割り振ったカレンダーを作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p34',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">35. トレンドとブランドの接続点を探す</div><div class="imeta">場面: 今流行っている話題に無理なく乗りたいとき</div><pre class="prompt" id="p35">今[トレンドの内容]が話題になっています。このトレンドと、うちのブランドの世界観を無理なくつなげられる企画があれば提案してください。合わないと感じたら、無理に乗らない方がいい理由も教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p35',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">36. Z世代の消費行動の変化を整理する</div><div class="imeta">場面: 若い世代の購買行動が自分の感覚と違うと感じたとき</div><pre class="prompt" id="p36">最近のZ世代の消費行動やSNSの使い方について、私が持っている印象と実際の傾向にズレがないか確認したいです。私の印象は[自分の印象をメモ]です。ズレていそうな点があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p36',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">37. 発信の目的を数値目標から言葉に戻す</div><div class="imeta">場面: フォロワー数や再生数だけを追ってしまい、発信の軸がぶれていると感じるとき</div><pre class="prompt" id="p37">最近の発信は数字を意識しすぎて、本来伝えたかったことがぼやけている気がします。直近の投稿を貼るので、[投稿一覧]、本来のブランドの発信目的とズレている投稿があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p37',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">38. ショート動画の構成をたたき台として作る</div><div class="imeta">場面: 動画のネタはあるが、構成に落とし込む時間がないとき</div><pre class="prompt" id="p38">[動画で伝えたい内容]をショート動画にしたいです。最初の3秒で惹きつける入り方、本編の流れ、締めの一言まで、構成案を1つ作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p38',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">39. 誤解を招く表現を事前にチェックする</div><div class="imeta">場面: 投稿前に、配慮が足りない表現がないか確認したいとき</div><pre class="prompt" id="p39">この投稿を出す前にチェックしてほしいです。
+コメント全体を見て、フォロワーが本当に感じていること、期待していることを分類して教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p33',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">34. 週次の発信テーマをカレンダー化する</div><div class="imeta">毎回投稿ネタを考えるのに時間がかかっているとき</div><pre class="prompt" id="p34">来週1週間分の発信テーマを考えたいです。ブランドの直近の動き(新作・イベント・裏側など)は[箇条書きで渡す]です。曜日ごとにテーマを割り振ったカレンダーを作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p34',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">35. トレンドとブランドの接続点を探す</div><div class="imeta">今流行っている話題に無理なく乗りたいとき</div><pre class="prompt" id="p35">今[トレンドの内容]が話題になっています。このトレンドと、うちのブランドの世界観を無理なくつなげられる企画があれば提案してください。合わないと感じたら、無理に乗らない方がいい理由も教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p35',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">36. Z世代の消費行動の変化を整理する</div><div class="imeta">若い世代の購買行動が自分の感覚と違うと感じたとき</div><pre class="prompt" id="p36">最近のZ世代の消費行動やSNSの使い方について、私が持っている印象と実際の傾向にズレがないか確認したいです。私の印象は[自分の印象をメモ]です。ズレていそうな点があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p36',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">37. 発信の目的を数値目標から言葉に戻す</div><div class="imeta">フォロワー数や再生数だけを追ってしまい、発信の軸がぶれていると感じるとき</div><pre class="prompt" id="p37">最近の発信は数字を意識しすぎて、本来伝えたかったことがぼやけている気がします。直近の投稿を貼るので、[投稿一覧]、本来のブランドの発信目的とズレている投稿があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p37',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">38. ショート動画の構成をたたき台として作る</div><div class="imeta">動画のネタはあるが、構成に落とし込む時間がないとき</div><pre class="prompt" id="p38">[動画で伝えたい内容]をショート動画にしたいです。最初の3秒で惹きつける入り方、本編の流れ、締めの一言まで、構成案を1つ作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p38',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">39. 誤解を招く表現を事前にチェックする</div><div class="imeta">投稿前に、配慮が足りない表現がないか確認したいとき</div><pre class="prompt" id="p39">この投稿を出す前にチェックしてほしいです。
 
 [投稿文を貼る]
 
-誤解を招きそうな表現、配慮が足りない可能性がある言い回しがあれば具体的に指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p39',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">40. 発信キャラクターの一貫性を確認する</div><div class="imeta">場面: 複数人で発信していて、口調やスタンスにブレが出ていないか確認したいとき</div><pre class="prompt" id="p40">直近の投稿をまとめて貼ります。
+誤解を招きそうな表現、配慮が足りない可能性がある言い回しがあれば具体的に指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p39',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">40. 発信キャラクターの一貫性を確認する</div><div class="imeta">複数人で発信していて、口調やスタンスにブレが出ていないか確認したいとき</div><pre class="prompt" id="p40">直近の投稿をまとめて貼ります。
 
 [投稿を複数貼る]
 
-口調やスタンスに一貫性があるか確認し、ブレている箇所があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p40',this)">📋 コピー</button></div></div><div class="cat" id="c4">クリエイティブ・デザイン・世界観づくり</div>
-<div class="icard"><div class="ititle">41. ムードボードの方向性を言語化する</div><div class="imeta">場面: 撮影やビジュアル制作の前に、参考イメージの共通点を整理したいとき</div><pre class="prompt" id="p41">集めた参考画像の共通点を言語化したいです。
+口調やスタンスに一貫性があるか確認し、ブレている箇所があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p40',this)">📋 このプロンプトをコピー</button></div></div><div class="cat" id="c4"><span class="cn">5</span>クリエイティブ・デザイン・世界観づくり</div>
+<div class="icard"><div class="ititle">41. ムードボードの方向性を言語化する</div><div class="imeta">撮影やビジュアル制作の前に、参考イメージの共通点を整理したいとき</div><pre class="prompt" id="p41">集めた参考画像の共通点を言語化したいです。
 
 [画像を複数貼る]
 
-色味・構図・光の使い方・被写体の共通点を分析し、ムードボードのコンセプト文としてまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p41',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">42. 撮影のディレクション資料を作る</div><div class="imeta">場面: カメラマンやスタイリストに世界観を伝える資料が必要なとき</div><pre class="prompt" id="p42">今回の撮影で目指したい世界観は[イメージや参考画像]です。カメラマン・スタイリストに一目で伝わるディレクション資料を、箇条書きと簡単な説明でまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p42',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">43. 色使いの一貫性をチェックする</div><div class="imeta">場面: シーズンごとにビジュアルの色味がバラついていないか確認したいとき</div><pre class="prompt" id="p43">過去のビジュアルをいくつか貼ります。
+色味・構図・光の使い方・被写体の共通点を分析し、ムードボードのコンセプト文としてまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p41',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">42. 撮影のディレクション資料を作る</div><div class="imeta">カメラマンやスタイリストに世界観を伝える資料が必要なとき</div><pre class="prompt" id="p42">今回の撮影で目指したい世界観は[イメージや参考画像]です。カメラマン・スタイリストに一目で伝わるディレクション資料を、箇条書きと簡単な説明でまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p42',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">43. 色使いの一貫性をチェックする</div><div class="imeta">シーズンごとにビジュアルの色味がバラついていないか確認したいとき</div><pre class="prompt" id="p43">過去のビジュアルをいくつか貼ります。
 
 [画像を複数貼る]
 
-色使いに一貫性があるか、ブランドカラーとして定着している色があるかを分析してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p43',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">44. 世界観を言葉で説明できるようにする</div><div class="imeta">場面: 外部パートナーに口頭で世界観を説明する前に、言葉を整えたいとき</div><pre class="prompt" id="p44">うちのブランドの世界観を、初めて会う外部パートナーに口頭で説明するとしたら、どんな言葉で伝えると一番伝わりますか。手元の情報は[ブランドの特徴をメモ]です。3パターン考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p44',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">45. パッケージデザインの方向性を絞り込む</div><div class="imeta">場面: 複数のデザイン案から1つに絞る判断基準が欲しいとき</div><pre class="prompt" id="p45">パッケージデザインの案が複数あります。
+色使いに一貫性があるか、ブランドカラーとして定着している色があるかを分析してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p43',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">44. 世界観を言葉で説明できるようにする</div><div class="imeta">外部パートナーに口頭で世界観を説明する前に、言葉を整えたいとき</div><pre class="prompt" id="p44">うちのブランドの世界観を、初めて会う外部パートナーに口頭で説明するとしたら、どんな言葉で伝えると一番伝わりますか。手元の情報は[ブランドの特徴をメモ]です。3パターン考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p44',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">45. パッケージデザインの方向性を絞り込む</div><div class="imeta">複数のデザイン案から1つに絞る判断基準が欲しいとき</div><pre class="prompt" id="p45">パッケージデザインの案が複数あります。
 
 [案の説明や画像を貼る]
 
-ブランドコンセプトは[コンセプト]です。それぞれの案がコンセプトにどれだけ合っているか、判断基準つきで比較してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p45',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">46. コラボ企画のビジュアル方向性をすり合わせる</div><div class="imeta">場面: 他ブランドとのコラボで、双方の世界観をどう融合させるか検討したいとき</div><pre class="prompt" id="p46">[自社ブランド]と[コラボ相手]のコラボを検討しています。それぞれの世界観の特徴は[特徴をメモ]です。両方の良さを潰さずに融合できるビジュアルの方向性を提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p46',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">47. ポップアップ空間デザインのコンセプトを作る</div><div class="imeta">場面: 店舗やイベント空間の設計を発注する前に、コンセプトを固めたいとき</div><pre class="prompt" id="p47">今度のポップアップストアの空間デザインを考えています。伝えたい体験は[伝えたいことをメモ]です。空間全体のコンセプトと、入り口・中央・レジ周りでそれぞれ意識したいポイントを整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p47',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">48. デザイン案への違和感を言葉にする</div><div class="imeta">場面: デザイン案を見て違和感はあるが、うまく言語化できないとき</div><pre class="prompt" id="p48">このデザイン案を見て、なんとなく違和感があります。
+ブランドコンセプトは[コンセプト]です。それぞれの案がコンセプトにどれだけ合っているか、判断基準つきで比較してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p45',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">46. コラボ企画のビジュアル方向性をすり合わせる</div><div class="imeta">他ブランドとのコラボで、双方の世界観をどう融合させるか検討したいとき</div><pre class="prompt" id="p46">[自社ブランド]と[コラボ相手]のコラボを検討しています。それぞれの世界観の特徴は[特徴をメモ]です。両方の良さを潰さずに融合できるビジュアルの方向性を提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p46',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">47. ポップアップ空間デザインのコンセプトを作る</div><div class="imeta">店舗やイベント空間の設計を発注する前に、コンセプトを固めたいとき</div><pre class="prompt" id="p47">今度のポップアップストアの空間デザインを考えています。伝えたい体験は[伝えたいことをメモ]です。空間全体のコンセプトと、入り口・中央・レジ周りでそれぞれ意識したいポイントを整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p47',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">48. デザイン案への違和感を言葉にする</div><div class="imeta">デザイン案を見て違和感はあるが、うまく言語化できないとき</div><pre class="prompt" id="p48">このデザイン案を見て、なんとなく違和感があります。
 
 [案の説明や画像]
 
-違和感の正体を言語化したいので、考えられる理由をいくつか挙げてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p48',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">49. シーズンテーマを具体的なビジュアル案に落とし込む</div><div class="imeta">場面: 抽象的なシーズンテーマを、実際の企画に変換したいとき</div><pre class="prompt" id="p49">今シーズンのテーマは[テーマ]です。この抽象的なテーマを、実際の商品ビジュアルや撮影企画に落とし込むとしたら、どんな具体案が考えられますか。5つ提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p49',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">50. クリエイティブの判断基準を若手に引き継ぐ</div><div class="imeta">場面: 感覚で判断してきたクリエイティブ基準を、言葉にしてチームに残したいとき</div><pre class="prompt" id="p50">これまで感覚で判断してきたクリエイティブの良し悪しの基準を、若手メンバーにも伝わる言葉にしたいです。過去に採用した案・却下した案の例は[例をメモ]です。判断基準をリスト化してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p50',this)">📋 コピー</button></div></div><div class="cat" id="c5">商品企画・EC・在庫/販売</div>
-<div class="icard"><div class="ititle">51. 新商品企画のたたき台を作る</div><div class="imeta">場面: 企画会議前に、方向性の異なる案をいくつか用意したいとき</div><pre class="prompt" id="p51">新商品を企画しています。ブランドコンセプトは[コンセプト]、想定価格帯は[価格帯]です。方向性の異なる企画案を3つ、それぞれの狙いとターゲットも添えて考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p51',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">52. 販売データから売れ筋の傾向を読む</div><div class="imeta">場面: 月次の販売データを見て、次の仕入れ判断に活かしたいとき</div><pre class="prompt" id="p52">今月の販売データを貼ります。
+違和感の正体を言語化したいので、考えられる理由をいくつか挙げてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p48',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">49. シーズンテーマを具体的なビジュアル案に落とし込む</div><div class="imeta">抽象的なシーズンテーマを、実際の企画に変換したいとき</div><pre class="prompt" id="p49">今シーズンのテーマは[テーマ]です。この抽象的なテーマを、実際の商品ビジュアルや撮影企画に落とし込むとしたら、どんな具体案が考えられますか。5つ提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p49',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">50. クリエイティブの判断基準を若手に引き継ぐ</div><div class="imeta">感覚で判断してきたクリエイティブ基準を、言葉にしてチームに残したいとき</div><pre class="prompt" id="p50">これまで感覚で判断してきたクリエイティブの良し悪しの基準を、若手メンバーにも伝わる言葉にしたいです。過去に採用した案・却下した案の例は[例をメモ]です。判断基準をリスト化してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p50',this)">📋 このプロンプトをコピー</button></div></div><div class="cat" id="c5"><span class="cn">6</span>商品企画・EC・在庫/販売</div>
+<div class="icard"><div class="ititle">51. 新商品企画のたたき台を作る</div><div class="imeta">企画会議前に、方向性の異なる案をいくつか用意したいとき</div><pre class="prompt" id="p51">新商品を企画しています。ブランドコンセプトは[コンセプト]、想定価格帯は[価格帯]です。方向性の異なる企画案を3つ、それぞれの狙いとターゲットも添えて考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p51',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">52. 販売データから売れ筋の傾向を読む</div><div class="imeta">月次の販売データを見て、次の仕入れ判断に活かしたいとき</div><pre class="prompt" id="p52">今月の販売データを貼ります。
 
 [商品名・売上・在庫数などのデータ]
 
-売れ筋の傾向、逆に動きが悪い商品の共通点を分析し、次の発注判断に使えるポイントを教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p52',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">53. 在庫リスクを事前にシミュレーションする</div><div class="imeta">場面: 新商品の発注数量を決める前に、売れ残りリスクを検討したいとき</div><pre class="prompt" id="p53">新商品の発注数量を検討しています。過去の類似商品の販売実績は[実績データ]です。今回の発注数量として考えられる複数のシナリオと、それぞれのリスクを整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p53',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">54. 価格設定の妥当性を検討する</div><div class="imeta">場面: 新商品の価格を決める前に、複数の視点から確認したいとき</div><pre class="prompt" id="p54">新商品の価格を[想定価格]に設定しようとしています。原価や競合の価格帯は[情報をメモ]です。この価格設定が妥当か、顧客視点・利益率視点の両方から検討してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p54',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">55. ECサイトの購入導線のボトルネックを探す</div><div class="imeta">場面: カート離脱率が高いページがあり、原因を考えたいとき</div><pre class="prompt" id="p55">ECサイトのこのページで離脱が多いです。
+売れ筋の傾向、逆に動きが悪い商品の共通点を分析し、次の発注判断に使えるポイントを教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p52',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">53. 在庫リスクを事前にシミュレーションする</div><div class="imeta">新商品の発注数量を決める前に、売れ残りリスクを検討したいとき</div><pre class="prompt" id="p53">新商品の発注数量を検討しています。過去の類似商品の販売実績は[実績データ]です。今回の発注数量として考えられる複数のシナリオと、それぞれのリスクを整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p53',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">54. 価格設定の妥当性を検討する</div><div class="imeta">新商品の価格を決める前に、複数の視点から確認したいとき</div><pre class="prompt" id="p54">新商品の価格を[想定価格]に設定しようとしています。原価や競合の価格帯は[情報をメモ]です。この価格設定が妥当か、顧客視点・利益率視点の両方から検討してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p54',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">55. ECサイトの購入導線のボトルネックを探す</div><div class="imeta">カート離脱率が高いページがあり、原因を考えたいとき</div><pre class="prompt" id="p55">ECサイトのこのページで離脱が多いです。
 
 [ページの構成やスクリーンショットを説明]
 
-購入導線として考えられる問題点を洗い出してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p55',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">56. 商品ページの説明文をわかりやすくする</div><div class="imeta">場面: 商品説明が長い・専門的すぎると感じたとき</div><pre class="prompt" id="p56">この商品説明文を書き直したいです。
+購入導線として考えられる問題点を洗い出してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p55',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">56. 商品ページの説明文をわかりやすくする</div><div class="imeta">商品説明が長い・専門的すぎると感じたとき</div><pre class="prompt" id="p56">この商品説明文を書き直したいです。
 
 [説明文を貼る]
 
-内容は変えずに、初めてこのブランドを知る人にも伝わる文章に調整してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p56',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">57. 季節商品の販売時期を検討する</div><div class="imeta">場面: いつから販売を開始するのが適切か判断したいとき</div><pre class="prompt" id="p57">[商品カテゴリ]の季節商品の販売開始時期を検討しています。過去の販売実績は[実績データ]です。今年の販売開始タイミングについて、複数の案とその根拠を教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p57',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">58. セール施策の設計をたたき台として作る</div><div class="imeta">場面: セールの割引率や対象商品をどう決めるか迷っているとき</div><pre class="prompt" id="p58">セールを企画しています。目的は[セールの目的]、対象在庫は[在庫状況]です。ブランドイメージを損なわない範囲でのセール設計案を考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p58',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">59. 顧客レビューから商品改善点を抽出する</div><div class="imeta">場面: 商品レビューが溜まってきたが、まとめて分析する時間がないとき</div><pre class="prompt" id="p59">この商品につけられたレビューをまとめて貼ります。
+内容は変えずに、初めてこのブランドを知る人にも伝わる文章に調整してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p56',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">57. 季節商品の販売時期を検討する</div><div class="imeta">いつから販売を開始するのが適切か判断したいとき</div><pre class="prompt" id="p57">[商品カテゴリ]の季節商品の販売開始時期を検討しています。過去の販売実績は[実績データ]です。今年の販売開始タイミングについて、複数の案とその根拠を教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p57',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">58. セール施策の設計をたたき台として作る</div><div class="imeta">セールの割引率や対象商品をどう決めるか迷っているとき</div><pre class="prompt" id="p58">セールを企画しています。目的は[セールの目的]、対象在庫は[在庫状況]です。ブランドイメージを損なわない範囲でのセール設計案を考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p58',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">59. 顧客レビューから商品改善点を抽出する</div><div class="imeta">商品レビューが溜まってきたが、まとめて分析する時間がないとき</div><pre class="prompt" id="p59">この商品につけられたレビューをまとめて貼ります。
 
 [レビューを複数貼る]
 
-良い評価と悪い評価それぞれの共通点を整理し、次回の商品改善に使えるポイントを教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p59',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">60. 商品ラインナップ全体のバランスを見直す</div><div class="imeta">場面: シーズンの商品構成が偏っていないか確認したいとき</div><pre class="prompt" id="p60">今シーズンの商品ラインナップは[商品リスト]です。価格帯・カテゴリ・ターゲット層のバランスを分析し、偏りがあれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p60',this)">📋 コピー</button></div></div><div class="cat" id="c6">採用・組織・カルチャー・チーム</div>
-<div class="icard"><div class="ititle">61. 求人票の言葉をブランドらしく整える</div><div class="imeta">場面: 求人票がありきたりな表現になっていると感じるとき</div><pre class="prompt" id="p61">この求人票を書き直したいです。
+良い評価と悪い評価それぞれの共通点を整理し、次回の商品改善に使えるポイントを教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p59',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">60. 商品ラインナップ全体のバランスを見直す</div><div class="imeta">シーズンの商品構成が偏っていないか確認したいとき</div><pre class="prompt" id="p60">今シーズンの商品ラインナップは[商品リスト]です。価格帯・カテゴリ・ターゲット層のバランスを分析し、偏りがあれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p60',this)">📋 このプロンプトをコピー</button></div></div><div class="cat" id="c6"><span class="cn">7</span>採用・組織・カルチャー・チーム</div>
+<div class="icard"><div class="ititle">61. 求人票の言葉をブランドらしく整える</div><div class="imeta">求人票がありきたりな表現になっていると感じるとき</div><pre class="prompt" id="p61">この求人票を書き直したいです。
 
 [求人票の内容を貼る]
 
-事実は変えずに、うちのブランドらしさが伝わる言葉遣いに調整してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p61',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">62. 面接で聞くべき質問を用意する</div><div class="imeta">場面: 面接前に、その候補者に合わせた質問を準備したいとき</div><pre class="prompt" id="p62">[募集ポジション]の面接をします。候補者の経歴は[経歴を貼る]です。この人の実力とカルチャーフィットを見極めるための質問を10個考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p62',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">63. 組織のカルチャーを言語化する</div><div class="imeta">場面: 社内で大事にしている価値観を、新しく入る人にも伝わる言葉にしたいとき</div><pre class="prompt" id="p63">今の組織で大事にしている価値観や働き方の特徴を言語化したいです。普段よく起きている出来事は[エピソードをメモ]です。この情報から、カルチャーを表す言葉をいくつか提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p63',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">64. 1on1で聞くべきことを整理する</div><div class="imeta">場面: メンバーとの1on1の前に、話す内容を準備したいとき</div><pre class="prompt" id="p64">[メンバー名]との1on1があります。最近の様子は[最近の状況をメモ]です。今回話すべきテーマと、聞いておきたい質問を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p64',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">65. チームの役割分担の抜け漏れを確認する</div><div class="imeta">場面: プロジェクトが進む中で、誰も担当していないタスクがないか確認したいとき</div><pre class="prompt" id="p65">このプロジェクトのタスクと担当者を貼ります。
+事実は変えずに、うちのブランドらしさが伝わる言葉遣いに調整してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p61',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">62. 面接で聞くべき質問を用意する</div><div class="imeta">面接前に、その候補者に合わせた質問を準備したいとき</div><pre class="prompt" id="p62">[募集ポジション]の面接をします。候補者の経歴は[経歴を貼る]です。この人の実力とカルチャーフィットを見極めるための質問を10個考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p62',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">63. 組織のカルチャーを言語化する</div><div class="imeta">社内で大事にしている価値観を、新しく入る人にも伝わる言葉にしたいとき</div><pre class="prompt" id="p63">今の組織で大事にしている価値観や働き方の特徴を言語化したいです。普段よく起きている出来事は[エピソードをメモ]です。この情報から、カルチャーを表す言葉をいくつか提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p63',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">64. 1on1で聞くべきことを整理する</div><div class="imeta">メンバーとの1on1の前に、話す内容を準備したいとき</div><pre class="prompt" id="p64">[メンバー名]との1on1があります。最近の様子は[最近の状況をメモ]です。今回話すべきテーマと、聞いておきたい質問を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p64',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">65. チームの役割分担の抜け漏れを確認する</div><div class="imeta">プロジェクトが進む中で、誰も担当していないタスクがないか確認したいとき</div><pre class="prompt" id="p65">このプロジェクトのタスクと担当者を貼ります。
 
 [タスクと担当者の一覧]
 
-担当が曖昧なタスクや、抜け漏れがないか確認してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p65',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">66. 評価基準を言葉にして共有する</div><div class="imeta">場面: メンバーの評価を感覚だけで決めていると感じるとき</div><pre class="prompt" id="p66">メンバーの評価基準を言語化したいです。これまで高く評価してきた行動の例は[具体例をメモ]です。この例から、評価基準として言葉にできるものを整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p66',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">67. 組織拡大にともなう課題を洗い出す</div><div class="imeta">場面: 人数が増えてきて、これまでのやり方が通用しなくなってきたと感じるとき</div><pre class="prompt" id="p67">組織の人数が[人数]人になりました。今感じている運営上の違和感は[違和感をメモ]です。人数が増える組織でよく起きる課題と照らし合わせて、今対処すべきものを教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p67',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">68. 退職の申し出への向き合い方を整理する</div><div class="imeta">場面: メンバーから退職の相談を受け、どう対応するか考えたいとき</div><pre class="prompt" id="p68">[メンバー]から退職の相談がありました。理由として話していたのは[理由をメモ]です。引き止めるべきか、送り出すべきか、判断材料を整理する手伝いをしてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p68',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">69. 社内向けの発表内容をわかりやすく整える</div><div class="imeta">場面: 全社会議で話す内容を、伝わりやすく整理したいとき</div><pre class="prompt" id="p69">全社会議で[伝えたい内容]について話します。伝えたいポイントは[箇条書きでメモ]です。聞く人が迷わないよう、話す順番と構成を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p69',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">70. チーム内の意見対立を整理する</div><div class="imeta">場面: メンバー同士の意見が割れていて、判断に迷うとき</div><pre class="prompt" id="p70">[議題]について、チーム内で意見が割れています。それぞれの主張は[意見をメモ]です。それぞれの意見の背景にある前提を整理し、判断材料をまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p70',this)">📋 コピー</button></div></div><div class="cat" id="c7">経営・数字・投資家対応・上場企業運営</div>
-<div class="icard"><div class="ititle">71. 月次数値の異常値をチェックする</div><div class="imeta">場面: 月次の数字を見て、いつもと違う動きがないか確認したいとき</div><pre class="prompt" id="p71">今月の主要数値を貼ります。
+担当が曖昧なタスクや、抜け漏れがないか確認してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p65',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">66. 評価基準を言葉にして共有する</div><div class="imeta">メンバーの評価を感覚だけで決めていると感じるとき</div><pre class="prompt" id="p66">メンバーの評価基準を言語化したいです。これまで高く評価してきた行動の例は[具体例をメモ]です。この例から、評価基準として言葉にできるものを整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p66',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">67. 組織拡大にともなう課題を洗い出す</div><div class="imeta">人数が増えてきて、これまでのやり方が通用しなくなってきたと感じるとき</div><pre class="prompt" id="p67">組織の人数が[人数]人になりました。今感じている運営上の違和感は[違和感をメモ]です。人数が増える組織でよく起きる課題と照らし合わせて、今対処すべきものを教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p67',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">68. 退職の申し出への向き合い方を整理する</div><div class="imeta">メンバーから退職の相談を受け、どう対応するか考えたいとき</div><pre class="prompt" id="p68">[メンバー]から退職の相談がありました。理由として話していたのは[理由をメモ]です。引き止めるべきか、送り出すべきか、判断材料を整理する手伝いをしてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p68',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">69. 社内向けの発表内容をわかりやすく整える</div><div class="imeta">全社会議で話す内容を、伝わりやすく整理したいとき</div><pre class="prompt" id="p69">全社会議で[伝えたい内容]について話します。伝えたいポイントは[箇条書きでメモ]です。聞く人が迷わないよう、話す順番と構成を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p69',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">70. チーム内の意見対立を整理する</div><div class="imeta">メンバー同士の意見が割れていて、判断に迷うとき</div><pre class="prompt" id="p70">[議題]について、チーム内で意見が割れています。それぞれの主張は[意見をメモ]です。それぞれの意見の背景にある前提を整理し、判断材料をまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p70',this)">📋 このプロンプトをコピー</button></div></div><div class="cat" id="c7"><span class="cn">8</span>経営・数字・投資家対応・上場企業運営</div>
+<div class="icard"><div class="ititle">71. 月次数値の異常値をチェックする</div><div class="imeta">月次の数字を見て、いつもと違う動きがないか確認したいとき</div><pre class="prompt" id="p71">今月の主要数値を貼ります。
 
 [売上・利益・その他指標のデータ]
 
-前月や過去の傾向と比べて、注意すべき変化があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p71',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">72. 決算説明資料の言葉をわかりやすくする</div><div class="imeta">場面: 決算説明資料の文章が専門的すぎると感じるとき</div><pre class="prompt" id="p72">この決算説明資料の文章を貼ります。
+前月や過去の傾向と比べて、注意すべき変化があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p71',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">72. 決算説明資料の言葉をわかりやすくする</div><div class="imeta">決算説明資料の文章が専門的すぎると感じるとき</div><pre class="prompt" id="p72">この決算説明資料の文章を貼ります。
 
 [文章を貼る]
 
-数字は変えずに、投資家以外の人が読んでも理解できる言葉に調整してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p72',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">73. 投資家からの質問を事前に想定する</div><div class="imeta">場面: 決算説明会や面談の前に、聞かれそうな質問を準備したいとき</div><pre class="prompt" id="p73">今回の決算内容は[概要をメモ]です。この内容から、投資家が聞いてきそうな質問を10個想定し、それぞれの回答の方向性も考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p73',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">74. 中期経営計画の骨子を整理する</div><div class="imeta">場面: 数年先の方向性を、社内外に説明できる形にまとめたいとき</div><pre class="prompt" id="p74">今後[期間]の事業の方向性について考えています。今持っている構想は[構想をメモ]です。この内容を中期経営計画の骨子として、伝わる順番に整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p74',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">75. コスト構造の見直しポイントを探す</div><div class="imeta">場面: 利益率を改善したいが、どこから手をつけるか迷っているとき</div><pre class="prompt" id="p75">今のコスト構造を貼ります。
+数字は変えずに、投資家以外の人が読んでも理解できる言葉に調整してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p72',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">73. 投資家からの質問を事前に想定する</div><div class="imeta">決算説明会や面談の前に、聞かれそうな質問を準備したいとき</div><pre class="prompt" id="p73">今回の決算内容は[概要をメモ]です。この内容から、投資家が聞いてきそうな質問を10個想定し、それぞれの回答の方向性も考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p73',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">74. 中期経営計画の骨子を整理する</div><div class="imeta">数年先の方向性を、社内外に説明できる形にまとめたいとき</div><pre class="prompt" id="p74">今後[期間]の事業の方向性について考えています。今持っている構想は[構想をメモ]です。この内容を中期経営計画の骨子として、伝わる順番に整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p74',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">75. コスト構造の見直しポイントを探す</div><div class="imeta">利益率を改善したいが、どこから手をつけるか迷っているとき</div><pre class="prompt" id="p75">今のコスト構造を貼ります。
 
 [費目ごとのコストデータ]
 
-利益率改善のために見直す余地がありそうな項目を、優先順位つきで教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p75',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">76. IR資料の抜け漏れを確認する</div><div class="imeta">場面: IR資料を作成した後、抜け漏れがないか最終チェックしたいとき</div><pre class="prompt" id="p76">このIR資料の内容を貼ります。
+利益率改善のために見直す余地がありそうな項目を、優先順位つきで教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p75',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">76. IR資料の抜け漏れを確認する</div><div class="imeta">IR資料を作成した後、抜け漏れがないか最終チェックしたいとき</div><pre class="prompt" id="p76">このIR資料の内容を貼ります。
 
 [資料の内容を貼る]
 
-投資家が知りたいと思われる情報のうち、抜けている項目があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p76',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">77. 上場企業として気をつけるべき発信内容を確認する</div><div class="imeta">場面: SNSやインタビューで話す内容が、開示ルール上問題ないか事前に確認したいとき</div><pre class="prompt" id="p77">この内容を対外的に話そうと思っています。
+投資家が知りたいと思われる情報のうち、抜けている項目があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p76',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">77. 上場企業として気をつけるべき発信内容を確認する</div><div class="imeta">SNSやインタビューで話す内容が、開示ルール上問題ないか事前に確認したいとき</div><pre class="prompt" id="p77">この内容を対外的に話そうと思っています。
 
 [話す予定の内容]
 
-上場企業の代表として、開示のタイミングや表現に注意すべき点があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p77',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">78. 新規事業の投資判断材料を整理する</div><div class="imeta">場面: 新しい事業への投資可否を検討する会議の前に、材料をまとめたいとき</div><pre class="prompt" id="p78">新規事業として[事業内容]を検討しています。見込んでいる数字は[数字の想定]です。投資判断に必要な論点を整理し、判断材料として不足している情報があれば教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p78',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">79. 経営会議のアジェンダを整理する</div><div class="imeta">場面: 経営会議の議題が多く、優先順位をつけたいとき</div><pre class="prompt" id="p79">次の経営会議で話したい議題を全部書き出します。
+上場企業の代表として、開示のタイミングや表現に注意すべき点があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p77',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">78. 新規事業の投資判断材料を整理する</div><div class="imeta">新しい事業への投資可否を検討する会議の前に、材料をまとめたいとき</div><pre class="prompt" id="p78">新規事業として[事業内容]を検討しています。見込んでいる数字は[数字の想定]です。投資判断に必要な論点を整理し、判断材料として不足している情報があれば教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p78',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">79. 経営会議のアジェンダを整理する</div><div class="imeta">経営会議の議題が多く、優先順位をつけたいとき</div><pre class="prompt" id="p79">次の経営会議で話したい議題を全部書き出します。
 
 [議題を箇条書き]
 
-緊急度と重要度で優先順位をつけ、会議の時間配分案も提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p79',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">80. 株主向けメッセージの言葉を整える</div><div class="imeta">場面: 株主総会や株主通信で話す内容を、誠実に伝わる言葉にしたいとき</div><pre class="prompt" id="p80">株主向けに伝えたい内容は[伝えたいことをメモ]です。誇張せず、誠実に伝わる言葉でメッセージ文を作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p80',this)">📋 コピー</button></div></div><div class="cat" id="c8">顧客理解・コミュニティ</div>
-<div class="icard"><div class="ititle">81. 顧客の声を分類して優先順位をつける</div><div class="imeta">場面: 問い合わせやSNSの声が溜まってきて、対応の優先順位を決めたいとき</div><pre class="prompt" id="p81">最近寄せられた顧客の声をまとめて貼ります。
+緊急度と重要度で優先順位をつけ、会議の時間配分案も提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p79',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">80. 株主向けメッセージの言葉を整える</div><div class="imeta">株主総会や株主通信で話す内容を、誠実に伝わる言葉にしたいとき</div><pre class="prompt" id="p80">株主向けに伝えたい内容は[伝えたいことをメモ]です。誇張せず、誠実に伝わる言葉でメッセージ文を作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p80',this)">📋 このプロンプトをコピー</button></div></div><div class="cat" id="c8"><span class="cn">9</span>顧客理解・コミュニティ</div>
+<div class="icard"><div class="ititle">81. 顧客の声を分類して優先順位をつける</div><div class="imeta">問い合わせやSNSの声が溜まってきて、対応の優先順位を決めたいとき</div><pre class="prompt" id="p81">最近寄せられた顧客の声をまとめて貼ります。
 
 [声を複数貼る]
 
-内容ごとに分類し、対応の緊急度が高いもの、じっくり検討すべきものに分けてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p81',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">82. コアファンとライトユーザーの違いを整理する</div><div class="imeta">場面: 熱量の高い顧客と、そうでない顧客への対応を分けて考えたいとき</div><pre class="prompt" id="p82">うちのブランドの顧客について、コアファンとライトユーザーそれぞれの特徴をまとめたいです。手元にあるデータや印象は[データやメモ]です。両者の違いと、それぞれに合ったコミュニケーションの取り方を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p82',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">83. コミュニティ施策のアイデアを出す</div><div class="imeta">場面: 顧客同士がつながる場を作りたいが、具体案が浮かばないとき</div><pre class="prompt" id="p83">顧客同士がつながれるコミュニティ施策を考えたいです。ブランドの特徴は[特徴をメモ]、想定する顧客層は[顧客層]です。オンライン・オフライン問わず、実現しやすいアイデアを5つ提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p83',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">84. クレーム対応の初動を整理する</div><div class="imeta">場面: クレームが来たとき、感情的にならず冷静に初動対応を決めたいとき</div><pre class="prompt" id="p84">このクレームが届きました。
+内容ごとに分類し、対応の緊急度が高いもの、じっくり検討すべきものに分けてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p81',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">82. コアファンとライトユーザーの違いを整理する</div><div class="imeta">熱量の高い顧客と、そうでない顧客への対応を分けて考えたいとき</div><pre class="prompt" id="p82">うちのブランドの顧客について、コアファンとライトユーザーそれぞれの特徴をまとめたいです。手元にあるデータや印象は[データやメモ]です。両者の違いと、それぞれに合ったコミュニケーションの取り方を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p82',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">83. コミュニティ施策のアイデアを出す</div><div class="imeta">顧客同士がつながる場を作りたいが、具体案が浮かばないとき</div><pre class="prompt" id="p83">顧客同士がつながれるコミュニティ施策を考えたいです。ブランドの特徴は[特徴をメモ]、想定する顧客層は[顧客層]です。オンライン・オフライン問わず、実現しやすいアイデアを5つ提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p83',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">84. クレーム対応の初動を整理する</div><div class="imeta">クレームが来たとき、感情的にならず冷静に初動対応を決めたいとき</div><pre class="prompt" id="p84">このクレームが届きました。
 
 [クレーム内容を貼る]
 
-事実確認として最初にすべきこと、返信の際に気をつけるべき点を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p84',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">85. 顧客インタビューの質問設計をする</div><div class="imeta">場面: 顧客に直接話を聞く機会があり、聞くべきことを整理したいとき</div><pre class="prompt" id="p85">[顧客層]に直接インタビューする機会があります。知りたいことは[知りたいことをメモ]です。本音を引き出せる質問設計を考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p85',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">86. アンバサダー施策の候補基準を整理する</div><div class="imeta">場面: ブランドを一緒に盛り上げてくれる顧客を選ぶ基準が欲しいとき</div><pre class="prompt" id="p86">ブランドのアンバサダーになってもらう顧客を選びたいです。ブランドが大事にしている価値観は[価値観をメモ]です。選ぶ際の基準をリスト化してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p86',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">87. 顧客対応の温度感をブランドに合わせる</div><div class="imeta">場面: 問い合わせ対応の返信文が、ブランドの雰囲気と合っていないと感じるとき</div><pre class="prompt" id="p87">この問い合わせ返信文を書き直したいです。
+事実確認として最初にすべきこと、返信の際に気をつけるべき点を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p84',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">85. 顧客インタビューの質問設計をする</div><div class="imeta">顧客に直接話を聞く機会があり、聞くべきことを整理したいとき</div><pre class="prompt" id="p85">[顧客層]に直接インタビューする機会があります。知りたいことは[知りたいことをメモ]です。本音を引き出せる質問設計を考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p85',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">86. アンバサダー施策の候補基準を整理する</div><div class="imeta">ブランドを一緒に盛り上げてくれる顧客を選ぶ基準が欲しいとき</div><pre class="prompt" id="p86">ブランドのアンバサダーになってもらう顧客を選びたいです。ブランドが大事にしている価値観は[価値観をメモ]です。選ぶ際の基準をリスト化してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p86',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">87. 顧客対応の温度感をブランドに合わせる</div><div class="imeta">問い合わせ対応の返信文が、ブランドの雰囲気と合っていないと感じるとき</div><pre class="prompt" id="p87">この問い合わせ返信文を書き直したいです。
 
 [返信文を貼る]
 
-内容は変えずに、ブランドらしい温度感の言葉遣いに調整してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p87',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">88. 顧客が離れていく理由を仮説立てする</div><div class="imeta">場面: リピート率が落ちていて、その理由を考えたいとき</div><pre class="prompt" id="p88">最近リピート率が下がっています。手元にあるデータや状況は[データや状況をメモ]です。考えられる離脱理由の仮説をいくつか挙げ、それぞれ検証する方法も教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p88',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">89. SNSでの顧客との距離感を見直す</div><div class="imeta">場面: 顧客とのやり取りが事務的になりすぎていないか確認したいとき</div><pre class="prompt" id="p89">直近のSNSでの顧客とのやり取りを貼ります。
+内容は変えずに、ブランドらしい温度感の言葉遣いに調整してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p87',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">88. 顧客が離れていく理由を仮説立てする</div><div class="imeta">リピート率が落ちていて、その理由を考えたいとき</div><pre class="prompt" id="p88">最近リピート率が下がっています。手元にあるデータや状況は[データや状況をメモ]です。考えられる離脱理由の仮説をいくつか挙げ、それぞれ検証する方法も教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p88',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">89. SNSでの顧客との距離感を見直す</div><div class="imeta">顧客とのやり取りが事務的になりすぎていないか確認したいとき</div><pre class="prompt" id="p89">直近のSNSでの顧客とのやり取りを貼ります。
 
 [やり取りの内容]
 
-距離感が近すぎる、または遠すぎる部分があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p89',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">90. 顧客の期待値と実際の体験のズレを確認する</div><div class="imeta">場面: 購入前の期待と、購入後の満足度にギャップがないか確認したいとき</div><pre class="prompt" id="p90">商品ページでの訴求内容は[訴求内容]です。実際に届いたレビューは以下の通りです。
+距離感が近すぎる、または遠すぎる部分があれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p89',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">90. 顧客の期待値と実際の体験のズレを確認する</div><div class="imeta">購入前の期待と、購入後の満足度にギャップがないか確認したいとき</div><pre class="prompt" id="p90">商品ページでの訴求内容は[訴求内容]です。実際に届いたレビューは以下の通りです。
 
 [レビューを貼る]
 
-期待値と実際の体験にズレがあれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p90',this)">📋 コピー</button></div></div><div class="cat" id="c9">学び・インプット・自己成長</div>
-<div class="icard"><div class="ititle">91. 読んだ本の内容を自分の仕事に翻訳する</div><div class="imeta">場面: 本で得た学びを、実際の業務にどう活かすか考えたいとき</div><pre class="prompt" id="p91">[本のタイトルや内容の要約]を読みました。この内容を、今の自分の仕事である[仕事内容]にどう応用できるか、具体的なアクションに翻訳してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p91',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">92. インプットした情報を後で見返せる形に整理する</div><div class="imeta">場面: 気になる記事やニュースを読みっぱなしにしていると感じるとき</div><pre class="prompt" id="p92">最近読んだ記事の内容を貼ります。
+期待値と実際の体験にズレがあれば指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p90',this)">📋 このプロンプトをコピー</button></div></div><div class="cat" id="c9"><span class="cn">10</span>学び・インプット・自己成長</div>
+<div class="icard"><div class="ititle">91. 読んだ本の内容を自分の仕事に翻訳する</div><div class="imeta">本で得た学びを、実際の業務にどう活かすか考えたいとき</div><pre class="prompt" id="p91">[本のタイトルや内容の要約]を読みました。この内容を、今の自分の仕事である[仕事内容]にどう応用できるか、具体的なアクションに翻訳してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p91',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">92. インプットした情報を後で見返せる形に整理する</div><div class="imeta">気になる記事やニュースを読みっぱなしにしていると感じるとき</div><pre class="prompt" id="p92">最近読んだ記事の内容を貼ります。
 
 [記事の要点をメモ]
 
-後で見返しやすいように、要点と自分にとっての気づきをセットで整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p92',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">93. 新しい分野の全体像を短時間でつかむ</div><div class="imeta">場面: 詳しくない分野について、まず全体像だけ知りたいとき</div><pre class="prompt" id="p93">[知りたい分野]について、まだ詳しくありません。専門用語を避けながら、この分野の全体像と押さえておくべき基本的な考え方を教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p93',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">94. 自分の得意・不得意を仕事の実例から棚卸しする</div><div class="imeta">場面: 今後何を伸ばし、何を人に任せるかを考えたいとき</div><pre class="prompt" id="p94">最近取り組んだ仕事をいくつか振り返ります。
+後で見返しやすいように、要点と自分にとっての気づきをセットで整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p92',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">93. 新しい分野の全体像を短時間でつかむ</div><div class="imeta">詳しくない分野について、まず全体像だけ知りたいとき</div><pre class="prompt" id="p93">[知りたい分野]について、まだ詳しくありません。専門用語を避けながら、この分野の全体像と押さえておくべき基本的な考え方を教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p93',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">94. 自分の得意・不得意を仕事の実例から棚卸しする</div><div class="imeta">今後何を伸ばし、何を人に任せるかを考えたいとき</div><pre class="prompt" id="p94">最近取り組んだ仕事をいくつか振り返ります。
 
 [取り組んだ仕事の例をメモ]
 
-うまくいった部分、苦手意識を感じた部分から、自分の得意・不得意を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p94',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">95. 他業界の事例から学べることを抽出する</div><div class="imeta">場面: 自分の業界にない発想を取り入れたいとき</div><pre class="prompt" id="p95">[他業界]で話題になっている取り組みについて、概要は[取り組みの概要をメモ]です。この事例からアパレル/D2Cの仕事に応用できる考え方があれば教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p95',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">96. 苦手な分野を克服するための学習計画を作る</div><div class="imeta">場面: 苦手意識がある分野を、少しずつ克服したいとき</div><pre class="prompt" id="p96">[苦手な分野]が苦手だと感じています。今のレベル感は[今の理解度をメモ]です。無理のないペースで学べる学習計画を作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p96',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">97. 参考にしている考え方を自分なりに解釈する</div><div class="imeta">場面: 影響を受けている考え方を、自分の言葉で咀嚼したいとき</div><pre class="prompt" id="p97">[参考にしている考え方や理論]について、自分の言葉で説明できるようにしたいです。まず要点を整理してもらい、それに対して私が今の状況にどう当てはめられるか、質問しながら一緒に考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p97',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">98. 学んだことを人に説明できるレベルまで整理する</div><div class="imeta">場面: 学んだ内容をチームに共有する前に、自分の理解を確認したいとき</div><pre class="prompt" id="p98">[学んだ内容]について、チームに共有する予定です。人に説明できるレベルまで理解を整理したいので、私が説明する内容に対して、わかりにくい部分や抜けている論点を指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p98',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">99. 1年前の自分と今の自分の変化を振り返る</div><div class="imeta">場面: 節目のタイミングで、自分の成長を客観視したいとき</div><pre class="prompt" id="p99">1年前の自分の状況は[当時の状況をメモ]でした。今の自分の状況は[今の状況をメモ]です。この2つを比べて、変わった点、変わっていない点を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p99',this)">📋 コピー</button></div></div>
-<div class="icard"><div class="ititle">100. 次の1年で伸ばしたい力を1つに絞る</div><div class="imeta">場面: 目標が多すぎて絞り切れていないと感じるとき</div><pre class="prompt" id="p100">次の1年で伸ばしたい力の候補がいくつかあります。
+うまくいった部分、苦手意識を感じた部分から、自分の得意・不得意を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p94',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">95. 他業界の事例から学べることを抽出する</div><div class="imeta">自分の業界にない発想を取り入れたいとき</div><pre class="prompt" id="p95">[他業界]で話題になっている取り組みについて、概要は[取り組みの概要をメモ]です。この事例からアパレル/D2Cの仕事に応用できる考え方があれば教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p95',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">96. 苦手な分野を克服するための学習計画を作る</div><div class="imeta">苦手意識がある分野を、少しずつ克服したいとき</div><pre class="prompt" id="p96">[苦手な分野]が苦手だと感じています。今のレベル感は[今の理解度をメモ]です。無理のないペースで学べる学習計画を作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p96',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">97. 参考にしている考え方を自分なりに解釈する</div><div class="imeta">影響を受けている考え方を、自分の言葉で咀嚼したいとき</div><pre class="prompt" id="p97">[参考にしている考え方や理論]について、自分の言葉で説明できるようにしたいです。まず要点を整理してもらい、それに対して私が今の状況にどう当てはめられるか、質問しながら一緒に考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p97',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">98. 学んだことを人に説明できるレベルまで整理する</div><div class="imeta">学んだ内容をチームに共有する前に、自分の理解を確認したいとき</div><pre class="prompt" id="p98">[学んだ内容]について、チームに共有する予定です。人に説明できるレベルまで理解を整理したいので、私が説明する内容に対して、わかりにくい部分や抜けている論点を指摘してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p98',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">99. 1年前の自分と今の自分の変化を振り返る</div><div class="imeta">節目のタイミングで、自分の成長を客観視したいとき</div><pre class="prompt" id="p99">1年前の自分の状況は[当時の状況をメモ]でした。今の自分の状況は[今の状況をメモ]です。この2つを比べて、変わった点、変わっていない点を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p99',this)">📋 このプロンプトをコピー</button></div></div>
+<div class="icard"><div class="ititle">100. 次の1年で伸ばしたい力を1つに絞る</div><div class="imeta">目標が多すぎて絞り切れていないと感じるとき</div><pre class="prompt" id="p100">次の1年で伸ばしたい力の候補がいくつかあります。
 
 [候補をメモ]
 
-この中から、今の自分の状況に照らして最優先で伸ばすべきものを1つに絞るなら何か、理由とともに教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p100',this)">📋 コピー</button></div></div></section>
-<footer>AIエージェント ／ 🎁 このプレゼントは自由にお使いください。</footer></div>
-<pre id="pfull" style="display:none;"># 🎁 ゆとりくんが使うプロンプト100選
+この中から、今の自分の状況に照らして最優先で伸ばすべきものを1つに絞るなら何か、理由とともに教えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p100',this)">📋 このプロンプトをコピー</button></div></div></section><footer><div class="fl">🎁 AIエージェント</div>このプレゼントは自由にお使いください。手元のAI（ChatGPT・Claude・Grok など）にそのまま貼れます。</footer></div><pre id="pfull" style="display:none;"># 🎁 ゆとりくんが使うプロンプト100選
 
 肩書きではなく一人の人間としてAIに向き合う。画像や音楽、生年月日まで渡して自分の無意識を読み解く「直感分析」から、日々の意思決定やブランド運営まで、実際に使われている発想を100本のプロンプトにしました。
 
@@ -1186,7 +1207,9 @@ ECサイトのこのページで離脱が多いです。
 
 この中から、今の自分の状況に照らして最優先で伸ばすべきものを1つに絞るなら何か、理由とともに教えてください。
 ```
-</pre><script>function copyTextWithFallback(t){function f(){try{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();return ok;}catch(e){return false;}}if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t).then(()=>true).catch(f);}return Promise.resolve(f());}
-function showCopyResult(b,ok){const o=b.textContent;b.textContent=ok?'✔ コピーしました！':'✖ コピー不可 ↓DLを';setTimeout(()=>{b.textContent=o;},ok?1600:3200);}
+</pre><script>
+function copyTextWithFallback(t){function f(){try{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();return ok;}catch(e){return false;}}if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t).then(()=>true).catch(f);}return Promise.resolve(f());}
+function showCopyResult(b,ok){const o=b.dataset.o||b.textContent;b.dataset.o=o;b.textContent=ok?'✔ コピーしました！':'✖ コピー不可 ↓DLを';setTimeout(()=>{b.textContent=o;},ok?1700:3200);}
 async function copyPrompt(id,b){const ok=await copyTextWithFallback(document.getElementById(id).textContent);showCopyResult(b,ok);}
-function downloadText(id,fn,b){try{const t=document.getElementById(id).textContent;const bl=new Blob([t],{type:'text/plain;charset=utf-8'});const u=URL.createObjectURL(bl);const a=document.createElement('a');a.href=u;a.download=fn;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);}catch(e){if(b){const o=b.textContent;b.textContent='✖ 保存不可';setTimeout(()=>{b.textContent=o;},3000);}}}</script></body></html>
+function downloadText(id,fn,b){try{const t=document.getElementById(id).textContent;const bl=new Blob([t],{type:'text/plain;charset=utf-8'});const u=URL.createObjectURL(bl);const a=document.createElement('a');a.href=u;a.download=fn;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);}catch(e){if(b){const o=b.textContent;b.textContent='✖ 保存不可';setTimeout(()=>{b.textContent=o;},3000);}}}
+</script></body></html>

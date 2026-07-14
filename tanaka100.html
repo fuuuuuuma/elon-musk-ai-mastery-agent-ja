@@ -1,0 +1,1242 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>田中渓が使うプロンプト100選</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+<style>:root{--brand:#1C3461;--brand-deep:#16284A;--brand-soft:rgba(28,52,97,.08);--brand-line:rgba(28,52,97,.22);--accent:#5BBCD4;--accent-deep:#2C7A93;--accent-soft:rgba(91,188,212,.16);--bg:#F7FAFC;--paper:#FFFFFF;--ink:#1C3461;--ink-mid:#4A6080;--ink-sub:#8098B4;--line:rgba(28,52,97,.12);--head:'Noto Sans JP'}*{{box-sizing:border-box;margin:0;padding:0;}}
+body{{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',-apple-system,'Hiragino Sans',sans-serif;line-height:1.7;}}
+.doc{{max-width:920px;margin:0 auto;background:var(--paper);box-shadow:0 0 60px rgba(0,0,0,.10);min-height:100vh;}}
+.hero{{position:relative;background:linear-gradient(160deg,var(--brand-soft),var(--bg) 70%);padding:44px 46px 34px;border-bottom:3px solid var(--brand-line);}}
+.chan{{display:inline-flex;align-items:center;gap:11px;margin-bottom:14px;}}
+.chan img{{width:46px;height:46px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.16);}}
+.chan b{{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:16px;}}
+.chan b small{{display:block;font-size:11px;color:var(--ink-mid);font-weight:500;}}
+h1{{font-family:var(--head);font-weight:900;font-size:31px;color:var(--ink);line-height:1.25;}} h1 .hl{{color:var(--brand-deep);}}
+.hero p.sub{{font-size:16px;color:var(--ink-mid);font-weight:700;margin-top:12px;max-width:700px;}}
+section{{padding:30px 46px;border-bottom:1px solid var(--line);}}
+.h2{{font-family:var(--head);font-weight:900;font-size:21px;color:var(--ink);margin-bottom:8px;}}
+.cat{{font-family:var(--head);font-weight:900;font-size:18px;color:var(--brand-deep);margin:26px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--brand-line);}}
+.catnav{{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 2px;}}
+.catnav a{{font-size:12.5px;font-weight:700;color:var(--brand-deep);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;}}
+.icard{{background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:13px;padding:15px 18px;margin-bottom:12px;}}
+.ititle{{font-family:var(--head);font-weight:900;font-size:16px;color:var(--ink);}}
+.imeta{{font-size:12.5px;color:var(--ink-mid);margin:4px 0 9px;}}
+pre.prompt{{background:var(--ink);color:#ECECEA;border-radius:10px;padding:14px 16px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.6;max-height:280px;overflow-y:auto;}}
+.btns{{margin-top:10px;display:flex;gap:9px;flex-wrap:wrap;}}
+.btn{{display:inline-flex;align-items:center;gap:7px;background:var(--accent);border:2px solid var(--accent-deep);color:var(--ink);border-radius:999px;padding:9px 20px;font-family:var(--head);font-weight:900;font-size:13.5px;cursor:pointer;text-decoration:none;}}
+.btn.sm{{padding:7px 15px;font-size:12.5px;}} .btn.ghost{{background:var(--paper);border:1.5px solid var(--line);color:var(--brand-deep);}}
+.linkcard{{display:flex;justify-content:space-between;align-items:center;gap:16px;border:2px solid var(--brand);border-radius:14px;padding:18px 22px;margin-bottom:13px;background:var(--bg);}}
+.linkcard .lt{{font-family:var(--head);font-weight:900;font-size:18px;color:var(--ink);}} .linkcard .ld{{font-size:13px;color:var(--ink-mid);margin-top:3px;}}
+.linkcard .cnt{{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:13px;background:var(--brand-soft);border-radius:999px;padding:4px 12px;display:inline-block;margin-bottom:6px;}}
+.recv{{background:var(--brand-soft);border:1.5px solid var(--brand-line);border-radius:13px;padding:18px 22px;}} .recv ol{{margin-left:20px;font-size:14.5px;}} .recv li{{margin-bottom:6px;}}
+.note{{background:var(--accent-soft);border:1.5px solid var(--accent);border-radius:12px;padding:14px 18px;font-size:13.5px;color:var(--ink);margin-top:14px;}}
+footer{{background:var(--ink);color:#EBEBE7;padding:26px 46px;font-size:13px;}}</style></head><body><svg style="display:none">
+  <symbol id="kawaru-logo" viewBox="0 0 406 93">
+    <rect x="6.67572e-06" y="13.4815" width="7.93029" height="74.5447" fill="currentColor"/>
+    <path d="M18.2397 52.7235L24.2772 47.5817L57.8911 88.0582L48.3318 88.0582L18.2397 52.7235Z" fill="#5BBCD4"/>
+    <path d="M34.8933 49.5514L40.9308 44.4096L77.2278 88.0366L67.4075 88.0262L34.8933 49.5514Z" fill="#5BBCD4"/>
+    <rect x="57.1908" y="2.92276" width="7.93029" height="83.5485" transform="rotate(42.3764 57.1908 2.92276)" fill="currentColor"/>
+    <rect x="59.4772" width="7.93029" height="22.2048" fill="currentColor"/>
+    <rect x="44.4096" y="7.9303" width="7.93029" height="22.9978" transform="rotate(-90 44.4096 7.9303)" fill="currentColor"/>
+    <path d="M110.882 61.3999L110.204 47.3281L135.413 20.7649H148.958L126.233 45.2211L119.46 52.4451L110.882 61.3999ZM99.9703 73.4399V20.7649H112.086V73.4399H99.9703ZM136.015 73.4399L117.278 50.4886L125.254 41.8349L150.237 73.4399H136.015ZM181.053 73.4399V65.5386L180.301 63.8079V49.6609C180.301 47.1525 179.523 45.196 177.968 43.7914C176.463 42.3867 174.13 41.6844 170.97 41.6844C168.813 41.6844 166.681 42.0355 164.574 42.7379C162.517 43.39 160.761 44.293 159.306 45.4469L155.092 37.2446C157.299 35.6895 159.958 34.4855 163.069 33.6326C166.179 32.7798 169.339 32.3534 172.55 32.3534C178.721 32.3534 183.512 33.8082 186.923 36.7179C190.334 39.6275 192.04 44.1676 192.04 50.3381V73.4399H181.053ZM168.712 74.0419C165.552 74.0419 162.843 73.5151 160.585 72.4616C158.328 71.358 156.597 69.878 155.393 68.0219C154.189 66.1657 153.587 64.0838 153.587 61.7761C153.587 59.3681 154.164 57.2611 155.318 55.4551C156.522 53.6491 158.403 52.2445 160.962 51.2411C163.52 50.1876 166.856 49.6609 170.97 49.6609H181.731V56.5086H172.249C169.49 56.5086 167.584 56.9601 166.53 57.8631C165.527 58.7661 165.025 59.8949 165.025 61.2494C165.025 62.7544 165.602 63.9584 166.756 64.8614C167.96 65.7142 169.59 66.1406 171.647 66.1406C173.604 66.1406 175.359 65.6891 176.915 64.7861C178.47 63.833 179.599 62.4534 180.301 60.6474L182.107 66.0654C181.254 68.674 179.699 70.6556 177.441 72.0101C175.184 73.3646 172.274 74.0419 168.712 74.0419ZM213.443 73.4399L198.844 32.9554H209.906L222.021 67.7961H216.754L229.396 32.9554H239.329L251.594 67.7961H246.327L258.818 32.9554H269.203L254.529 73.4399H243.166L232.406 43.5656H235.867L224.73 73.4399H213.443ZM300.427 73.4399V65.5386L299.675 63.8079V49.6609C299.675 47.1525 298.897 45.196 297.342 43.7914C295.837 42.3867 293.504 41.6844 290.344 41.6844C288.187 41.6844 286.055 42.0355 283.948 42.7379C281.891 43.39 280.135 44.293 278.68 45.4469L274.466 37.2446C276.674 35.6895 279.332 34.4855 282.443 33.6326C285.553 32.7798 288.714 32.3534 291.924 32.3534C298.095 32.3534 302.886 33.8082 306.297 36.7179C309.708 39.6275 311.414 44.1676 311.414 50.3381V73.4399H300.427ZM288.086 74.0419C284.926 74.0419 282.217 73.5151 279.959 72.4616C277.702 71.358 275.971 69.878 274.767 68.0219C273.563 66.1657 272.961 64.0838 272.961 61.7761C272.961 59.3681 273.538 57.2611 274.692 55.4551C275.896 53.6491 277.777 52.2445 280.336 51.2411C282.894 50.1876 286.23 49.6609 290.344 49.6609H301.105V56.5086H291.623C288.864 56.5086 286.958 56.9601 285.904 57.8631C284.901 58.7661 284.399 59.8949 284.399 61.2494C284.399 62.7544 284.976 63.9584 286.13 64.8614C287.334 65.7142 288.964 66.1406 291.021 66.1406C292.978 66.1406 294.734 65.6891 296.289 64.7861C297.844 63.833 298.973 62.4534 299.675 60.6474L301.481 66.0654C300.628 68.674 299.073 70.6556 296.815 72.0101C294.558 73.3646 291.648 74.0419 288.086 74.0419ZM324.296 73.4399V32.9554H335.508V44.3934L333.928 41.0824C335.132 38.2229 337.063 36.0657 339.722 34.6109C342.381 33.1059 345.617 32.3534 349.429 32.3534V43.1894C348.928 43.1392 348.476 43.1141 348.075 43.1141C347.674 43.064 347.247 43.0389 346.796 43.0389C343.585 43.0389 340.976 43.967 338.97 45.8231C337.013 47.6291 336.035 50.4635 336.035 54.3264V73.4399H324.296ZM376.043 74.0419C372.681 74.0419 369.671 73.3897 367.013 72.0854C364.404 70.781 362.372 68.7995 360.917 66.1406C359.462 63.4316 358.735 59.9952 358.735 55.8314V32.9554H370.474V54.1006C370.474 57.4618 371.176 59.945 372.581 61.5504C374.036 63.1055 376.068 63.8831 378.676 63.8831C380.482 63.8831 382.088 63.5069 383.492 62.7544C384.897 61.9517 386.001 60.7477 386.803 59.1424C387.606 57.4869 388.007 55.43 388.007 52.9719V32.9554H399.746V73.4399H388.609V62.3029L390.641 65.5386C389.287 68.348 387.28 70.48 384.621 71.9349C382.012 73.3395 379.153 74.0419 376.043 74.0419Z" fill="currentColor"/>
+  </symbol>
+</svg><div class="doc">
+<div class="hero"><div class="chan"><svg width="120" height="27" style="color:var(--brand);flex-shrink:0"><use href="#kawaru-logo"/></svg><b>AIエージェント<small>Kawaru</small></b></div><h1>🎁 <span class="hl">田中渓が使うプロンプト100選</span></h1><p class="sub">判断の型・音声入力・多視点レビュー・リサーチ・資料作成。</p>
+<div class="btns" style="margin-top:14px;"><a class="btn ghost" href="./present.html">← プレゼント一覧へ</a><button class="btn" onclick="downloadText('pfull','tanaka-prompts-100.md',this)">⬇ 全100本まとめてDL（.md）</button></div>
+<div class="catnav"><a href="#c0">判断の型・意思決定</a><a href="#c1">ディープリサーチ・情報収集・裏取り</a><a href="#c2">資料/レポート/提案書の自動作成</a><a href="#c3">音声メモの整理・文章化（口調保持）</a><a href="#c4">ロールモデル憑依・多視点レビュー</a><a href="#c5">自己コンテンツ化・思考ログ・AIの自分専用化</a><a href="#c6">投資・金融・事業分析・数字</a><a href="#c7">効率化・時間圧縮・仕組み化</a><a href="#c8">交渉・コミュニケーション・チーム</a><a href="#c9">学び・キャリア・自己規律</a></div></div>
+<section><div class="cat" id="c0">判断の型・意思決定</div>
+<div class="icard"><div class="ititle">1. 新規事業アイデアの4項目診断</div><div class="imeta">場面: 新しい事業アイデアを思いついた直後、着手するか判断する時</div><pre class="prompt" id="p1">以下の事業アイデアについて、①市場の需要はあるか②なぜ自分たちが勝てるのか③最悪のケースで何を失うか④明日からの初手は何か、の4項目で評価してください。まず甘い評価をせず厳しめの視点で診断し、次にその診断に対する反論も一つ出してください。
+
+[アイデア: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p1',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">2. 判断に迷ったときの言語化補助</div><div class="imeta">場面: 判断基準が自分の中で曖昧で、決めきれない時</div><pre class="prompt" id="p2">今悩んでいる判断について、私が話す内容から判断基準を逆算して箇条書きにしてください。次にその基準に優先順位をつけ、今回のケースにどう当てはまるかを整理してください。
+
+[悩んでいること: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p2',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">3. 「やらない」判断の言語化</div><div class="imeta">場面: 魅力的だが手を出すべきでない案件を断る時</div><pre class="prompt" id="p3">この案件について、やる理由ではなく「やらない理由」を先に3つ挙げてください。その上で、それでもやる価値があるとすれば何が条件になるかを教えてください。
+
+[案件概要: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p3',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">4. 1→10フェーズのタスク切り分け</div><div class="imeta">場面: 0→1のアイデア出しが終わり、実行フェーズに入る時</div><pre class="prompt" id="p4">このアイデアをもとに、ゼロから形にする部分と、形になったものを磨き上げる部分を分けて整理してください。ゼロから形にする部分の叩き台を先に作ってください。磨き上げる部分は私がやるので、判断が必要な論点だけ質問にしてください。
+
+[アイデア: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p4',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">5. 撤退基準の事前設定</div><div class="imeta">場面: 新しい取り組みを始める前に、やめる基準を先に決めておきたい時</div><pre class="prompt" id="p5">これから始める取り組みについて、どうなったら撤退するかの基準を先に3つ提案してください。期間・数字・状態の3つの切り口で、それぞれ具体的な線引きにしてください。
+
+[取り組み内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p5',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">6. 複数案の比較ジャッジ</div><div class="imeta">場面: 案が2つ以上あり、どちらを選ぶか決めきれない時</div><pre class="prompt" id="p6">以下の複数案を、需要・勝てる理由・最悪のケース・初手の4項目でそれぞれ整理し、比較表にしてください。最後にどちらか一方を選ぶとしたら、という前提で意見も添えてください。
+
+[案A: ]
+[案B: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p6',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">7. 感情と事実の切り分け</div><div class="imeta">場面: 気持ちが先走って判断が鈍っていると感じる時</div><pre class="prompt" id="p7">私がこれから話す内容から、事実と感情を分けて整理してください。事実だけを並べたときに、この判断はどう見えるか教えてください。
+
+[話す内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p7',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">8. 小さく試すための初手設計</div><div class="imeta">場面: 大きな決断をする前に、最小限のコストで検証したい時</div><pre class="prompt" id="p8">このアイデアを、一番小さいコストとリスクで検証する方法を3つ考えてください。それぞれにかかる時間と、検証できることの範囲も添えてください。
+
+[アイデア: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p8',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">9. 過去の判断の振り返り</div><div class="imeta">場面: 過去に下した判断が正しかったか検証したい時</div><pre class="prompt" id="p9">過去にこう判断してこうなった、という事実を伝えるので、当時の4項目評価(需要・勝てる理由・最悪のケース・初手)を仮に組み立て直してください。今振り返るとどこが甘かったか指摘してください。
+
+[過去の判断と結果: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p9',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">10. 決断前の最終チェックリスト</div><div class="imeta">場面: 決断を下す直前、最後の抜け漏れを確認したい時</div><pre class="prompt" id="p10">この決断について、見落としていそうな論点を5つ質問として投げかけてください。私が答えたら、その回答も踏まえて総合的な意見をください。
+
+[決断の内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p10',this)">📋 コピー</button></div></div><div class="cat" id="c1">ディープリサーチ・情報収集・裏取り</div>
+<div class="icard"><div class="ititle">11. 業界動向の一次情報あたり</div><div class="imeta">場面: 新しい業界や市場について土地勘をつけたい時</div><pre class="prompt" id="p11">[業界名]について、直近の動向を調べてください。数字や固有名詞を使う場合は出典を明記し、断定できない情報は「未確認」として区別してください。最後に、この業界を理解する上で押さえておくべき論点を5つにまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p11',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">12. 反対意見を先に集める</div><div class="imeta">場面: 自分の仮説に肯定的な情報ばかり集めてしまいがちな時</div><pre class="prompt" id="p12">[仮説]について、賛成する情報ではなく反対する情報や反証を優先して集めてください。反証のうち、無視できないものを3つ選んで理由も添えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p12',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">13. 一次情報と二次情報の仕分け</div><div class="imeta">場面: 集めた情報の信頼度を整理したい時</div><pre class="prompt" id="p13">これまで集めた以下の情報を、一次情報(本人・公式発表)と二次情報(伝聞・まとめ)に仕分けしてください。二次情報しかない部分は、裏取りが必要な論点として別にリストアップしてください。
+
+[集めた情報: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p13',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">14. 数字の裏取りチェック</div><div class="imeta">場面: レポートに使う数字が正しいか確認したい時</div><pre class="prompt" id="p14">この数字について、出典元まで遡って確認してください。出典が見つからない場合、確認できなかったとはっきり伝えてください。似た数字が複数の出典で違う値になっている場合はその違いも報告してください。
+
+[確認したい数字: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p14',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">15. 競合の動きの棚卸し</div><div class="imeta">場面: 同じ市場にいる相手の動きを整理したい時</div><pre class="prompt" id="p15">[競合名]の直近の動きを時系列で整理してください。公表されている事実と、そこから推測できることを分けて書いてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p15',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">16. リサーチ前の論点整理</div><div class="imeta">場面: 調べ始める前に、何を調べるべきか自体を整理したい時</div><pre class="prompt" id="p16">[テーマ]について調べようと思っています。本題に入る前に、調べるべき論点を5つ質問の形で挙げてください。私が答えてから、実際のリサーチに入ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p16',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">17. 情報の鮮度チェック</div><div class="imeta">場面: 集めた情報が古くなっていないか確認したい時</div><pre class="prompt" id="p17">これまで集めた情報のうち、発表時期が古いものや状況が変わっていそうなものを洗い出してください。最新の状況に更新すべき項目だけをリストにしてください。
+
+[集めた情報: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p17',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">18. 専門用語の翻訳</div><div class="imeta">場面: 専門的な資料を人に説明できる言葉に直したい時</div><pre class="prompt" id="p18">この専門的な内容を、中学生にも伝わる言葉に置き換えてください。専門用語を使う場合は、その都度カッコ書きで一言説明を添えてください。
+
+[専門的な内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p18',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">19. リサーチ結果の矛盾点洗い出し</div><div class="imeta">場面: 複数の情報源から集めた内容に矛盾がないか確認したい時</div><pre class="prompt" id="p19">これまで集めた情報の中で、内容が食い違っている箇所を洗い出してください。どちらが正しそうか判断材料も添えてください。
+
+[集めた情報: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p19',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">20. 未確認情報への態度</div><div class="imeta">場面: 断定できない情報を扱う時のルールを決めたい時</div><pre class="prompt" id="p20">これから調べる内容について、確認が取れた事実と、まだ確認が取れていない推測を、最初から分けて報告する形式でまとめてください。推測部分には「未確認」と明記してください。
+
+[調べる内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p20',this)">📋 コピー</button></div></div><div class="cat" id="c2">資料/レポート/提案書の自動作成</div>
+<div class="icard"><div class="ititle">21. 提案書のたたき台作成</div><div class="imeta">場面: 提案書をゼロから作る時間がない時</div><pre class="prompt" id="p21">[提案の概要]をもとに、提案書のたたき台を作ってください。構成は課題・解決策・根拠・次のアクションの順にしてください。私はこのたたき台に手を入れる形で仕上げます。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p21',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">22. 長文資料の圧縮</div><div class="imeta">場面: 分厚い資料を短時間で要点だけ把握したい時</div><pre class="prompt" id="p22">この資料を、要点だけを残して3分の1の分量に圧縮してください。削った部分がどこかも簡単に添えてください。
+
+[資料: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p22',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">23. 資料の構成だけ先に作る</div><div class="imeta">場面: 何を書くか決まっていないが、資料は作らないといけない時</div><pre class="prompt" id="p23">[テーマ]についての資料を作りたいのですが、まず中身は書かず、章立てと各章に何を書くかの一行メモだけ作ってください。私が構成を確認してから中身に入ります。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p23',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">24. 報告書の読み手別トーン調整</div><div class="imeta">場面: 同じ内容を相手によって伝え方を変えたい時</div><pre class="prompt" id="p24">この報告内容を、経営層向け・現場向けの2パターンで書き分けてください。経営層向けは結論から、現場向けは背景から書いてください。
+
+[報告内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p24',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">25. 資料の抜け漏れチェック</div><div class="imeta">場面: 資料が完成に近づき、最終確認をしたい時</div><pre class="prompt" id="p25">この資料を読んで、論理が飛んでいる箇所や説明不足に見える箇所を指摘してください。良い点の指摘は不要です、直すべき点だけ教えてください。
+
+[資料: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p25',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">26. 数字なしの主張への裏付け追加</div><div class="imeta">場面: 主張はあるが数字の裏付けが弱いと感じる時</div><pre class="prompt" id="p26">この文章の主張のうち、数字の裏付けがなく説得力が弱い部分を指摘してください。どんな数字があれば補強できるか、調べるべき項目も提案してください。
+
+[文章: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p26',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">27. 会議資料のたたき台</div><div class="imeta">場面: 会議前に議題と論点を整理したい時</div><pre class="prompt" id="p27">次の会議のテーマは[テーマ]です。想定される議題を3つに整理し、それぞれについて事前に決めておくべき論点を挙げてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p27',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">28. 資料の一文要約</div><div class="imeta">場面: 資料全体を一文で説明できるようにしたい時</div><pre class="prompt" id="p28">この資料の内容を一文で要約してください。その後、もう少し詳しく知りたい人向けに3行の補足も添えてください。
+
+[資料: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p28',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">29. テンプレート化できる資料の型抽出</div><div class="imeta">場面: 何度も作る資料を毎回ゼロから作らずに済むようにしたい時</div><pre class="prompt" id="p29">これまで作ったこの種類の資料をいくつか渡すので、共通している構成パターンを抽出してテンプレート化してください。次からはこのテンプレートに沿って中身だけ埋める形にしたいです。
+
+[過去の資料: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p29',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">30. 図解にする価値がある箇所の特定</div><div class="imeta">場面: 文章だけの資料をわかりやすくしたい時</div><pre class="prompt" id="p30">この文章の中で、図や表にした方が伝わりやすい箇所を教えてください。その部分を簡単な表や箇条書きの形に直してください。
+
+[文章: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p30',this)">📋 コピー</button></div></div><div class="cat" id="c3">音声メモの整理・文章化（口調保持）</div>
+<div class="icard"><div class="ititle">31. 話し言葉を文章に整える</div><div class="imeta">場面: 考えを声に出して話した後、それを文章にまとめたい時</div><pre class="prompt" id="p31">これから話す内容を、口調は残したまま読める文章に整えてください。言い間違いや脱線した部分は整理してよいですが、言葉の選び方や勢いはできるだけ残してください。
+
+[音声の書き起こし: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p31',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">32. 未整理な話を要点に分解</div><div class="imeta">場面: 思いついたことをまとまりなく話した後、要点だけ取り出したい時</div><pre class="prompt" id="p32">今話した内容から、要点を3つに分解してください。それぞれ見出しをつけて、話した言葉をなるべくそのまま使ってください。
+
+[音声の書き起こし: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p32',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">33. 口頭ブレストの議事録化</div><div class="imeta">場面: 一人で声に出しながら考えた内容を記録に残したい時</div><pre class="prompt" id="p33">この話し言葉の記録を、決定事項・保留事項・次に考えることの3つに整理してください。文体は硬くしすぎず、話した時の温度感を残してください。
+
+[音声の書き起こし: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p33',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">34. 感情が乗った発言のトーン保持</div><div class="imeta">場面: 熱量を込めて話した内容を、熱量ごと文章化したい時</div><pre class="prompt" id="p34">この話を文章にする際、内容の整理はしてよいですが、熱量や勢いは削らないでください。冷静な報告書のような文体にはしないでください。
+
+[音声の書き起こし: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p34',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">35. 長い独り言からの企画抽出</div><div class="imeta">場面: とりとめのない独り言の中に企画のヒントが混じっている時</div><pre class="prompt" id="p35">この長い話の中から、企画として使えそうな部分だけを抜き出してください。抜き出した部分は元の言い回しをできるだけ残してください。
+
+[音声の書き起こし: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p35',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">36. 音声メモをそのまま下書きに</div><div class="imeta">場面: 投稿文や文章の下書きを声から作りたい時</div><pre class="prompt" id="p36">この話し言葉を、そのまま投稿できる下書きに変換してください。話した口調をベースにしつつ、読みにくい繰り返しだけ整理してください。
+
+[音声の書き起こし: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p36',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">37. 話しながら考えた判断理由の言語化</div><div class="imeta">場面: 声に出しながら考えて、なぜその結論に至ったか自分でも整理したい時</div><pre class="prompt" id="p37">この話の中から、結論とその理由を分けて抜き出してください。理由が複数ある場合は、話した順番のまま並べてください。
+
+[音声の書き起こし: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p37',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">38. 音声メモの誤字脱字だけ直す</div><div class="imeta">場面: 内容の言い回しは変えず、読みやすさだけ整えたい時</div><pre class="prompt" id="p38">この書き起こしテキストは、言い回しや口調は一切変えずに、聞き取りミスや重複した言葉だけを直してください。内容の要約や言い換えはしないでください。
+
+[音声の書き起こし: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p38',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">39. 複数回の音声メモをつなげる</div><div class="imeta">場面: 別々のタイミングで話した内容を一つの文章にまとめたい時</div><pre class="prompt" id="p39">別々に話した以下の複数の音声メモを、時系列でつなげて一つの文章にしてください。話ごとの口調の違いはそのまま残してください。
+
+[音声メモ1: ]
+[音声メモ2: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p39',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">40. 音声メモから見出しを立てる</div><div class="imeta">場面: 話した内容の分量が多く、見出しをつけて読みやすくしたい時</div><pre class="prompt" id="p40">この長い話し言葉に、内容の切れ目で見出しをつけてください。本文の口調は変えず、見出しだけ整理された言葉にしてください。
+
+[音声の書き起こし: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p40',this)">📋 コピー</button></div></div><div class="cat" id="c4">ロールモデル憑依・多視点レビュー</div>
+<div class="icard"><div class="ititle">41. 3つの立場からの検討</div><div class="imeta">場面: 一つの案について複数の視点からの意見が欲しい時</div><pre class="prompt" id="p41">この案について、慎重派・積極派・現場目線の3つの立場に分かれて、それぞれの意見を出してください。最後に3つの意見が食い違う点を整理してください。
+
+[案の内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p41',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">42. 反対の役割を演じさせる</div><div class="imeta">場面: 自分の考えに反対する立場の意見を聞きたい時</div><pre class="prompt" id="p42">この考えに真っ向から反対する立場に立って、反論を作ってください。反論は感情的にではなく、根拠を挙げて指摘してください。
+
+[考えの内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p42',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">43. 異なる職種の視点を集める</div><div class="imeta">場面: 一つの企画を複数の職種の目線でチェックしたい時</div><pre class="prompt" id="p43">この企画について、営業目線・現場目線・数字管理の目線の3つに分かれて、それぞれ気になる点を挙げてください。
+
+[企画の内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p43',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">44. 一人会議形式のブレスト</div><div class="imeta">場面: 相談相手が周りにおらず、一人で複数視点の会議をしたい時</div><pre class="prompt" id="p44">この議題について、3人の異なる立場の人物を想定した会議形式で進めてください。それぞれ役割と意見を明確にし、最後に会議の結論案をまとめてください。
+
+[議題: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p44',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">45. 厳しめの第三者チェック</div><div class="imeta">場面: 身内には見せづらい厳しい意見が欲しい時</div><pre class="prompt" id="p45">この内容について、身内には言いにくいような厳しい指摘をする第三者の立場で見てください。遠慮せず、弱い部分を指摘してください。
+
+[内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p45',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">46. 顧客視点への切り替え</div><div class="imeta">場面: 作り手目線になりすぎていないか確認したい時</div><pre class="prompt" id="p46">この提案を、実際に使う側の視点に立って読んでください。作り手目線では気づきにくい違和感や不便さを指摘してください。
+
+[提案内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p46',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">47. 過去の自分との対話</div><div class="imeta">場面: 今の判断を、以前の自分だったらどう考えたか確認したい時</div><pre class="prompt" id="p47">これまで話してきた私の考え方の傾向をもとに、以前の自分ならこの判断をどう見るか、想定される意見を出してください。
+
+[今の判断内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p47',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">48. 未来の自分からの助言</div><div class="imeta">場面: 今の選択が数年後にどう見えるか考えたい時</div><pre class="prompt" id="p48">数年後の視点に立って、今のこの選択を振り返るとしたらどう見えるか、想定される助言を出してください。
+
+[今の選択内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p48',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">49. 意見が割れた時の統合</div><div class="imeta">場面: 複数の立場からの意見が出たが、まとめきれていない時</div><pre class="prompt" id="p49">これまで出た複数の立場からの意見を整理し、共通している点と対立している点を分けてください。対立している点については、判断材料になる質問を出してください。
+
+[これまでの意見: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p49',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">50. ロールを固定した継続レビュー役</div><div class="imeta">場面: 毎回同じ厳しい視点でチェックしてほしい時</div><pre class="prompt" id="p50">これから継続してこの内容を渡すので、常に慎重で数字に厳しい視点でチェックする役として意見をください。楽観的な評価はせず、リスクから先に指摘してください。
+
+[チェックしたい内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p50',this)">📋 コピー</button></div></div><div class="cat" id="c5">自己コンテンツ化・思考ログ・AIの自分専用化</div>
+<div class="icard"><div class="ititle">51. 思考ログの蓄積開始</div><div class="imeta">場面: 日々の考えをAIに渡して、自分専用の壁打ち相手を育てたい時</div><pre class="prompt" id="p51">これから日々の考えたことや気づきを渡していきます。まずは今日分から始めるので、内容を要約して記録してください。次回以降はこれまでの記録も踏まえた上で意見をください。
+
+[今日の考えたこと: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p51',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">52. 過去の発言の一貫性チェック</div><div class="imeta">場面: 自分の考えが以前と変わっていないか確認したい時</div><pre class="prompt" id="p52">これまで渡してきた思考ログの中から、今回の考えと矛盾する部分がないか確認してください。矛盾があれば指摘し、単なる変化なのか揺らぎなのか意見をください。
+
+[今回の考え: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p52',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">53. 自分の口癖・思考パターンの抽出</div><div class="imeta">場面: 自分の考え方の癖を客観的に把握したい時</div><pre class="prompt" id="p53">これまで渡してきた話し言葉や文章から、自分がよく使う言い回しや考え方のパターンを抽出してください。良い癖と直した方がよさそうな癖に分けてください。
+
+[過去の文章・発言: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p53',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">54. 日記からの自己分析</div><div class="imeta">場面: 日記や記録を振り返って、今の状態を客観視したい時</div><pre class="prompt" id="p54">この期間の日記を読んで、繰り返し出てくるテーマや感情の傾向を教えてください。私自身が気づいていなさそうな点があれば指摘してください。
+
+[日記の内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p54',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">55. 自分専用の判断基準を学習させる</div><div class="imeta">場面: AIに自分の判断のクセを覚えさせて、次から近い判断をしてほしい時</div><pre class="prompt" id="p55">これまでの判断とその結果をいくつか渡すので、そこから私の判断基準を推測してまとめてください。次からは、この基準に沿った意見を優先して出してください。
+
+[過去の判断と結果: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p55',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">56. 自分の言葉での要約依頼</div><div class="imeta">場面: 誰かの言葉ではなく、自分らしい言葉で内容をまとめたい時</div><pre class="prompt" id="p56">これまで渡してきた私の話し方の特徴を踏まえて、この内容を私が話しているような言葉でまとめてください。
+
+[まとめたい内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p56',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">57. 思考ログからの企画の種探し</div><div class="imeta">場面: 蓄積した思考ログの中から企画やコンテンツの種を見つけたい時</div><pre class="prompt" id="p57">これまで渡してきた思考ログの中から、企画やコンテンツになりそうな話題を5つ拾い出してください。それぞれなぜ面白いと思ったかも一言添えてください。
+
+[思考ログ: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p57',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">58. 悩みの変遷を追う</div><div class="imeta">場面: 同じような悩みを繰り返していないか確認したい時</div><pre class="prompt" id="p58">これまでの記録の中で、繰り返し出てくる悩みや迷いがあれば教えてください。それぞれどう変化してきたかも一緒に整理してください。
+
+[過去の記録: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p58',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">59. 自分宛てのフィードバックログ化</div><div class="imeta">場面: 人から受けたフィードバックを蓄積して振り返れるようにしたい時</div><pre class="prompt" id="p59">これまで受けたフィードバックを渡すので、テーマ別に整理して記録してください。同じ指摘が繰り返されている部分があれば教えてください。
+
+[受けたフィードバック: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p59',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">60. 半年前の自分との比較</div><div class="imeta">場面: 一定期間の変化や成長を確認したい時</div><pre class="prompt" id="p60">半年前の記録と今の記録を比べて、考え方や判断のどこが変わったか教えてください。変わっていない部分も併せて指摘してください。
+
+[半年前の記録: ]
+[今の記録: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p60',this)">📋 コピー</button></div></div><div class="cat" id="c6">投資・金融・事業分析・数字</div>
+<div class="icard"><div class="ititle">61. 投資判断の4項目整理</div><div class="imeta">場面: 投資先やその方向性を検討する時</div><pre class="prompt" id="p61">この投資対象について、需要・優位性・最悪のケースでの損失・最初にやるべきことの4項目で整理してください。感情を抜いた事実ベースでお願いします。
+
+[投資対象: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p61',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">62. 数字の一人歩きチェック</div><div class="imeta">場面: 資料に載っている数字が過大に見えていないか確認したい時</div><pre class="prompt" id="p62">この資料に出てくる数字のうち、前提条件次第で見え方が変わりそうなものを指摘してください。同じ数字でも別の見せ方をするとどうなるか教えてください。
+
+[資料の数字: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p62',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">63. 事業の収支シミュレーション</div><div class="imeta">場面: 新しい事業や施策の採算を大まかに掴みたい時</div><pre class="prompt" id="p63">この事業について、大まかな収支のシミュレーションを作ってください。前提として置いた数字はすべて明示し、断定できない部分は幅を持たせてください。
+
+[事業の概要: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p63',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">64. リスクシナリオの洗い出し</div><div class="imeta">場面: 投資や事業判断で、悪いケースを事前に想定しておきたい時</div><pre class="prompt" id="p64">この投資・事業について、起こりうる悪いシナリオを3つ挙げてください。それぞれの発生確率の高さと、起きた場合の対応策も添えてください。
+
+[投資・事業の内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p64',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">65. 過去の下落局面からの学び整理</div><div class="imeta">場面: 相場が崩れた局面での教訓を今の判断に活かしたい時</div><pre class="prompt" id="p65">相場が大きく崩れた局面で有効だった考え方や行動の型を整理してください。今の状況にそのまま当てはめられる部分と、当てはめるべきでない部分を分けてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p65',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">66. 決算・数字の要点抽出</div><div class="imeta">場面: 数字の多い資料から重要なポイントだけ拾いたい時</div><pre class="prompt" id="p66">この数字を含む資料から、意思決定に関わる重要な数字だけを5つに絞って抜き出してください。それぞれ何を意味する数字か一言添えてください。
+
+[資料: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p66',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">67. 事業計画の甘さ探し</div><div class="imeta">場面: 事業計画を出す前に、楽観的すぎる部分がないか確認したい時</div><pre class="prompt" id="p67">この事業計画の中で、前提が甘い、または楽観的すぎると感じる箇所を指摘してください。指摘だけでなく、より現実的な数字の置き方も提案してください。
+
+[事業計画: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p67',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">68. 資金の使い道の優先順位付け</div><div class="imeta">場面: 限られた資金をどこに配分するか決めたい時</div><pre class="prompt" id="p68">限られた資金をこれらの用途に配分するとして、優先順位をつけてください。優先順位の理由も添えてください。
+
+[用途の候補: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p68',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">69. 損切りラインの言語化</div><div class="imeta">場面: どの状態になったら撤退するか、感情に流されず決めておきたい時</div><pre class="prompt" id="p69">この投資・事業について、感情を挟まずに撤退すべきラインを数字と状態の両面で提案してください。
+
+[投資・事業の内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p69',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">70. 業績数値の異常値チェック</div><div class="imeta">場面: 数字の推移の中で気になる動きがないか確認したい時</div><pre class="prompt" id="p70">この数値の推移を見て、他の期間と比べて明らかに異常な動きをしている箇所があれば指摘してください。考えられる原因も添えてください。
+
+[数値の推移: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p70',this)">📋 コピー</button></div></div><div class="cat" id="c7">効率化・時間圧縮・仕組み化</div>
+<div class="icard"><div class="ititle">71. 毎回同じ作業のテンプレート化</div><div class="imeta">場面: 繰り返し発生する作業を仕組みにしたい時</div><pre class="prompt" id="p71">これまで何度もやってきたこの作業について、毎回変わらない部分と毎回変わる部分を分けてください。変わらない部分はテンプレートとして固定してください。
+
+[作業の内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p71',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">72. 1日の作業の棚卸し</div><div class="imeta">場面: 時間の使い方を見直したい時</div><pre class="prompt" id="p72">今日やった作業を渡すので、AIに任せられそうな部分と、自分でしかできない部分に分けてください。AIに任せられる部分は、どう渡せば済むかも提案してください。
+
+[今日の作業内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p72',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">73. 判断だけ人間、実行はAIの切り分け</div><div class="imeta">場面: 作業のうち、自分がやるべき部分を明確にしたい時</div><pre class="prompt" id="p73">このタスクを、判断が必要な部分と、判断さえ決まれば実行できる部分に分けてください。判断が必要な部分だけ質問にして、私に確認してください。
+
+[タスクの内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p73',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">74. よくあるやり取りのひな形化</div><div class="imeta">場面: 同じようなメッセージや返信を何度も書いている時</div><pre class="prompt" id="p74">これまで書いてきた似た内容のやり取りをいくつか渡すので、共通するひな形を作ってください。次からは状況だけ伝えれば、このひな形で文面を作れるようにしてください。
+
+[過去のやり取り: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p74',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">75. 会議時間の圧縮</div><div class="imeta">場面: 会議前の準備を効率化したい時</div><pre class="prompt" id="p75">この会議のアジェンダをもとに、会議中に議論すべき論点と、事前に資料で共有すれば済む内容を分けてください。会議時間を短くするための構成案も出してください。
+
+[アジェンダ: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p75',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">76. 週次の振り返りの自動整理</div><div class="imeta">場面: 毎週の振り返りに時間をかけたくない時</div><pre class="prompt" id="p76">今週やったことを渡すので、成果・課題・来週やることの3つに整理してください。次週以降も同じ形式で渡すので、前週との比較も含めてまとめてください。
+
+[今週やったこと: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p76',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">77. 判断待ちタスクの見える化</div><div class="imeta">場面: 自分の判断待ちで止まっているタスクを把握したい時</div><pre class="prompt" id="p77">今抱えているタスクを渡すので、自分の判断がないと前に進まないものだけを抜き出してください。それぞれ何を決めれば前に進むかも添えてください。
+
+[抱えているタスク: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p77',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">78. マニュアル化できる工程の抽出</div><div class="imeta">場面: 自分しかできないと思っていた作業を人に渡したい時</div><pre class="prompt" id="p78">この作業の進め方を話すので、他の人でも再現できる手順に落とし込んでください。判断が必要な部分は、判断基準まで含めて書いてください。
+
+[作業の進め方: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p78',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">79. 情報収集の定型ルート化</div><div class="imeta">場面: 毎回ゼロから情報を集めるのをやめたい時</div><pre class="prompt" id="p79">これまで毎回別々に調べていたこの種の情報について、次から使い回せる調査の型を作ってください。何を調べ、どこまで確認すればよいかをチェックリストにしてください。
+
+[調べている情報の種類: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p79',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">80. 優先順位のつけ直し</div><div class="imeta">場面: やることが多すぎて何から手をつけるべきか迷う時</div><pre class="prompt" id="p80">今抱えているこれらのタスクに優先順位をつけてください。優先順位は、影響の大きさと今やらないと手遅れになるかどうかの2軸で判断してください。
+
+[抱えているタスク: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p80',this)">📋 コピー</button></div></div><div class="cat" id="c8">交渉・コミュニケーション・チーム</div>
+<div class="icard"><div class="ititle">81. 交渉前の論点整理</div><div class="imeta">場面: 交渉に臨む前に、自分の立場を整理したい時</div><pre class="prompt" id="p81">この交渉について、自分が譲れる点と譲れない点を分けてください。相手側が重視していそうな点も予想し、落としどころの案を出してください。
+
+[交渉の内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p81',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">82. 相手の立場に立った文面チェック</div><div class="imeta">場面: 送る前のメッセージが相手にどう読まれるか確認したい時</div><pre class="prompt" id="p82">このメッセージを、受け取る相手の立場で読んでください。誤解されそうな表現や、きつく感じられそうな言い回しがあれば指摘してください。
+
+[メッセージ本文: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p82',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">83. 断りづらい依頼への返答案</div><div class="imeta">場面: 断りたい依頼に、角が立たない返答をしたい時</div><pre class="prompt" id="p83">この依頼を断りたいのですが、関係を壊さない言い方で返答文を作ってください。理由は正直に、ただし相手を否定しない形にしてください。
+
+[依頼の内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p83',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">84. チームへの指示の具体化</div><div class="imeta">場面: 頭の中にある指示をチームに伝わる形にしたい時</div><pre class="prompt" id="p84">これから話す指示の内容を、前提条件と期待する結果を具体的に含めた指示文にしてください。中学生に説明するつもりで、曖昧な言葉を避けてください。
+
+[指示したい内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p84',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">85. フィードバックの伝え方の調整</div><div class="imeta">場面: 厳しい指摘を、関係を壊さずに伝えたい時</div><pre class="prompt" id="p85">このフィードバックの内容を、相手のやる気を削がない伝え方に調整してください。指摘の中身は弱めず、伝え方だけ工夫してください。
+
+[伝えたい指摘内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p85',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">86. 会議での発言案の準備</div><div class="imeta">場面: 会議で発言する内容を事前に整理したい時</div><pre class="prompt" id="p86">この議題について、会議で発言する内容を短くまとめてください。結論から話す構成にし、想定される反論への返答も一つ準備してください。
+
+[議題: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p86',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">87. 依頼メールの前提補足</div><div class="imeta">場面: 依頼メールを送る前に、抜けている前提がないか確認したい時</div><pre class="prompt" id="p87">このメールを、受け取った相手が読んで疑問に思いそうな点を先回りして質問にしてください。私が答えたら、その内容をメールに反映してください。
+
+[メール本文: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p87',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">88. 意見が対立した時の落としどころ探し</div><div class="imeta">場面: チーム内で意見が割れて進まない時</div><pre class="prompt" id="p88">この対立している2つの意見について、それぞれの背景にある目的を整理してください。目的が近いなら、両方を満たせる折衷案を提案してください。
+
+[対立している意見: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p88',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">89. 感謝や労いの言葉の言語化</div><div class="imeta">場面: 気持ちはあるが、うまく言葉にできない時</div><pre class="prompt" id="p89">この相手にこれまでの働きへの感謝を伝えたいのですが、話す内容から自然な言葉にまとめてください。形式張りすぎない言い方にしてください。
+
+[伝えたい内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p89',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">90. 初対面向けの自己紹介の整理</div><div class="imeta">場面: 新しい相手に自分や事業を説明する機会がある時</div><pre class="prompt" id="p90">これから話す自分や事業の説明を、初対面の相手にも伝わる短い自己紹介にまとめてください。専門用語は避け、相手が質問したくなるような終わり方にしてください。
+
+[話す内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p90',this)">📋 コピー</button></div></div><div class="cat" id="c9">学び・キャリア・自己規律</div>
+<div class="icard"><div class="ititle">91. 新しい分野を学ぶ前の質問出し</div><div class="imeta">場面: 未知の分野を学び始める前に、何から手をつければいいか分からない時</div><pre class="prompt" id="p91">[学びたい分野]について学び始めようと思っています。本題に入る前に、学ぶ順番を決めるために私に聞くべき質問を5つ出してください。私が答えてから、学習の進め方を提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p91',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">92. 学んだ内容の中学生への説明</div><div class="imeta">場面: 学んだことを本当に理解できているか確認したい時</div><pre class="prompt" id="p92">今学んだこの内容を、中学生に説明するつもりで言葉にしてください。専門用語を使わず、身近な例えに置き換えてください。
+
+[学んだ内容: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p92',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">93. 自己規律の振り返り</div><div class="imeta">場面: 決めた習慣が続いているか確認したい時</div><pre class="prompt" id="p93">この期間の行動記録を渡すので、自分で決めた習慣がどれくらい守れているか確認してください。崩れているパターンがあれば、崩れるきっかけも一緒に指摘してください。
+
+[行動記録: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p93',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">94. 失敗からの型化</div><div class="imeta">場面: 失敗した経験を次に活かせる形にしたい時</div><pre class="prompt" id="p94">この失敗の経緯を話すので、次に同じ失敗をしないための判断の型を作ってください。抽象的な教訓ではなく、次に何を確認すればいいかという具体的な形にしてください。
+
+[失敗の経緯: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p94',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">95. キャリアの選択肢の整理</div><div class="imeta">場面: 今後のキャリアの方向性で迷っている時</div><pre class="prompt" id="p95">今考えているキャリアの選択肢を、需要・自分の強み・最悪のケース・最初の一歩の4項目でそれぞれ整理してください。
+
+[選択肢: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p95',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">96. 学習の優先順位づけ</div><div class="imeta">場面: 学びたいことが多すぎて絞りきれない時</div><pre class="prompt" id="p96">今学びたいと思っているこれらのテーマに優先順位をつけてください。今の状況で一番効果が出やすいものはどれか、理由も添えて教えてください。
+
+[学びたいテーマ: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p96',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">97. 一日を終える前の内省</div><div class="imeta">場面: 一日の終わりに、その日の判断を振り返りたい時</div><pre class="prompt" id="p97">今日あったことを話すので、その中で良かった判断と、もう少し違うやり方があった判断を分けてください。次に同じ場面が来たらどうするかも一緒に考えてください。
+
+[今日あったこと: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p97',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">98. 苦手分野の克服計画</div><div class="imeta">場面: 苦手だと感じている分野に向き合いたい時</div><pre class="prompt" id="p98">この苦手な分野について、何が苦手の原因になっているか一緒に整理してください。原因が分かったら、無理のない範囲での克服の進め方を提案してください。
+
+[苦手な分野: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p98',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">99. 継続できなかった習慣の再設計</div><div class="imeta">場面: 過去に挫折した習慣を、もう一度別のやり方で試したい時</div><pre class="prompt" id="p99">過去にこの習慣を続けられなかった経緯を話すので、なぜ続かなかったか一緒に整理してください。同じ失敗を避けるための、もう少し無理のない形を提案してください。
+
+[習慣の内容と挫折の経緯: ]</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p99',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">100. 一年後から見た今の自分への問いかけ</div><div class="imeta">場面: 長期的な視点で今の努力の方向性を確認したい時</div><pre class="prompt" id="p100">一年後の自分が今の自分を振り返るとしたら、聞いておきたいであろう質問を5つ考えてください。私がそれぞれに答えるので、答えを踏まえて今のうちにやっておくべきことを提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p100',this)">📋 コピー</button></div></div></section>
+<footer>AIエージェント ／ 🎁 このプレゼントは自由にお使いください。</footer></div>
+<pre id="pfull" style="display:none;"># 🎁 田中渓が使うプロンプト100選
+
+判断のプロセスを言語化してAIに移植する「型化」と、規律ある効率化で時間を生み出す「圧縮」。この2つの軸で、判断・リサーチ・資料作成・音声入力・多視点レビューなど、日々のあらゆる場面でそのまま使える100本のプロンプトをまとめました。
+
+**受け取り方**: 各プロンプトのコピーボタンでコピーするか、このファイルをダウンロードしてください。
+
+**使い方**: 気になるカテゴリから好きな順に使ってください。文中の[ ]には、今考えている案件やテーマなど、自分の状況を当てはめて使ってください。
+
+## 判断の型・意思決定
+
+### 1. 新規事業アイデアの4項目診断
+場面: 新しい事業アイデアを思いついた直後、着手するか判断する時
+
+```text
+以下の事業アイデアについて、①市場の需要はあるか②なぜ自分たちが勝てるのか③最悪のケースで何を失うか④明日からの初手は何か、の4項目で評価してください。まず甘い評価をせず厳しめの視点で診断し、次にその診断に対する反論も一つ出してください。
+
+[アイデア: ]
+```
+
+### 2. 判断に迷ったときの言語化補助
+場面: 判断基準が自分の中で曖昧で、決めきれない時
+
+```text
+今悩んでいる判断について、私が話す内容から判断基準を逆算して箇条書きにしてください。次にその基準に優先順位をつけ、今回のケースにどう当てはまるかを整理してください。
+
+[悩んでいること: ]
+```
+
+### 3. 「やらない」判断の言語化
+場面: 魅力的だが手を出すべきでない案件を断る時
+
+```text
+この案件について、やる理由ではなく「やらない理由」を先に3つ挙げてください。その上で、それでもやる価値があるとすれば何が条件になるかを教えてください。
+
+[案件概要: ]
+```
+
+### 4. 1→10フェーズのタスク切り分け
+場面: 0→1のアイデア出しが終わり、実行フェーズに入る時
+
+```text
+このアイデアをもとに、ゼロから形にする部分と、形になったものを磨き上げる部分を分けて整理してください。ゼロから形にする部分の叩き台を先に作ってください。磨き上げる部分は私がやるので、判断が必要な論点だけ質問にしてください。
+
+[アイデア: ]
+```
+
+### 5. 撤退基準の事前設定
+場面: 新しい取り組みを始める前に、やめる基準を先に決めておきたい時
+
+```text
+これから始める取り組みについて、どうなったら撤退するかの基準を先に3つ提案してください。期間・数字・状態の3つの切り口で、それぞれ具体的な線引きにしてください。
+
+[取り組み内容: ]
+```
+
+### 6. 複数案の比較ジャッジ
+場面: 案が2つ以上あり、どちらを選ぶか決めきれない時
+
+```text
+以下の複数案を、需要・勝てる理由・最悪のケース・初手の4項目でそれぞれ整理し、比較表にしてください。最後にどちらか一方を選ぶとしたら、という前提で意見も添えてください。
+
+[案A: ]
+[案B: ]
+```
+
+### 7. 感情と事実の切り分け
+場面: 気持ちが先走って判断が鈍っていると感じる時
+
+```text
+私がこれから話す内容から、事実と感情を分けて整理してください。事実だけを並べたときに、この判断はどう見えるか教えてください。
+
+[話す内容: ]
+```
+
+### 8. 小さく試すための初手設計
+場面: 大きな決断をする前に、最小限のコストで検証したい時
+
+```text
+このアイデアを、一番小さいコストとリスクで検証する方法を3つ考えてください。それぞれにかかる時間と、検証できることの範囲も添えてください。
+
+[アイデア: ]
+```
+
+### 9. 過去の判断の振り返り
+場面: 過去に下した判断が正しかったか検証したい時
+
+```text
+過去にこう判断してこうなった、という事実を伝えるので、当時の4項目評価(需要・勝てる理由・最悪のケース・初手)を仮に組み立て直してください。今振り返るとどこが甘かったか指摘してください。
+
+[過去の判断と結果: ]
+```
+
+### 10. 決断前の最終チェックリスト
+場面: 決断を下す直前、最後の抜け漏れを確認したい時
+
+```text
+この決断について、見落としていそうな論点を5つ質問として投げかけてください。私が答えたら、その回答も踏まえて総合的な意見をください。
+
+[決断の内容: ]
+```
+
+## ディープリサーチ・情報収集・裏取り
+
+### 11. 業界動向の一次情報あたり
+場面: 新しい業界や市場について土地勘をつけたい時
+
+```text
+[業界名]について、直近の動向を調べてください。数字や固有名詞を使う場合は出典を明記し、断定できない情報は「未確認」として区別してください。最後に、この業界を理解する上で押さえておくべき論点を5つにまとめてください。
+```
+
+### 12. 反対意見を先に集める
+場面: 自分の仮説に肯定的な情報ばかり集めてしまいがちな時
+
+```text
+[仮説]について、賛成する情報ではなく反対する情報や反証を優先して集めてください。反証のうち、無視できないものを3つ選んで理由も添えてください。
+```
+
+### 13. 一次情報と二次情報の仕分け
+場面: 集めた情報の信頼度を整理したい時
+
+```text
+これまで集めた以下の情報を、一次情報(本人・公式発表)と二次情報(伝聞・まとめ)に仕分けしてください。二次情報しかない部分は、裏取りが必要な論点として別にリストアップしてください。
+
+[集めた情報: ]
+```
+
+### 14. 数字の裏取りチェック
+場面: レポートに使う数字が正しいか確認したい時
+
+```text
+この数字について、出典元まで遡って確認してください。出典が見つからない場合、確認できなかったとはっきり伝えてください。似た数字が複数の出典で違う値になっている場合はその違いも報告してください。
+
+[確認したい数字: ]
+```
+
+### 15. 競合の動きの棚卸し
+場面: 同じ市場にいる相手の動きを整理したい時
+
+```text
+[競合名]の直近の動きを時系列で整理してください。公表されている事実と、そこから推測できることを分けて書いてください。
+```
+
+### 16. リサーチ前の論点整理
+場面: 調べ始める前に、何を調べるべきか自体を整理したい時
+
+```text
+[テーマ]について調べようと思っています。本題に入る前に、調べるべき論点を5つ質問の形で挙げてください。私が答えてから、実際のリサーチに入ってください。
+```
+
+### 17. 情報の鮮度チェック
+場面: 集めた情報が古くなっていないか確認したい時
+
+```text
+これまで集めた情報のうち、発表時期が古いものや状況が変わっていそうなものを洗い出してください。最新の状況に更新すべき項目だけをリストにしてください。
+
+[集めた情報: ]
+```
+
+### 18. 専門用語の翻訳
+場面: 専門的な資料を人に説明できる言葉に直したい時
+
+```text
+この専門的な内容を、中学生にも伝わる言葉に置き換えてください。専門用語を使う場合は、その都度カッコ書きで一言説明を添えてください。
+
+[専門的な内容: ]
+```
+
+### 19. リサーチ結果の矛盾点洗い出し
+場面: 複数の情報源から集めた内容に矛盾がないか確認したい時
+
+```text
+これまで集めた情報の中で、内容が食い違っている箇所を洗い出してください。どちらが正しそうか判断材料も添えてください。
+
+[集めた情報: ]
+```
+
+### 20. 未確認情報への態度
+場面: 断定できない情報を扱う時のルールを決めたい時
+
+```text
+これから調べる内容について、確認が取れた事実と、まだ確認が取れていない推測を、最初から分けて報告する形式でまとめてください。推測部分には「未確認」と明記してください。
+
+[調べる内容: ]
+```
+
+## 資料/レポート/提案書の自動作成
+
+### 21. 提案書のたたき台作成
+場面: 提案書をゼロから作る時間がない時
+
+```text
+[提案の概要]をもとに、提案書のたたき台を作ってください。構成は課題・解決策・根拠・次のアクションの順にしてください。私はこのたたき台に手を入れる形で仕上げます。
+```
+
+### 22. 長文資料の圧縮
+場面: 分厚い資料を短時間で要点だけ把握したい時
+
+```text
+この資料を、要点だけを残して3分の1の分量に圧縮してください。削った部分がどこかも簡単に添えてください。
+
+[資料: ]
+```
+
+### 23. 資料の構成だけ先に作る
+場面: 何を書くか決まっていないが、資料は作らないといけない時
+
+```text
+[テーマ]についての資料を作りたいのですが、まず中身は書かず、章立てと各章に何を書くかの一行メモだけ作ってください。私が構成を確認してから中身に入ります。
+```
+
+### 24. 報告書の読み手別トーン調整
+場面: 同じ内容を相手によって伝え方を変えたい時
+
+```text
+この報告内容を、経営層向け・現場向けの2パターンで書き分けてください。経営層向けは結論から、現場向けは背景から書いてください。
+
+[報告内容: ]
+```
+
+### 25. 資料の抜け漏れチェック
+場面: 資料が完成に近づき、最終確認をしたい時
+
+```text
+この資料を読んで、論理が飛んでいる箇所や説明不足に見える箇所を指摘してください。良い点の指摘は不要です、直すべき点だけ教えてください。
+
+[資料: ]
+```
+
+### 26. 数字なしの主張への裏付け追加
+場面: 主張はあるが数字の裏付けが弱いと感じる時
+
+```text
+この文章の主張のうち、数字の裏付けがなく説得力が弱い部分を指摘してください。どんな数字があれば補強できるか、調べるべき項目も提案してください。
+
+[文章: ]
+```
+
+### 27. 会議資料のたたき台
+場面: 会議前に議題と論点を整理したい時
+
+```text
+次の会議のテーマは[テーマ]です。想定される議題を3つに整理し、それぞれについて事前に決めておくべき論点を挙げてください。
+```
+
+### 28. 資料の一文要約
+場面: 資料全体を一文で説明できるようにしたい時
+
+```text
+この資料の内容を一文で要約してください。その後、もう少し詳しく知りたい人向けに3行の補足も添えてください。
+
+[資料: ]
+```
+
+### 29. テンプレート化できる資料の型抽出
+場面: 何度も作る資料を毎回ゼロから作らずに済むようにしたい時
+
+```text
+これまで作ったこの種類の資料をいくつか渡すので、共通している構成パターンを抽出してテンプレート化してください。次からはこのテンプレートに沿って中身だけ埋める形にしたいです。
+
+[過去の資料: ]
+```
+
+### 30. 図解にする価値がある箇所の特定
+場面: 文章だけの資料をわかりやすくしたい時
+
+```text
+この文章の中で、図や表にした方が伝わりやすい箇所を教えてください。その部分を簡単な表や箇条書きの形に直してください。
+
+[文章: ]
+```
+
+## 音声メモの整理・文章化（口調保持）
+
+### 31. 話し言葉を文章に整える
+場面: 考えを声に出して話した後、それを文章にまとめたい時
+
+```text
+これから話す内容を、口調は残したまま読める文章に整えてください。言い間違いや脱線した部分は整理してよいですが、言葉の選び方や勢いはできるだけ残してください。
+
+[音声の書き起こし: ]
+```
+
+### 32. 未整理な話を要点に分解
+場面: 思いついたことをまとまりなく話した後、要点だけ取り出したい時
+
+```text
+今話した内容から、要点を3つに分解してください。それぞれ見出しをつけて、話した言葉をなるべくそのまま使ってください。
+
+[音声の書き起こし: ]
+```
+
+### 33. 口頭ブレストの議事録化
+場面: 一人で声に出しながら考えた内容を記録に残したい時
+
+```text
+この話し言葉の記録を、決定事項・保留事項・次に考えることの3つに整理してください。文体は硬くしすぎず、話した時の温度感を残してください。
+
+[音声の書き起こし: ]
+```
+
+### 34. 感情が乗った発言のトーン保持
+場面: 熱量を込めて話した内容を、熱量ごと文章化したい時
+
+```text
+この話を文章にする際、内容の整理はしてよいですが、熱量や勢いは削らないでください。冷静な報告書のような文体にはしないでください。
+
+[音声の書き起こし: ]
+```
+
+### 35. 長い独り言からの企画抽出
+場面: とりとめのない独り言の中に企画のヒントが混じっている時
+
+```text
+この長い話の中から、企画として使えそうな部分だけを抜き出してください。抜き出した部分は元の言い回しをできるだけ残してください。
+
+[音声の書き起こし: ]
+```
+
+### 36. 音声メモをそのまま下書きに
+場面: 投稿文や文章の下書きを声から作りたい時
+
+```text
+この話し言葉を、そのまま投稿できる下書きに変換してください。話した口調をベースにしつつ、読みにくい繰り返しだけ整理してください。
+
+[音声の書き起こし: ]
+```
+
+### 37. 話しながら考えた判断理由の言語化
+場面: 声に出しながら考えて、なぜその結論に至ったか自分でも整理したい時
+
+```text
+この話の中から、結論とその理由を分けて抜き出してください。理由が複数ある場合は、話した順番のまま並べてください。
+
+[音声の書き起こし: ]
+```
+
+### 38. 音声メモの誤字脱字だけ直す
+場面: 内容の言い回しは変えず、読みやすさだけ整えたい時
+
+```text
+この書き起こしテキストは、言い回しや口調は一切変えずに、聞き取りミスや重複した言葉だけを直してください。内容の要約や言い換えはしないでください。
+
+[音声の書き起こし: ]
+```
+
+### 39. 複数回の音声メモをつなげる
+場面: 別々のタイミングで話した内容を一つの文章にまとめたい時
+
+```text
+別々に話した以下の複数の音声メモを、時系列でつなげて一つの文章にしてください。話ごとの口調の違いはそのまま残してください。
+
+[音声メモ1: ]
+[音声メモ2: ]
+```
+
+### 40. 音声メモから見出しを立てる
+場面: 話した内容の分量が多く、見出しをつけて読みやすくしたい時
+
+```text
+この長い話し言葉に、内容の切れ目で見出しをつけてください。本文の口調は変えず、見出しだけ整理された言葉にしてください。
+
+[音声の書き起こし: ]
+```
+
+## ロールモデル憑依・多視点レビュー
+
+### 41. 3つの立場からの検討
+場面: 一つの案について複数の視点からの意見が欲しい時
+
+```text
+この案について、慎重派・積極派・現場目線の3つの立場に分かれて、それぞれの意見を出してください。最後に3つの意見が食い違う点を整理してください。
+
+[案の内容: ]
+```
+
+### 42. 反対の役割を演じさせる
+場面: 自分の考えに反対する立場の意見を聞きたい時
+
+```text
+この考えに真っ向から反対する立場に立って、反論を作ってください。反論は感情的にではなく、根拠を挙げて指摘してください。
+
+[考えの内容: ]
+```
+
+### 43. 異なる職種の視点を集める
+場面: 一つの企画を複数の職種の目線でチェックしたい時
+
+```text
+この企画について、営業目線・現場目線・数字管理の目線の3つに分かれて、それぞれ気になる点を挙げてください。
+
+[企画の内容: ]
+```
+
+### 44. 一人会議形式のブレスト
+場面: 相談相手が周りにおらず、一人で複数視点の会議をしたい時
+
+```text
+この議題について、3人の異なる立場の人物を想定した会議形式で進めてください。それぞれ役割と意見を明確にし、最後に会議の結論案をまとめてください。
+
+[議題: ]
+```
+
+### 45. 厳しめの第三者チェック
+場面: 身内には見せづらい厳しい意見が欲しい時
+
+```text
+この内容について、身内には言いにくいような厳しい指摘をする第三者の立場で見てください。遠慮せず、弱い部分を指摘してください。
+
+[内容: ]
+```
+
+### 46. 顧客視点への切り替え
+場面: 作り手目線になりすぎていないか確認したい時
+
+```text
+この提案を、実際に使う側の視点に立って読んでください。作り手目線では気づきにくい違和感や不便さを指摘してください。
+
+[提案内容: ]
+```
+
+### 47. 過去の自分との対話
+場面: 今の判断を、以前の自分だったらどう考えたか確認したい時
+
+```text
+これまで話してきた私の考え方の傾向をもとに、以前の自分ならこの判断をどう見るか、想定される意見を出してください。
+
+[今の判断内容: ]
+```
+
+### 48. 未来の自分からの助言
+場面: 今の選択が数年後にどう見えるか考えたい時
+
+```text
+数年後の視点に立って、今のこの選択を振り返るとしたらどう見えるか、想定される助言を出してください。
+
+[今の選択内容: ]
+```
+
+### 49. 意見が割れた時の統合
+場面: 複数の立場からの意見が出たが、まとめきれていない時
+
+```text
+これまで出た複数の立場からの意見を整理し、共通している点と対立している点を分けてください。対立している点については、判断材料になる質問を出してください。
+
+[これまでの意見: ]
+```
+
+### 50. ロールを固定した継続レビュー役
+場面: 毎回同じ厳しい視点でチェックしてほしい時
+
+```text
+これから継続してこの内容を渡すので、常に慎重で数字に厳しい視点でチェックする役として意見をください。楽観的な評価はせず、リスクから先に指摘してください。
+
+[チェックしたい内容: ]
+```
+
+## 自己コンテンツ化・思考ログ・AIの自分専用化
+
+### 51. 思考ログの蓄積開始
+場面: 日々の考えをAIに渡して、自分専用の壁打ち相手を育てたい時
+
+```text
+これから日々の考えたことや気づきを渡していきます。まずは今日分から始めるので、内容を要約して記録してください。次回以降はこれまでの記録も踏まえた上で意見をください。
+
+[今日の考えたこと: ]
+```
+
+### 52. 過去の発言の一貫性チェック
+場面: 自分の考えが以前と変わっていないか確認したい時
+
+```text
+これまで渡してきた思考ログの中から、今回の考えと矛盾する部分がないか確認してください。矛盾があれば指摘し、単なる変化なのか揺らぎなのか意見をください。
+
+[今回の考え: ]
+```
+
+### 53. 自分の口癖・思考パターンの抽出
+場面: 自分の考え方の癖を客観的に把握したい時
+
+```text
+これまで渡してきた話し言葉や文章から、自分がよく使う言い回しや考え方のパターンを抽出してください。良い癖と直した方がよさそうな癖に分けてください。
+
+[過去の文章・発言: ]
+```
+
+### 54. 日記からの自己分析
+場面: 日記や記録を振り返って、今の状態を客観視したい時
+
+```text
+この期間の日記を読んで、繰り返し出てくるテーマや感情の傾向を教えてください。私自身が気づいていなさそうな点があれば指摘してください。
+
+[日記の内容: ]
+```
+
+### 55. 自分専用の判断基準を学習させる
+場面: AIに自分の判断のクセを覚えさせて、次から近い判断をしてほしい時
+
+```text
+これまでの判断とその結果をいくつか渡すので、そこから私の判断基準を推測してまとめてください。次からは、この基準に沿った意見を優先して出してください。
+
+[過去の判断と結果: ]
+```
+
+### 56. 自分の言葉での要約依頼
+場面: 誰かの言葉ではなく、自分らしい言葉で内容をまとめたい時
+
+```text
+これまで渡してきた私の話し方の特徴を踏まえて、この内容を私が話しているような言葉でまとめてください。
+
+[まとめたい内容: ]
+```
+
+### 57. 思考ログからの企画の種探し
+場面: 蓄積した思考ログの中から企画やコンテンツの種を見つけたい時
+
+```text
+これまで渡してきた思考ログの中から、企画やコンテンツになりそうな話題を5つ拾い出してください。それぞれなぜ面白いと思ったかも一言添えてください。
+
+[思考ログ: ]
+```
+
+### 58. 悩みの変遷を追う
+場面: 同じような悩みを繰り返していないか確認したい時
+
+```text
+これまでの記録の中で、繰り返し出てくる悩みや迷いがあれば教えてください。それぞれどう変化してきたかも一緒に整理してください。
+
+[過去の記録: ]
+```
+
+### 59. 自分宛てのフィードバックログ化
+場面: 人から受けたフィードバックを蓄積して振り返れるようにしたい時
+
+```text
+これまで受けたフィードバックを渡すので、テーマ別に整理して記録してください。同じ指摘が繰り返されている部分があれば教えてください。
+
+[受けたフィードバック: ]
+```
+
+### 60. 半年前の自分との比較
+場面: 一定期間の変化や成長を確認したい時
+
+```text
+半年前の記録と今の記録を比べて、考え方や判断のどこが変わったか教えてください。変わっていない部分も併せて指摘してください。
+
+[半年前の記録: ]
+[今の記録: ]
+```
+
+## 投資・金融・事業分析・数字
+
+### 61. 投資判断の4項目整理
+場面: 投資先やその方向性を検討する時
+
+```text
+この投資対象について、需要・優位性・最悪のケースでの損失・最初にやるべきことの4項目で整理してください。感情を抜いた事実ベースでお願いします。
+
+[投資対象: ]
+```
+
+### 62. 数字の一人歩きチェック
+場面: 資料に載っている数字が過大に見えていないか確認したい時
+
+```text
+この資料に出てくる数字のうち、前提条件次第で見え方が変わりそうなものを指摘してください。同じ数字でも別の見せ方をするとどうなるか教えてください。
+
+[資料の数字: ]
+```
+
+### 63. 事業の収支シミュレーション
+場面: 新しい事業や施策の採算を大まかに掴みたい時
+
+```text
+この事業について、大まかな収支のシミュレーションを作ってください。前提として置いた数字はすべて明示し、断定できない部分は幅を持たせてください。
+
+[事業の概要: ]
+```
+
+### 64. リスクシナリオの洗い出し
+場面: 投資や事業判断で、悪いケースを事前に想定しておきたい時
+
+```text
+この投資・事業について、起こりうる悪いシナリオを3つ挙げてください。それぞれの発生確率の高さと、起きた場合の対応策も添えてください。
+
+[投資・事業の内容: ]
+```
+
+### 65. 過去の下落局面からの学び整理
+場面: 相場が崩れた局面での教訓を今の判断に活かしたい時
+
+```text
+相場が大きく崩れた局面で有効だった考え方や行動の型を整理してください。今の状況にそのまま当てはめられる部分と、当てはめるべきでない部分を分けてください。
+```
+
+### 66. 決算・数字の要点抽出
+場面: 数字の多い資料から重要なポイントだけ拾いたい時
+
+```text
+この数字を含む資料から、意思決定に関わる重要な数字だけを5つに絞って抜き出してください。それぞれ何を意味する数字か一言添えてください。
+
+[資料: ]
+```
+
+### 67. 事業計画の甘さ探し
+場面: 事業計画を出す前に、楽観的すぎる部分がないか確認したい時
+
+```text
+この事業計画の中で、前提が甘い、または楽観的すぎると感じる箇所を指摘してください。指摘だけでなく、より現実的な数字の置き方も提案してください。
+
+[事業計画: ]
+```
+
+### 68. 資金の使い道の優先順位付け
+場面: 限られた資金をどこに配分するか決めたい時
+
+```text
+限られた資金をこれらの用途に配分するとして、優先順位をつけてください。優先順位の理由も添えてください。
+
+[用途の候補: ]
+```
+
+### 69. 損切りラインの言語化
+場面: どの状態になったら撤退するか、感情に流されず決めておきたい時
+
+```text
+この投資・事業について、感情を挟まずに撤退すべきラインを数字と状態の両面で提案してください。
+
+[投資・事業の内容: ]
+```
+
+### 70. 業績数値の異常値チェック
+場面: 数字の推移の中で気になる動きがないか確認したい時
+
+```text
+この数値の推移を見て、他の期間と比べて明らかに異常な動きをしている箇所があれば指摘してください。考えられる原因も添えてください。
+
+[数値の推移: ]
+```
+
+## 効率化・時間圧縮・仕組み化
+
+### 71. 毎回同じ作業のテンプレート化
+場面: 繰り返し発生する作業を仕組みにしたい時
+
+```text
+これまで何度もやってきたこの作業について、毎回変わらない部分と毎回変わる部分を分けてください。変わらない部分はテンプレートとして固定してください。
+
+[作業の内容: ]
+```
+
+### 72. 1日の作業の棚卸し
+場面: 時間の使い方を見直したい時
+
+```text
+今日やった作業を渡すので、AIに任せられそうな部分と、自分でしかできない部分に分けてください。AIに任せられる部分は、どう渡せば済むかも提案してください。
+
+[今日の作業内容: ]
+```
+
+### 73. 判断だけ人間、実行はAIの切り分け
+場面: 作業のうち、自分がやるべき部分を明確にしたい時
+
+```text
+このタスクを、判断が必要な部分と、判断さえ決まれば実行できる部分に分けてください。判断が必要な部分だけ質問にして、私に確認してください。
+
+[タスクの内容: ]
+```
+
+### 74. よくあるやり取りのひな形化
+場面: 同じようなメッセージや返信を何度も書いている時
+
+```text
+これまで書いてきた似た内容のやり取りをいくつか渡すので、共通するひな形を作ってください。次からは状況だけ伝えれば、このひな形で文面を作れるようにしてください。
+
+[過去のやり取り: ]
+```
+
+### 75. 会議時間の圧縮
+場面: 会議前の準備を効率化したい時
+
+```text
+この会議のアジェンダをもとに、会議中に議論すべき論点と、事前に資料で共有すれば済む内容を分けてください。会議時間を短くするための構成案も出してください。
+
+[アジェンダ: ]
+```
+
+### 76. 週次の振り返りの自動整理
+場面: 毎週の振り返りに時間をかけたくない時
+
+```text
+今週やったことを渡すので、成果・課題・来週やることの3つに整理してください。次週以降も同じ形式で渡すので、前週との比較も含めてまとめてください。
+
+[今週やったこと: ]
+```
+
+### 77. 判断待ちタスクの見える化
+場面: 自分の判断待ちで止まっているタスクを把握したい時
+
+```text
+今抱えているタスクを渡すので、自分の判断がないと前に進まないものだけを抜き出してください。それぞれ何を決めれば前に進むかも添えてください。
+
+[抱えているタスク: ]
+```
+
+### 78. マニュアル化できる工程の抽出
+場面: 自分しかできないと思っていた作業を人に渡したい時
+
+```text
+この作業の進め方を話すので、他の人でも再現できる手順に落とし込んでください。判断が必要な部分は、判断基準まで含めて書いてください。
+
+[作業の進め方: ]
+```
+
+### 79. 情報収集の定型ルート化
+場面: 毎回ゼロから情報を集めるのをやめたい時
+
+```text
+これまで毎回別々に調べていたこの種の情報について、次から使い回せる調査の型を作ってください。何を調べ、どこまで確認すればよいかをチェックリストにしてください。
+
+[調べている情報の種類: ]
+```
+
+### 80. 優先順位のつけ直し
+場面: やることが多すぎて何から手をつけるべきか迷う時
+
+```text
+今抱えているこれらのタスクに優先順位をつけてください。優先順位は、影響の大きさと今やらないと手遅れになるかどうかの2軸で判断してください。
+
+[抱えているタスク: ]
+```
+
+## 交渉・コミュニケーション・チーム
+
+### 81. 交渉前の論点整理
+場面: 交渉に臨む前に、自分の立場を整理したい時
+
+```text
+この交渉について、自分が譲れる点と譲れない点を分けてください。相手側が重視していそうな点も予想し、落としどころの案を出してください。
+
+[交渉の内容: ]
+```
+
+### 82. 相手の立場に立った文面チェック
+場面: 送る前のメッセージが相手にどう読まれるか確認したい時
+
+```text
+このメッセージを、受け取る相手の立場で読んでください。誤解されそうな表現や、きつく感じられそうな言い回しがあれば指摘してください。
+
+[メッセージ本文: ]
+```
+
+### 83. 断りづらい依頼への返答案
+場面: 断りたい依頼に、角が立たない返答をしたい時
+
+```text
+この依頼を断りたいのですが、関係を壊さない言い方で返答文を作ってください。理由は正直に、ただし相手を否定しない形にしてください。
+
+[依頼の内容: ]
+```
+
+### 84. チームへの指示の具体化
+場面: 頭の中にある指示をチームに伝わる形にしたい時
+
+```text
+これから話す指示の内容を、前提条件と期待する結果を具体的に含めた指示文にしてください。中学生に説明するつもりで、曖昧な言葉を避けてください。
+
+[指示したい内容: ]
+```
+
+### 85. フィードバックの伝え方の調整
+場面: 厳しい指摘を、関係を壊さずに伝えたい時
+
+```text
+このフィードバックの内容を、相手のやる気を削がない伝え方に調整してください。指摘の中身は弱めず、伝え方だけ工夫してください。
+
+[伝えたい指摘内容: ]
+```
+
+### 86. 会議での発言案の準備
+場面: 会議で発言する内容を事前に整理したい時
+
+```text
+この議題について、会議で発言する内容を短くまとめてください。結論から話す構成にし、想定される反論への返答も一つ準備してください。
+
+[議題: ]
+```
+
+### 87. 依頼メールの前提補足
+場面: 依頼メールを送る前に、抜けている前提がないか確認したい時
+
+```text
+このメールを、受け取った相手が読んで疑問に思いそうな点を先回りして質問にしてください。私が答えたら、その内容をメールに反映してください。
+
+[メール本文: ]
+```
+
+### 88. 意見が対立した時の落としどころ探し
+場面: チーム内で意見が割れて進まない時
+
+```text
+この対立している2つの意見について、それぞれの背景にある目的を整理してください。目的が近いなら、両方を満たせる折衷案を提案してください。
+
+[対立している意見: ]
+```
+
+### 89. 感謝や労いの言葉の言語化
+場面: 気持ちはあるが、うまく言葉にできない時
+
+```text
+この相手にこれまでの働きへの感謝を伝えたいのですが、話す内容から自然な言葉にまとめてください。形式張りすぎない言い方にしてください。
+
+[伝えたい内容: ]
+```
+
+### 90. 初対面向けの自己紹介の整理
+場面: 新しい相手に自分や事業を説明する機会がある時
+
+```text
+これから話す自分や事業の説明を、初対面の相手にも伝わる短い自己紹介にまとめてください。専門用語は避け、相手が質問したくなるような終わり方にしてください。
+
+[話す内容: ]
+```
+
+## 学び・キャリア・自己規律
+
+### 91. 新しい分野を学ぶ前の質問出し
+場面: 未知の分野を学び始める前に、何から手をつければいいか分からない時
+
+```text
+[学びたい分野]について学び始めようと思っています。本題に入る前に、学ぶ順番を決めるために私に聞くべき質問を5つ出してください。私が答えてから、学習の進め方を提案してください。
+```
+
+### 92. 学んだ内容の中学生への説明
+場面: 学んだことを本当に理解できているか確認したい時
+
+```text
+今学んだこの内容を、中学生に説明するつもりで言葉にしてください。専門用語を使わず、身近な例えに置き換えてください。
+
+[学んだ内容: ]
+```
+
+### 93. 自己規律の振り返り
+場面: 決めた習慣が続いているか確認したい時
+
+```text
+この期間の行動記録を渡すので、自分で決めた習慣がどれくらい守れているか確認してください。崩れているパターンがあれば、崩れるきっかけも一緒に指摘してください。
+
+[行動記録: ]
+```
+
+### 94. 失敗からの型化
+場面: 失敗した経験を次に活かせる形にしたい時
+
+```text
+この失敗の経緯を話すので、次に同じ失敗をしないための判断の型を作ってください。抽象的な教訓ではなく、次に何を確認すればいいかという具体的な形にしてください。
+
+[失敗の経緯: ]
+```
+
+### 95. キャリアの選択肢の整理
+場面: 今後のキャリアの方向性で迷っている時
+
+```text
+今考えているキャリアの選択肢を、需要・自分の強み・最悪のケース・最初の一歩の4項目でそれぞれ整理してください。
+
+[選択肢: ]
+```
+
+### 96. 学習の優先順位づけ
+場面: 学びたいことが多すぎて絞りきれない時
+
+```text
+今学びたいと思っているこれらのテーマに優先順位をつけてください。今の状況で一番効果が出やすいものはどれか、理由も添えて教えてください。
+
+[学びたいテーマ: ]
+```
+
+### 97. 一日を終える前の内省
+場面: 一日の終わりに、その日の判断を振り返りたい時
+
+```text
+今日あったことを話すので、その中で良かった判断と、もう少し違うやり方があった判断を分けてください。次に同じ場面が来たらどうするかも一緒に考えてください。
+
+[今日あったこと: ]
+```
+
+### 98. 苦手分野の克服計画
+場面: 苦手だと感じている分野に向き合いたい時
+
+```text
+この苦手な分野について、何が苦手の原因になっているか一緒に整理してください。原因が分かったら、無理のない範囲での克服の進め方を提案してください。
+
+[苦手な分野: ]
+```
+
+### 99. 継続できなかった習慣の再設計
+場面: 過去に挫折した習慣を、もう一度別のやり方で試したい時
+
+```text
+過去にこの習慣を続けられなかった経緯を話すので、なぜ続かなかったか一緒に整理してください。同じ失敗を避けるための、もう少し無理のない形を提案してください。
+
+[習慣の内容と挫折の経緯: ]
+```
+
+### 100. 一年後から見た今の自分への問いかけ
+場面: 長期的な視点で今の努力の方向性を確認したい時
+
+```text
+一年後の自分が今の自分を振り返るとしたら、聞いておきたいであろう質問を5つ考えてください。私がそれぞれに答えるので、答えを踏まえて今のうちにやっておくべきことを提案してください。
+```
+</pre><script>function copyTextWithFallback(t){function f(){try{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();return ok;}catch(e){return false;}}if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t).then(()=>true).catch(f);}return Promise.resolve(f());}
+function showCopyResult(b,ok){const o=b.textContent;b.textContent=ok?'✔ コピーしました！':'✖ コピー不可 ↓DLを';setTimeout(()=>{b.textContent=o;},ok?1600:3200);}
+async function copyPrompt(id,b){const ok=await copyTextWithFallback(document.getElementById(id).textContent);showCopyResult(b,ok);}
+function downloadText(id,fn,b){try{const t=document.getElementById(id).textContent;const bl=new Blob([t],{type:'text/plain;charset=utf-8'});const u=URL.createObjectURL(bl);const a=document.createElement('a');a.href=u;a.download=fn;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);}catch(e){if(b){const o=b.textContent;b.textContent='✖ 保存不可';setTimeout(()=>{b.textContent=o;},3000);}}}</script></body></html>

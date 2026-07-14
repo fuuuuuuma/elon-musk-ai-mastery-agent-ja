@@ -1,0 +1,896 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>イーロン・マスクが使うプロンプト100選</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+<style>:root{--brand:#1C3461;--brand-deep:#16284A;--brand-soft:rgba(28,52,97,.08);--brand-line:rgba(28,52,97,.22);--accent:#5BBCD4;--accent-deep:#2C7A93;--accent-soft:rgba(91,188,212,.16);--bg:#F7FAFC;--paper:#FFFFFF;--ink:#1C3461;--ink-mid:#4A6080;--ink-sub:#8098B4;--line:rgba(28,52,97,.12);--head:'Noto Sans JP'}*{{box-sizing:border-box;margin:0;padding:0;}}
+body{{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',-apple-system,'Hiragino Sans',sans-serif;line-height:1.7;}}
+.doc{{max-width:920px;margin:0 auto;background:var(--paper);box-shadow:0 0 60px rgba(0,0,0,.10);min-height:100vh;}}
+.hero{{position:relative;background:linear-gradient(160deg,var(--brand-soft),var(--bg) 70%);padding:44px 46px 34px;border-bottom:3px solid var(--brand-line);}}
+.chan{{display:inline-flex;align-items:center;gap:11px;margin-bottom:14px;}}
+.chan img{{width:46px;height:46px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.16);}}
+.chan b{{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:16px;}}
+.chan b small{{display:block;font-size:11px;color:var(--ink-mid);font-weight:500;}}
+h1{{font-family:var(--head);font-weight:900;font-size:31px;color:var(--ink);line-height:1.25;}} h1 .hl{{color:var(--brand-deep);}}
+.hero p.sub{{font-size:16px;color:var(--ink-mid);font-weight:700;margin-top:12px;max-width:700px;}}
+section{{padding:30px 46px;border-bottom:1px solid var(--line);}}
+.h2{{font-family:var(--head);font-weight:900;font-size:21px;color:var(--ink);margin-bottom:8px;}}
+.cat{{font-family:var(--head);font-weight:900;font-size:18px;color:var(--brand-deep);margin:26px 0 12px;padding-bottom:7px;border-bottom:2px solid var(--brand-line);}}
+.catnav{{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 2px;}}
+.catnav a{{font-size:12.5px;font-weight:700;color:var(--brand-deep);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;}}
+.icard{{background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:13px;padding:15px 18px;margin-bottom:12px;}}
+.ititle{{font-family:var(--head);font-weight:900;font-size:16px;color:var(--ink);}}
+.imeta{{font-size:12.5px;color:var(--ink-mid);margin:4px 0 9px;}}
+pre.prompt{{background:var(--ink);color:#ECECEA;border-radius:10px;padding:14px 16px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.6;max-height:280px;overflow-y:auto;}}
+.btns{{margin-top:10px;display:flex;gap:9px;flex-wrap:wrap;}}
+.btn{{display:inline-flex;align-items:center;gap:7px;background:var(--accent);border:2px solid var(--accent-deep);color:var(--ink);border-radius:999px;padding:9px 20px;font-family:var(--head);font-weight:900;font-size:13.5px;cursor:pointer;text-decoration:none;}}
+.btn.sm{{padding:7px 15px;font-size:12.5px;}} .btn.ghost{{background:var(--paper);border:1.5px solid var(--line);color:var(--brand-deep);}}
+.linkcard{{display:flex;justify-content:space-between;align-items:center;gap:16px;border:2px solid var(--brand);border-radius:14px;padding:18px 22px;margin-bottom:13px;background:var(--bg);}}
+.linkcard .lt{{font-family:var(--head);font-weight:900;font-size:18px;color:var(--ink);}} .linkcard .ld{{font-size:13px;color:var(--ink-mid);margin-top:3px;}}
+.linkcard .cnt{{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:13px;background:var(--brand-soft);border-radius:999px;padding:4px 12px;display:inline-block;margin-bottom:6px;}}
+.recv{{background:var(--brand-soft);border:1.5px solid var(--brand-line);border-radius:13px;padding:18px 22px;}} .recv ol{{margin-left:20px;font-size:14.5px;}} .recv li{{margin-bottom:6px;}}
+.note{{background:var(--accent-soft);border:1.5px solid var(--accent);border-radius:12px;padding:14px 18px;font-size:13.5px;color:var(--ink);margin-top:14px;}}
+footer{{background:var(--ink);color:#EBEBE7;padding:26px 46px;font-size:13px;}}</style></head><body><svg style="display:none">
+  <symbol id="kawaru-logo" viewBox="0 0 406 93">
+    <rect x="6.67572e-06" y="13.4815" width="7.93029" height="74.5447" fill="currentColor"/>
+    <path d="M18.2397 52.7235L24.2772 47.5817L57.8911 88.0582L48.3318 88.0582L18.2397 52.7235Z" fill="#5BBCD4"/>
+    <path d="M34.8933 49.5514L40.9308 44.4096L77.2278 88.0366L67.4075 88.0262L34.8933 49.5514Z" fill="#5BBCD4"/>
+    <rect x="57.1908" y="2.92276" width="7.93029" height="83.5485" transform="rotate(42.3764 57.1908 2.92276)" fill="currentColor"/>
+    <rect x="59.4772" width="7.93029" height="22.2048" fill="currentColor"/>
+    <rect x="44.4096" y="7.9303" width="7.93029" height="22.9978" transform="rotate(-90 44.4096 7.9303)" fill="currentColor"/>
+    <path d="M110.882 61.3999L110.204 47.3281L135.413 20.7649H148.958L126.233 45.2211L119.46 52.4451L110.882 61.3999ZM99.9703 73.4399V20.7649H112.086V73.4399H99.9703ZM136.015 73.4399L117.278 50.4886L125.254 41.8349L150.237 73.4399H136.015ZM181.053 73.4399V65.5386L180.301 63.8079V49.6609C180.301 47.1525 179.523 45.196 177.968 43.7914C176.463 42.3867 174.13 41.6844 170.97 41.6844C168.813 41.6844 166.681 42.0355 164.574 42.7379C162.517 43.39 160.761 44.293 159.306 45.4469L155.092 37.2446C157.299 35.6895 159.958 34.4855 163.069 33.6326C166.179 32.7798 169.339 32.3534 172.55 32.3534C178.721 32.3534 183.512 33.8082 186.923 36.7179C190.334 39.6275 192.04 44.1676 192.04 50.3381V73.4399H181.053ZM168.712 74.0419C165.552 74.0419 162.843 73.5151 160.585 72.4616C158.328 71.358 156.597 69.878 155.393 68.0219C154.189 66.1657 153.587 64.0838 153.587 61.7761C153.587 59.3681 154.164 57.2611 155.318 55.4551C156.522 53.6491 158.403 52.2445 160.962 51.2411C163.52 50.1876 166.856 49.6609 170.97 49.6609H181.731V56.5086H172.249C169.49 56.5086 167.584 56.9601 166.53 57.8631C165.527 58.7661 165.025 59.8949 165.025 61.2494C165.025 62.7544 165.602 63.9584 166.756 64.8614C167.96 65.7142 169.59 66.1406 171.647 66.1406C173.604 66.1406 175.359 65.6891 176.915 64.7861C178.47 63.833 179.599 62.4534 180.301 60.6474L182.107 66.0654C181.254 68.674 179.699 70.6556 177.441 72.0101C175.184 73.3646 172.274 74.0419 168.712 74.0419ZM213.443 73.4399L198.844 32.9554H209.906L222.021 67.7961H216.754L229.396 32.9554H239.329L251.594 67.7961H246.327L258.818 32.9554H269.203L254.529 73.4399H243.166L232.406 43.5656H235.867L224.73 73.4399H213.443ZM300.427 73.4399V65.5386L299.675 63.8079V49.6609C299.675 47.1525 298.897 45.196 297.342 43.7914C295.837 42.3867 293.504 41.6844 290.344 41.6844C288.187 41.6844 286.055 42.0355 283.948 42.7379C281.891 43.39 280.135 44.293 278.68 45.4469L274.466 37.2446C276.674 35.6895 279.332 34.4855 282.443 33.6326C285.553 32.7798 288.714 32.3534 291.924 32.3534C298.095 32.3534 302.886 33.8082 306.297 36.7179C309.708 39.6275 311.414 44.1676 311.414 50.3381V73.4399H300.427ZM288.086 74.0419C284.926 74.0419 282.217 73.5151 279.959 72.4616C277.702 71.358 275.971 69.878 274.767 68.0219C273.563 66.1657 272.961 64.0838 272.961 61.7761C272.961 59.3681 273.538 57.2611 274.692 55.4551C275.896 53.6491 277.777 52.2445 280.336 51.2411C282.894 50.1876 286.23 49.6609 290.344 49.6609H301.105V56.5086H291.623C288.864 56.5086 286.958 56.9601 285.904 57.8631C284.901 58.7661 284.399 59.8949 284.399 61.2494C284.399 62.7544 284.976 63.9584 286.13 64.8614C287.334 65.7142 288.964 66.1406 291.021 66.1406C292.978 66.1406 294.734 65.6891 296.289 64.7861C297.844 63.833 298.973 62.4534 299.675 60.6474L301.481 66.0654C300.628 68.674 299.073 70.6556 296.815 72.0101C294.558 73.3646 291.648 74.0419 288.086 74.0419ZM324.296 73.4399V32.9554H335.508V44.3934L333.928 41.0824C335.132 38.2229 337.063 36.0657 339.722 34.6109C342.381 33.1059 345.617 32.3534 349.429 32.3534V43.1894C348.928 43.1392 348.476 43.1141 348.075 43.1141C347.674 43.064 347.247 43.0389 346.796 43.0389C343.585 43.0389 340.976 43.967 338.97 45.8231C337.013 47.6291 336.035 50.4635 336.035 54.3264V73.4399H324.296ZM376.043 74.0419C372.681 74.0419 369.671 73.3897 367.013 72.0854C364.404 70.781 362.372 68.7995 360.917 66.1406C359.462 63.4316 358.735 59.9952 358.735 55.8314V32.9554H370.474V54.1006C370.474 57.4618 371.176 59.945 372.581 61.5504C374.036 63.1055 376.068 63.8831 378.676 63.8831C380.482 63.8831 382.088 63.5069 383.492 62.7544C384.897 61.9517 386.001 60.7477 386.803 59.1424C387.606 57.4869 388.007 55.43 388.007 52.9719V32.9554H399.746V73.4399H388.609V62.3029L390.641 65.5386C389.287 68.348 387.28 70.48 384.621 71.9349C382.012 73.3395 379.153 74.0419 376.043 74.0419Z" fill="currentColor"/>
+  </symbol>
+</svg><div class="doc">
+<div class="hero"><div class="chan"><svg width="120" height="27" style="color:var(--brand);flex-shrink:0"><use href="#kawaru-logo"/></svg><b>AIエージェント<small>Kawaru</small></b></div><h1>🎁 <span class="hl">イーロン・マスクが使うプロンプト100選</span></h1><p class="sub">第一原理・マルチエージェント・高速反復・自動化（/goal・/loop入り）。</p>
+<div class="btns" style="margin-top:14px;"><a class="btn ghost" href="./present.html">← プレゼント一覧へ</a><button class="btn" onclick="downloadText('pfull','elon-prompts-100.md',this)">⬇ 全100本まとめてDL（.md）</button></div>
+<div class="catnav"><a href="#c0">第一原理で考える</a><a href="#c1">マルチエージェントで並列化</a><a href="#c2">高速反復と検証</a><a href="#c3">自動化・仕組み化</a><a href="#c4">ディープリサーチと裏取り</a><a href="#c5">意思決定・優先順位・リスク</a><a href="#c6">経営・戦略・スピード</a><a href="#c7">エンジニアリング・実装・レビュー</a><a href="#c8">発信・コミュニケーション・交渉</a><a href="#c9">生産性・時間・自己マネジメント</a></div></div>
+<section><div class="cat" id="c0">第一原理で考える</div>
+<div class="icard"><div class="ititle">1. 前提を疑って要件を本質まで分解する</div><div class="imeta">場面: 新しい企画や機能に着手する前</div><pre class="prompt" id="p1">[対象のタスク・企画]について、まず「本当に必要な条件は何か」をユーザーや目的の本質までさかのぼって分解してください。次に、慣習や過去のやり方を理由にしているだけの要素を別枠でリストアップし、それぞれ本当に必要かどうかを一つずつ問い直してから、最小構成の実行案を提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p1',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">2. コスト構造を最小単位まで分解する</div><div class="imeta">場面: 開発・制作・運営のコストが膨らんでいると感じるとき</div><pre class="prompt" id="p2">[対象のプロジェクト]のコスト構造(時間・工数・外部サービス費用など)を、これ以上分解できない最小の要素まで洗い出してください。各要素について「削れる理由」「削れない理由」を明示し、合計を圧縮できる組み合わせを3パターン、優先順位付きで提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p2',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">3. 「本当の制約」と「思い込みの制約」を仕分ける</div><div class="imeta">場面: 「これは無理」という壁にぶつかったとき</div><pre class="prompt" id="p3">いま[対象]について「できない理由」として挙がっている項目を一つずつ挙げてください。それぞれが物理的・技術的に動かせない制約なのか、単なる慣習やルール、思い込みなのかを判定し、後者だけを対象にした回避策を考えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p3',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">4. ゼロベースで仕様を作り直す</div><div class="imeta">場面: 既存の仕様や運用が複雑になりすぎたと感じるとき</div><pre class="prompt" id="p4">既存の[仕様書・運用ルール]を一度読み込んだうえで、過去の経緯を無視してゼロから設計し直すとしたら何が最小構成になるかを提案してください。現行との差分を一覧にし、削れる機能と残すべき機能をそれぞれ理由付きで示してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p4',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">5. 「なぜ」を5回掘り下げて根本原因を特定する</div><div class="imeta">場面: 不具合や非効率の原因がはっきりしないとき</div><pre class="prompt" id="p5">[問題・症状]について「なぜそうなっているのか」を5段階掘り下げてください。各段階で得られた答えを次の問いの出発点にし、最後にたどり着いた根本原因と、それに対する対処案を提示してください。表面的な対症療法は、根本対処と分けて最後に補足として示してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p5',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">6. 目的と手段を切り離して再定義する</div><div class="imeta">場面: やり方が目的化していると感じるとき</div><pre class="prompt" id="p6">[施策・業務]について、そもそもの目的(達成したい状態)を1文で定義し直してください。そのうえで、いま採用している手段がその目的に対して最短ルートかどうかを検証し、目的は変えずに手段だけを差し替える案を2〜3個出してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p6',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">7. 会議・承認フローを「無くしても回るか」で検証する</div><div class="imeta">場面: 意思決定に時間がかかりすぎていると感じるとき</div><pre class="prompt" id="p7">[対象の業務プロセス]に含まれる会議・承認・確認の工程を一つずつ挙げてください。それぞれについて「その工程を無くした場合に何が壊れるか」を具体的に検証し、壊れないと判断できる工程だけを削った新しいフロー案を作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p7',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">8. 価格・条件を慣習ではなく提供価値から組み直す</div><div class="imeta">場面: 料金体系や契約条件を見直すとき</div><pre class="prompt" id="p8">[商品・サービス]の現在の価格・条件が、業界の慣習と提供している価値のどちらを基準に決まっているかを切り分けてください。提供価値だけを基準にした場合の価格・条件を再設計し、現行との差分と、その差分が正当化できる理由を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p8',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">9. 採用・依頼要件を「本当に必要な能力」まで絞り込む</div><div class="imeta">場面: 新しい人やパートナーを探すとき</div><pre class="prompt" id="p9">[募集したい役割]の要件を、肩書きや経歴ではなく「その役割が実際に発揮すべき能力」だけを基準に書き直してください。慣習で入っている条件(学歴・年数など)は別枠に出し、それぞれ本当に必要かどうかを判定してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p9',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">10. 指標・KPIを目的に直結する最小セットまで削る</div><div class="imeta">場面: 追っている指標が多すぎると感じるとき</div><pre class="prompt" id="p10">いま追っている指標を全部洗い出してください。それぞれについて、最終的な目的([目的])にどれだけ直結しているかを判定し、直結していない指標を削った最小セットを提案してください。削った指標を見なくても目的達成の進捗が追える理由もあわせて説明してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p10',this)">📋 コピー</button></div></div><div class="cat" id="c1">マルチエージェントで並列化</div>
+<div class="icard"><div class="ititle">11. 複数の専門家視点を並列で走らせて統合する</div><div class="imeta">場面: 一つの企画・資料を多角的にチェックしたいとき</div><pre class="prompt" id="p11">[企画・資料]について、「[視点A]」「[視点B]」「[視点C]」の3つの専門家役をsubagentとして並列で走らせ、それぞれの立場から改善点を洗い出してください。最後に3つの意見を統合し、重複や矛盾を整理したうえで優先順位付きの改善リストにまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p11',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">12. 賛成派と反対派を戦わせて判断材料にする</div><div class="imeta">場面: 判断に迷う意思決定をするとき</div><pre class="prompt" id="p12">[検討中の案]について、賛成の立場で最大限支持するsubagentと、反対の立場で最大限反論するsubagentを並列で走らせてください。両者の主張を突き合わせ、どちらの論点がより具体的な根拠に基づいているかを整理し、最終判断の材料としてまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p12',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">13. 実装役とレビュー役を分離して並走させる</div><div class="imeta">場面: 制作物の品質を自分以外の目でも確認したいとき</div><pre class="prompt" id="p13">[制作物]について、作成を担当するsubagentと、それを厳しくレビューするsubagentを分けて動かしてください。レビュー担当には作成担当の意図を伝えず独立した視点でチェックさせ、指摘事項を反映した最終版を出してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p13',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">14. 複数のペルソナで同時にコンテンツを検証する</div><div class="imeta">場面: 発信内容が狙った相手に届くか確認したいとき</div><pre class="prompt" id="p14">この[原稿・企画]を、[ペルソナA]・[ペルソナB]・[ペルソナC]という異なる読み手を演じるsubagentに並列で読ませてください。それぞれの立場から「分かりにくい箇所」「刺さらない箇所」を指摘させ、共通して挙がった課題を優先して直してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p14',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">15. リサーチ班と検証班を分けて並列に走らせる</div><div class="imeta">場面: 情報収集と裏取りを同時に進めたいとき</div><pre class="prompt" id="p15">[調べたいテーマ]について、情報を集めるsubagentと、集まった情報の根拠・整合性を検証するsubagentを並列で走らせてください。検証班は事実と推測を区別したうえで疑わしい箇所にフラグを立て、両者の結果を突き合わせた最終レポートを作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p15',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">16. 原稿・台本を専門分野別のsubagentで多角レビューする</div><div class="imeta">場面: 発信前の原稿を仕上げるとき</div><pre class="prompt" id="p16">この[原稿・台本]を、「構成」「表現の分かりやすさ」「事実関係」の3観点を担当する3つのsubagentに並列でレビューさせてください。各subagentの指摘を観点ごとに分けて一覧化し、優先して直すべき順に並べ替えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p16',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">17. 障害・不具合の原因候補を手分けして洗わせる</div><div class="imeta">場面: 原因がまだ絞り込めていない不具合が起きたとき</div><pre class="prompt" id="p17">[発生している不具合]について、考えられる原因カテゴリ([カテゴリ例])ごとにsubagentを割り当て、並列で調査させてください。各subagentには自分の担当領域だけを深掘りさせ、最後に全員の調査結果を突き合わせて最も可能性が高い原因を絞り込んでください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p17',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">18. 楽観シナリオと悲観シナリオを並列で試算する</div><div class="imeta">場面: 計画の前提が不確実なとき</div><pre class="prompt" id="p18">[計画・企画]について、楽観的な前提で試算するsubagentと、悲観的な前提で試算するsubagentを並列で走らせてください。両シナリオの差が生まれる要因を特定したうえで、現実的な着地点と、その着地点でも成立する計画かどうかを判定してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p18',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">19. /goal で大規模な調査・資料作成を自律実行する</div><div class="imeta">場面: 未知の対象(リポジトリ・市場・競合)の全体像を短時間で把握したいとき</div><pre class="prompt" id="p19">/goal [対象]の全体像を調査し、構成・主要な要素・外部依存・改善の余地がありそうな箇所をレポートにまとめる。主要な領域ごとにsubagentを並列で割り当てて調査させ、最後に自分(メインエージェント)が結果を統合して1本のレポートにまとめる。ゴールを達成した、またはターン上限に達したら停止する。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p19',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">20. 専門パネルを模した並列レビューを意思決定前に回す</div><div class="imeta">場面: 重い意思決定の前に多面的な検証をしたいとき</div><pre class="prompt" id="p20">[検討中の意思決定]について、異なる専門分野([分野A][分野B][分野C]など)を担当するsubagentのパネルを並列で編成してください。各subagentに独立して評価させたあと、意見が割れた論点だけを抽出し、その論点に絞って追加で深掘りさせてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p20',this)">📋 コピー</button></div></div><div class="cat" id="c2">高速反復と検証</div>
+<div class="icard"><div class="ititle">21. 最小構成で動くものを先に作らせてから磨く</div><div class="imeta">場面: 完璧な設計を先に固めようとして手が止まっているとき</div><pre class="prompt" id="p21">[作りたいもの]について、まずは動くだけの最小構成(不要な機能を全部省いたバージョン)を作ってください。完成後に、動かしてみて分かった問題点だけを踏まえて、次に改善すべき箇所を優先順位付きで提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p21',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">22. 失敗ログから対症療法ではなく根本原因を直させる</div><div class="imeta">場面: エラーや失敗が繰り返し起きているとき</div><pre class="prompt" id="p22">この[エラーログ・失敗の記録]を読み、表面的な対処ではなく根本原因を特定してください。根本原因への修正案と、応急処置としての対症療法を分けて提示し、どちらを先に適用すべきかも理由つきで示してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p22',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">23. 一晩で試せる最小の検証プランを立てる</div><div class="imeta">場面: アイデアの筋の良し悪しを早く見極めたいとき</div><pre class="prompt" id="p23">[アイデア]について、時間をかけずに検証できる最小の実験プランを立ててください。何を測定すれば「筋が良い/悪い」を判断できるか基準を先に決め、その基準に沿って結果の解釈方法まで含めて設計してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p23',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">24. プロトタイプを複数パターン並行で作って比較する</div><div class="imeta">場面: どの方向性が良いか決めかねているとき</div><pre class="prompt" id="p24">[作りたいもの]について、方向性の異なるプロトタイプを3パターン並行で作ってください。それぞれの狙い・トレードオフを整理したうえで、[判断基準]に照らして比較し、次に進めるべき案を推薦してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p24',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">25. 出た結論を別のやり方でも再現するか検証する</div><div class="imeta">場面: 一度の分析結果をそのまま信用してよいか不安なとき</div><pre class="prompt" id="p25">先ほど出した[結論・分析結果]について、異なる切り口・異なる方法で同じ結論に至るかを再検証してください。結果が一致した場合はその根拠を、食い違った場合はどちらがより信頼できるかを、理由とともに示してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p25',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">26. テストを先に書かせてから実装させる</div><div class="imeta">場面: 実装の前に期待する挙動を明確にしておきたいとき</div><pre class="prompt" id="p26">[実装したい機能]について、実装より先に期待する挙動を表すテストを書いてください。テストが合意できたら、そのテストが通ることを目標に実装を進め、テストを満たさない実装は行わないでください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p26',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">27. リリース後の反応から次の修正案をすぐ出させる</div><div class="imeta">場面: 公開・実施した施策の反応が出始めたとき</div><pre class="prompt" id="p27">[施策・コンテンツ]についてここまでに得られた反応・数値を整理してください。良かった点・想定と違った点をそれぞれ特定し、次の修正で試すべき変更点を、優先順位付きで2〜3個提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p27',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">28. 遠回りな手順を最短ルートに作り直させる</div><div class="imeta">場面: 一連の作業フローに無駄が多いと感じるとき</div><pre class="prompt" id="p28">[作業フロー]の各手順を洗い出し、それぞれが最終成果物にどう貢献しているかを判定してください。貢献度が低い、または省略できる手順を特定し、最短ルートで同じ成果を得られる新しいフロー案を作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p28',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">29. 「動くけど遅い」状態のボトルネックだけを特定させる</div><div class="imeta">場面: 動作はしているが速度・効率に課題があるとき</div><pre class="prompt" id="p29">[対象の処理・作業]について、全体をやみくもに直すのではなく、最も時間や工数を消費しているボトルネックを特定してください。ボトルネック以外の箇所は変更せず、特定した箇所だけを改善する最小の修正案を出してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p29',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">30. /loop で一定間隔ごとにテスト結果を確認し続ける</div><div class="imeta">場面: 実装を進めながらテストの状態を継続的に把握したいとき</div><pre class="prompt" id="p30">/loop 15m
+[対象プロジェクト]のテストを実行し、失敗しているテストがあれば要約して報告してください。失敗がなければ「異常なし」とだけ短く報告し、次の周回に進んでください。新しく失敗が発生した場合のみ、原因の見立ても添えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p30',this)">📋 コピー</button></div></div><div class="cat" id="c3">自動化・仕組み化</div>
+<div class="icard"><div class="ititle">31. /goal で大規模調査を自律実行する</div><div class="imeta">場面: 手をつけられていない全体調査を一気に片付けたいとき</div><pre class="prompt" id="p31">/goal [対象]全体を調査し、構成・主要な処理や仕組みの流れ・外部依存・改善の余地がありそうな箇所をレポートにまとめる。各領域はsubagentを並列で割り当てて調査させ、最後に自分(メインエージェント)が結果を統合して1本のレポートにまとめる。ゴールを達成した、またはターン上限に達したら停止する。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p31',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">32. /goal 複数タスクを並列subagentに割り振って自律的に進める</div><div class="imeta">場面: 独立した複数のタスクを一気に片付けたいとき</div><pre class="prompt" id="p32">/goal 次の[N]個のタスクを並列のsubagentに割り振って進める。
+1) [タスク1]
+2) [タスク2]
+3) [タスク3]
+各subagentの結果は個別に報告させ、最後に重複や矛盾がないかを自分で確認してから一つのレポートにまとめる。ゴールを達成した、またはターン上限に達したら停止する。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p32',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">33. /goal 資料作成を章立てから完成まで自律実行する</div><div class="imeta">場面: 大型の資料・ドキュメントを一気通貫で作りたいとき</div><pre class="prompt" id="p33">/goal [テーマ]について、章立てを設計し、各章をsubagentに並列で執筆させ、最後に自分(メインエージェント)が全体のトーンと事実関係を統一して1本の資料にまとめる。誇張表現や未確認の断定がないかも最終チェックの対象に含める。ゴールを達成した、またはターン上限に達したら停止する。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p33',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">34. /goal 定型業務フローをまるごと自律化する</div><div class="imeta">場面: 毎回同じ手順を繰り返している業務があるとき</div><pre class="prompt" id="p34">/goal [定型業務]の一連の手順を自律的に実行する。各ステップで何を判断基準にするかを先に整理し、判断に迷うステップだけ自分に確認を求める。それ以外は自律的に最後まで進め、完了後に実施内容の記録を残す。ゴールを達成した、またはターン上限に達したら停止する。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p34',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">35. /loop で一定間隔ごとに監視を回し続ける</div><div class="imeta">場面: システムやサービスの異常にいち早く気づきたいとき</div><pre class="prompt" id="p35">/loop 30m
+[対象システム]の稼働状況・エラーログを確認してください。異常があれば内容を要約して報告し、想定される原因まで添えてください。異常がなければ「異常なし」とだけ短く報告し、次の周回に進んでください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p35',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">36. /loop で一定間隔ごとに定期リサーチを回し続ける</div><div class="imeta">場面: 特定分野の最新動向を継続的に追いたいとき</div><pre class="prompt" id="p36">/loop 1h
+[追いたいテーマ]について新しい動きがないか確認してください。新しい情報があれば要点を3行以内で報告し、なければ「更新なし」とだけ報告して次の周回に進んでください。重要度が高いと判断した情報だけ詳細を添えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p36',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">37. /loop で一定間隔ごとに定期レポートを生成し続ける</div><div class="imeta">場面: 数値や進捗を定点観測したいとき</div><pre class="prompt" id="p37">/loop 24h
+[対象の数値・指標]を確認し、前回との差分を中心に短いレポートを作成してください。大きな変化があった項目だけ理由の仮説も添え、変化が小さい項目は数値の記載のみにとどめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p37',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">38. /loop で一定間隔ごとに進捗確認を回し続ける</div><div class="imeta">場面: 進行中の複数タスクの停滞にすぐ気づきたいとき</div><pre class="prompt" id="p38">/loop 2h
+進行中の[タスク一覧]の状態を確認してください。前回の確認から進捗がないタスクがあれば理由を推測して報告し、進んでいるタスクは一言で状況だけ報告してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p38',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">39. 繰り返し作業のルールをプロジェクト設定に落とし込む</div><div class="imeta">場面: 同じ指摘・同じやり直しを何度も繰り返しているとき</div><pre class="prompt" id="p39">これまでのやり取りで繰り返し発生している指摘・修正パターンを洗い出してください。それぞれについて、次回から自動的に守られるようルール化し、プロジェクトの設定ファイル(AGENTS.md/CLAUDE.md相当)に追記する形でまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p39',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">40. うまくいった手順をスキル化して再利用可能にする</div><div class="imeta">場面: 一度うまくいったやり方を毎回イチから説明し直しているとき</div><pre class="prompt" id="p40">今回うまくいった[作業・手順]の流れを振り返り、次回以降に再利用できる形(スキル)に落とし込んでください。前提条件・手順・注意点を整理し、/skillifyの要領で、次回は名前を呼ぶだけで同じ品質の結果が出るようにまとめてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p40',this)">📋 コピー</button></div></div><div class="cat" id="c4">ディープリサーチと裏取り</div>
+<div class="icard"><div class="ititle">41. 一次情報と伝聞を分けて整理する</div><div class="imeta">場面: 情報の信頼度を見極めたいとき</div><pre class="prompt" id="p41">[調べたいテーマ]について集めた情報を、一次情報(本人・公式発表など)と伝聞・要約・又聞きに分けて整理してください。伝聞情報については、可能な限り元になった一次情報を探し、見つからない場合はその旨を明記してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p41',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">42. 複数ソースを突き合わせて矛盾点を洗い出す</div><div class="imeta">場面: 情報源によって内容が食い違っていそうなとき</div><pre class="prompt" id="p42">[調べたいテーマ]について複数の情報源を集め、内容が一致している点と食い違っている点を分けて整理してください。食い違っている点については、それぞれの情報源の性質(公式/非公式、発信時期など)を踏まえてどちらが信頼できるかを検討してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p42',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">43. 反対意見・懐疑的な意見もあわせて検討する</div><div class="imeta">場面: 一つの見方に偏っていないか確認したいとき</div><pre class="prompt" id="p43">[テーマ・主張]について、肯定的な情報だけでなく、懐疑的・批判的な意見も意図的に集めてください。両方の主張の根拠を並べて比較し、どちらがより具体的な事実に基づいているかを整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p43',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">44. 数字の出典と前提条件を確認する</div><div class="imeta">場面: 資料やニュースに出てくる数字を引用したいとき</div><pre class="prompt" id="p44">[引用したい数字・統計]について、出典と、その数字がどんな前提条件・調査方法のもとで出されたものかを確認してください。前提条件が異なる別の数字と単純比較できない場合は、その旨を明記したうえで扱ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p44',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">45. 最新動向を要点だけに圧縮して報告する</div><div class="imeta">場面: 忙しい中で分野の動きを素早く把握したいとき</div><pre class="prompt" id="p45">[分野・トピック]の直近の動向を調べ、知っておくべき要点を3〜5個に圧縮して報告してください。重要度が低い枝葉の情報は省略し、判断や行動に関わる情報を優先してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p45',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">46. 競合・類似事例を横並びで比較表にする</div><div class="imeta">場面: 自分たちの立ち位置を客観的に把握したいとき</div><pre class="prompt" id="p46">[比較したい対象]について、[比較軸]を基準にした比較表を作成してください。情報が確認できなかった項目は空欄のままにせず「未確認」と明記し、推測で埋めないでください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p46',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">47. 情報の鮮度をそろえて報告する</div><div class="imeta">場面: 情報が古いまま判断材料にされるのを防ぎたいとき</div><pre class="prompt" id="p47">[調べたテーマ]についてまとめる際、それぞれの情報がいつ時点のものかを明記してください。情報源によって鮮度が大きく異なる場合は、最新の情報を優先しつつ、古い情報は参考情報として区別してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p47',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">48. 未確認情報には「未確認」と明示してまとめる</div><div class="imeta">場面: 裏取りが間に合っていない情報を扱うとき</div><pre class="prompt" id="p48">[調べたテーマ]について、確認が取れた事実と、確認が取れていない推測・伝聞を明確に分けてまとめてください。確認が取れていない項目は断定せず「未確認」と明記し、それらしい数字や固有名詞で穴埋めしないでください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p48',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">49. 専門用語をかみ砕きながら要約する</div><div class="imeta">場面: 専門外の相手にも分かるように伝えたいとき</div><pre class="prompt" id="p49">[専門的なテーマ・資料]を、専門用語を使わずに要約してください。どうしても必要な専門用語は、日常語での言い換えや簡単な比喩を添えて説明してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p49',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">50. リサーチ結果から次に決めるべきことまで落とし込む</div><div class="imeta">場面: 調べただけで終わらせたくないとき</div><pre class="prompt" id="p50">ここまでのリサーチ結果を踏まえて、「次に何を決める必要があるか」「その決定に必要な追加情報は何か」を整理してください。情報収集で終わらせず、次のアクションにつながる形で結論を提示してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p50',this)">📋 コピー</button></div></div><div class="cat" id="c5">意思決定・優先順位・リスク</div>
+<div class="icard"><div class="ititle">51. 複数の選択肢をメリット・デメリットで並べる</div><div class="imeta">場面: 複数の選択肢の中から一つを選ぶとき</div><pre class="prompt" id="p51">[検討中の選択肢一覧]について、それぞれのメリット・デメリットを同じ基準で並べてください。基準が曖昧な項目は推測で埋めず、判断に必要だが不足している情報があれば明記してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p51',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">52. 「今やらない場合に何が起きるか」を先に整理する</div><div class="imeta">場面: 着手を先延ばしにしがちな案件があるとき</div><pre class="prompt" id="p52">[先延ばしにしている案件]について、いま着手しない場合に1ヶ月後・3ヶ月後・半年後にそれぞれ何が起きうるかを整理してください。放置コストが明確になった場合は、優先度を上げるべきかどうかも判定してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p52',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">53. 最悪のシナリオを具体化してから判断する</div><div class="imeta">場面: リスクを取るかどうか迷っているとき</div><pre class="prompt" id="p53">[検討中の意思決定]について、起こりうる最悪のシナリオを具体的に描写してください。そのシナリオが実際に起きた場合の対処可能性も評価したうえで、リスクを取る価値があるかどうかの判断材料を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p53',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">54. 優先順位を影響度×緊急度で機械的に並べ替える</div><div class="imeta">場面: タスクが多すぎて優先順位が主観的になっているとき</div><pre class="prompt" id="p54">[対象のタスク一覧]について、それぞれの影響度と緊急度を評価し、機械的な基準で優先順位を並べ替えてください。感覚的に優先したくなる項目があれば、その理由が影響度・緊急度のどちらに基づくものかも明示してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p54',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">55. 決断を先延ばしにしている理由を言語化する</div><div class="imeta">場面: 決めるべきことをずっと決められずにいるとき</div><pre class="prompt" id="p55">[決めかねている件]について、なぜ今まで決断を先延ばしにしてきたのかを言語化してください。情報不足が理由なら足りない情報を、心理的な要因が理由ならその要因を具体的に挙げ、決断に必要な最後のピースを特定してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p55',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">56. 撤退基準を先に決めてから着手する</div><div class="imeta">場面: 新しい取り組みを始める前</div><pre class="prompt" id="p56">[新しく始める取り組み]について、着手する前に「どうなったら撤退するか」という基準を具体的な数値や期限で決めてください。基準を曖昧にせず、後から都合よく解釈できない形で言語化してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p56',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">57. 一度決めた方針への反対意見をあえて集める</div><div class="imeta">場面: 方針が固まった直後、思い込みで進めていないか確認したいとき</div><pre class="prompt" id="p57">すでに決定した[方針]について、あえて反対の立場から批判的な意見を集めてください。反論の中に見落としていた論点があれば、方針を修正すべきかどうかを再検討してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p57',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">58. 小さく試してから広げる計画に分解する</div><div class="imeta">場面: いきなり大きく展開するのがリスクに感じるとき</div><pre class="prompt" id="p58">[展開したい施策]について、いきなり全体に広げるのではなく、小さく試してから段階的に広げる計画に分解してください。各段階での成功判定基準と、次の段階に進む条件をあらかじめ決めてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p58',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">59. 判断に必要な情報が何かを先に洗い出す</div><div class="imeta">場面: 情報収集を始める前に何を集めるべきか整理したいとき</div><pre class="prompt" id="p59">[判断したいテーマ]について結論を出す前に、その判断に本当に必要な情報は何かを先に洗い出してください。すでに手元にある情報と、まだ足りていない情報を分け、足りていない情報をどう集めるかまで整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p59',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">60. 「やめる」選択肢も同列で比較する</div><div class="imeta">場面: 続けることが前提になってしまっているとき</div><pre class="prompt" id="p60">[継続中の取り組み]について、「このまま続ける」「縮小する」「やめる」の3つの選択肢を同列に並べて比較してください。「続ける」が無条件の前提になっていないか確認し、それぞれの選択肢のメリット・デメリットを公平に評価してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p60',this)">📋 コピー</button></div></div><div class="cat" id="c6">経営・戦略・スピード</div>
+<div class="icard"><div class="ititle">61. 複数事業・プロジェクトの進捗を一枚で並べて比較する</div><div class="imeta">場面: 複数の取り組みを同時に把握したいとき</div><pre class="prompt" id="p61">[進行中の事業・プロジェクト一覧]について、進捗状況・課題・次のマイルストーンを同じフォーマットで一覧化してください。停滞している取り組みが一目で分かるように、進捗の遅れが大きい順に並べてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p61',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">62. 意思決定スピードを落としているボトルネックを洗い出す</div><div class="imeta">場面: 複数の取り組みが軒並み遅れていると感じるとき</div><pre class="prompt" id="p62">[対象の組織・プロジェクト群]で意思決定が遅くなっている原因を洗い出してください。個別の事情ではなく複数の案件に共通しているボトルネックを特定し、その共通ボトルネックを解消する案を優先して提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p62',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">63. 権限委譲できる判断とできない判断を仕分ける</div><div class="imeta">場面: 自分に判断が集中しすぎていると感じるとき</div><pre class="prompt" id="p63">いま自分(または特定の担当者)に集まっている判断を洗い出してください。それぞれについて、他のメンバーに委譲しても問題ない判断と、委譲すべきでない判断を仕分け、委譲可能な判断については委譲先と判断基準を提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p63',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">64. リソース配分を「最も伸びる場所」基準で組み直す</div><div class="imeta">場面: 複数の取り組みにリソースを分散させているとき</div><pre class="prompt" id="p64">[対象の事業・プロジェクト群]への現在のリソース配分を整理してください。それぞれの伸びしろ・投資対効果を比較し、慣習ではなく「最も伸びる場所」を基準にした配分案を提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p64',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">65. 撤退・縮小すべき事業候補を機械的に洗い出す</div><div class="imeta">場面: 複数の取り組みの中で見直しが必要なものを判定したいとき</div><pre class="prompt" id="p65">[対象の事業・プロジェクト一覧]について、成長性・収益性・戦略的重要度を基準にスコアリングしてください。スコアが低い候補を機械的に抽出し、それぞれ撤退・縮小・継続のどれが妥当かを理由とともに提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p65',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">66. 会議体を削って意思決定を早める案を出す</div><div class="imeta">場面: 会議が多く意思決定が遅れていると感じるとき</div><pre class="prompt" id="p66">[対象組織]で定期的に行われている会議の一覧を整理してください。それぞれの会議の目的と、その目的が会議以外の手段(非同期の報告など)で達成できないかを検討し、削減・統合できる会議を提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p66',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">67. 複数事業に共通する仕組みを一本化する案を出す</div><div class="imeta">場面: 似たような業務が事業ごとにバラバラに存在しているとき</div><pre class="prompt" id="p67">[対象の複数事業・複数チーム]で、それぞれ個別に運用されている似た仕組み(ツール・フォーマット・手順など)を洗い出してください。一本化できるものを特定し、一本化した場合のメリットと、一本化に伴うリスクを整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p67',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">68. /goal 複数事業・複数プロジェクトの進行管理を自律的に回す</div><div class="imeta">場面: 複数の取り組みの状況把握を仕組み化したいとき</div><pre class="prompt" id="p68">/goal [対象の事業・プロジェクト一覧]について、それぞれの進捗・課題・次のアクションを継続的に把握する。各プロジェクトはsubagentを割り当てて並列に状況を確認させ、停滞や異常を検知したら要約して報告する。ゴールを達成した、またはターン上限に達したら停止する。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p68',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">69. 新規参入の勝ち筋を第一原理から組み立てる</div><div class="imeta">場面: 新しい市場・領域への参入を検討しているとき</div><pre class="prompt" id="p69">[検討中の新市場・新領域]について、既存プレイヤーのやり方を前提にせず、第一原理から「勝つとしたらどんな条件が必要か」を組み立ててください。その条件を自分たちが満たせるか、満たすには何が必要かも整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p69',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">70. 「前例主義」で止まっている案件を洗い出す</div><div class="imeta">場面: 過去に例がないという理由だけで進んでいない案件があるとき</div><pre class="prompt" id="p70">[対象組織]で、「前例がない」という理由で止まっている、または検討すら始まっていない案件を洗い出してください。それぞれについて、前例がないこと自体がリスクなのか、単に検討されていないだけなのかを切り分けてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p70',this)">📋 コピー</button></div></div><div class="cat" id="c7">エンジニアリング・実装・レビュー</div>
+<div class="icard"><div class="ititle">71. Plan Modeでまず実装計画を立ててから着手する</div><div class="imeta">場面: 実装に入る前に方針を固めたいとき</div><pre class="prompt" id="p71">[実装したい機能]について、いきなりコードを書き始めず、まずPlan Modeで実装方針・変更範囲・想定されるリスクを整理した計画を作ってください。計画に合意できたら、その計画に沿って実装に進んでください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p71',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">72. 最大8並列のsubagentでモジュールごとに実装を分担する</div><div class="imeta">場面: 独立性の高い複数モジュールをまとめて実装したいとき</div><pre class="prompt" id="p72">[対象の実装タスク]を、独立して進められるモジュール単位に分割してください。分割した各モジュールをsubagentに並列(最大8並列)で割り当てて実装させ、完了後にモジュール間の整合性を自分で確認してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p72',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">73. 実装役とレビュー役を分けて相互チェックする</div><div class="imeta">場面: 実装したコードの品質を客観的に確認したいとき</div><pre class="prompt" id="p73">[実装したコード]について、実装した内容を知らない前提でレビュー用のsubagentを立て、バグ・可読性・設計上の懸念を洗い出させてください。指摘事項を重大度別に分類し、優先して直すべき順に並べてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p73',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">74. セキュリティ観点だけで専用レビューを走らせる</div><div class="imeta">場面: 実装後にセキュリティ面の抜けがないか確認したいとき</div><pre class="prompt" id="p74">[対象のコード・機能]について、セキュリティの観点だけに絞った専用レビューを行ってください。入力値の検証・認証認可・秘密情報の扱いなど、想定される懸念点を洗い出し、それぞれの深刻度と対処案を示してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p74',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">75. パフォーマンス観点だけで専用レビューを走らせる</div><div class="imeta">場面: 動作は正しいが速度・負荷に不安があるとき</div><pre class="prompt" id="p75">[対象のコード・処理]について、パフォーマンスの観点だけに絞った専用レビューを行ってください。ボトルネックになりうる箇所を特定し、それぞれの改善優先度と、改善によって見込める効果を整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p75',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">76. MCP経由で外部ツール連携する設計を提案する</div><div class="imeta">場面: 外部データ・外部サービスと連携する機能を作りたいとき</div><pre class="prompt" id="p76">[実現したい連携機能]について、MCPを介して外部ツール・外部データと連携する設計を提案してください。必要な権限・想定されるエラーケース・失敗時のフォールバック挙動もあわせて整理してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p76',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">77. 既存コードの技術的負債を洗い出して優先順位をつける</div><div class="imeta">場面: 開発の足かせになっている負債を整理したいとき</div><pre class="prompt" id="p77">[対象のコードベース]を調査し、技術的負債(重複コード・古い依存関係・設計上の無理など)を洗い出してください。それぞれが開発速度や不具合発生にどの程度影響しているかを評価し、着手すべき優先順位をつけてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p77',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">78. テストが薄い箇所を洗い出してテストから書く</div><div class="imeta">場面: 不具合が出やすい箇所を事前に固めたいとき</div><pre class="prompt" id="p78">[対象のコードベース]を調査し、テストのカバレッジが薄い、または重要度の割にテストが不足している箇所を洗い出してください。優先度が高い箇所から、実装より先にテストを書いてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p78',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">79. コードレビューコメントを重大度別に仕分ける</div><div class="imeta">場面: レビュー指摘が多く何から直すべきか分からないとき</div><pre class="prompt" id="p79">このコードレビューの指摘一覧を、「今すぐ直すべきもの」「次のリリースまでに直すもの」「余裕があれば直すもの」の3段階に仕分けてください。仕分けの判断基準(不具合につながるか、可読性の問題かなど)も明記してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p79',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">80. AGENTS.mdに開発ルールを落とし込んで自動で守らせる</div><div class="imeta">場面: 同じ指摘を毎回繰り返しているとき</div><pre class="prompt" id="p80">これまでの開発で繰り返し指摘してきたルール・注意点(命名規則、禁止パターン、レビュー基準など)を洗い出してください。それらをAGENTS.md(またはプロジェクトの設定ファイル)に反映する形でまとめ、次回以降のセッションで自動的に守られるようにしてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p80',this)">📋 コピー</button></div></div><div class="cat" id="c8">発信・コミュニケーション・交渉</div>
+<div class="icard"><div class="ititle">81. 率直な下書きと丸めた下書きを並べて比較する</div><div class="imeta">場面: 発信文の言い回しに迷っているとき</div><pre class="prompt" id="p81">[伝えたい内容]について、率直な物言いで書いた下書きと、表現を丸めて配慮した下書きの両方を作ってください。それぞれのメリット・デメリット(伝わりやすさ、角の立ちにくさなど)を整理し、状況に応じてどちらを使うべきか提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p81',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">82. 相手の反論を先に想定してから返信文を作る</div><div class="imeta">場面: 意見が対立しそうな相手に返信するとき</div><pre class="prompt" id="p82">[相手からの連絡・意見]について、相手が返信に対して想定しうる反論を先に洗い出してください。その反論を踏まえたうえで、無用な対立を避けつつこちらの意図が正確に伝わる返信文を作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p82',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">83. 交渉前に相手の狙いと代替案を整理する</div><div class="imeta">場面: 交渉や商談に臨む前</div><pre class="prompt" id="p83">[交渉相手]との交渉に臨む前に、相手が本当に得たいものは何か、交渉が決裂した場合に相手が取りうる代替案は何かを整理してください。そのうえで、こちらが譲れる条件と譲れない条件を切り分けてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p83',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">84. 長文の連絡を要点3つに圧縮する</div><div class="imeta">場面: 長い経緯を短く共有し直したいとき</div><pre class="prompt" id="p84">この[長文の連絡・経緯]を、相手が最初に読むべき要点3つに圧縮してください。詳細を知りたい相手のために、要点のあとに補足として元の内容への参照箇所を添えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p84',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">85. 批判的なコメントへの返信を複数トーンで作って選ぶ</div><div class="imeta">場面: 批判的な反応への対応に迷っているとき</div><pre class="prompt" id="p85">[受け取った批判的なコメント・意見]について、「毅然と反論する」「一部認めつつ説明する」「感謝を示しつつ受け流す」の3トーンで返信文を作ってください。それぞれ使った場合に想定される反応の違いも添えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p85',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">86. 発信文の誇張・断定しすぎな表現を検出する</div><div class="imeta">場面: 外部に出す文章を公開する前</div><pre class="prompt" id="p86">この[発信文・原稿]の中から、誇張表現・根拠のない断定・言い切りすぎている箇所を検出してください。検出した箇所について、根拠を示すか、表現を弱めるかのどちらかで修正案を提示してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p86',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">87. 発表資料の一番伝えたい1文を先に決める</div><div class="imeta">場面: プレゼン資料や発表原稿を作り始めるとき</div><pre class="prompt" id="p87">[発表テーマ]について、聞き手に一番持ち帰ってほしい1文をまず決めてください。その1文が伝わることを目的に、資料全体の構成をその1文から逆算して組み立ててください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p87',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">88. チーム向け説明を専門用語なしで作り直す</div><div class="imeta">場面: 専門知識のないメンバーにも意図を伝えたいとき</div><pre class="prompt" id="p88">この[専門的な説明・仕様]を、専門用語を一切使わずにチーム全体に説明できる形に作り直してください。どうしても必要な概念は、身近な例に置き換えて説明してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p88',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">89. 会議の決定事項とネクストアクションだけを抽出する</div><div class="imeta">場面: 会議の記録から実行すべきことだけを取り出したいとき</div><pre class="prompt" id="p89">この[会議の記録・議事メモ]から、決定した事項と、次に誰が何をいつまでにやるかというネクストアクションだけを抽出してください。議論の過程や雑談は省略し、実行に関わる情報だけに絞ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p89',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">90. 反対されそうな提案は反論をつぶした状態で作る</div><div class="imeta">場面: 通しにくい提案を通したいとき</div><pre class="prompt" id="p90">[通したい提案]について、想定される反対意見をあらかじめ洗い出してください。それぞれの反対意見に対する回答をあらかじめ提案本文に組み込み、反論の余地を減らした状態の提案書を作ってください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p90',this)">📋 コピー</button></div></div><div class="cat" id="c9">生産性・時間・自己マネジメント</div>
+<div class="icard"><div class="ititle">91. 1日のタスクを影響度順に並べ替える</div><div class="imeta">場面: 1日の始まりにやることを整理するとき</div><pre class="prompt" id="p91">今日やる予定の[タスク一覧]を、最終的な目標への影響度が大きい順に並べ替えてください。影響度が低いタスクについては、後回しにしてよいか、そもそもやらなくてよいかも判定してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p91',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">92. やらなくていい作業を先に洗い出す</div><div class="imeta">場面: タスクを増やす前に減らす余地を確認したいとき</div><pre class="prompt" id="p92">いま抱えている[タスク一覧]の中から、成果に直結していない、または誰かの確認待ちのまま止まっている作業を洗い出してください。それぞれについて「やめる」「保留する」「圧縮する」のどれが適切かを判定してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p92',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">93. 会議時間を半分にする代替案を出す</div><div class="imeta">場面: 会議に時間を取られすぎていると感じるとき</div><pre class="prompt" id="p93">[定例で行っている会議]について、現在の時間配分と目的を整理してください。目的を損なわずに時間を半分にする代替案(事前共有・非同期化・参加者の絞り込みなど)を具体的に提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p93',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">94. 集中すべき1つを決めて他をいったん保留する</div><div class="imeta">場面: 複数のことに同時に手をつけて手が止まっているとき</div><pre class="prompt" id="p94">いま同時進行している[タスク一覧]の中から、最も優先すべき1つを選んでください。それ以外のタスクは、いつまで保留してよいか、保留する間に発生しうるリスクは何かを整理したうえで、明確に脇に置いてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p94',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">95. 週の振り返りをうまくいった理由・いかなかった理由で整理する</div><div class="imeta">場面: 週末や月末に振り返りをするとき</div><pre class="prompt" id="p95">今週の[取り組み・成果]について、うまくいったこととその理由、うまくいかなかったこととその理由をそれぞれ整理してください。来週に活かせる具体的な行動の変更点を1〜2個に絞って提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p95',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">96. タスクの見積もりが甘くなる原因を洗い出す</div><div class="imeta">場面: 見積もりと実際の所要時間がいつもずれるとき</div><pre class="prompt" id="p96">過去の[タスク・プロジェクトの記録]を振り返り、見積もり時間と実際にかかった時間の差が大きかったものを洗い出してください。差が生まれた共通原因を特定し、次回の見積もりで補正すべきポイントを提案してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p96',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">97. 割り込みタスクを今すぐ・後で・捨てるに仕分ける</div><div class="imeta">場面: 予定外の依頼や連絡が次々に来るとき</div><pre class="prompt" id="p97">今日入ってきた[割り込みタスク・連絡一覧]を、「今すぐ対応すべきもの」「後でまとめて対応してよいもの」「対応しなくてよいもの」の3つに仕分けてください。仕分けの判断基準も一言で添えてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p97',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">98. 1日の使い方をログから分析してムダを指摘する</div><div class="imeta">場面: 時間の使い方を客観的に見直したいとき</div><pre class="prompt" id="p98">この[作業ログ・カレンダーの記録]をもとに、1日の時間の使い方を分析してください。目的に対して時間対効果が低いと考えられる時間の使い方を指摘し、削るか圧縮するかの具体的な提案をしてください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p98',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">99. 委任できるのに抱えているタスクを洗い出す</div><div class="imeta">場面: 自分の作業量が増えすぎていると感じるとき</div><pre class="prompt" id="p99">いま自分が抱えている[タスク一覧]の中から、他のメンバーやAIエージェントに委任できるものを洗い出してください。委任する場合に必要な情報や判断基準を整理し、委任した場合のリスクも合わせて示してください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p99',this)">📋 コピー</button></div></div>
+<div class="icard"><div class="ititle">100. /loop で一定間隔ごとにタスク・受信箱を確認し続ける</div><div class="imeta">場面: 対応漏れに気づかないまま時間が経つのを防ぎたいとき</div><pre class="prompt" id="p100">/loop 1h
+[タスク一覧・受信箱]を確認し、対応期限が近い、または返信が止まっている項目があれば要約して報告してください。特に急ぎの対応が必要なものがなければ「対応漏れなし」とだけ報告し、次の周回に進んでください。</pre><div class="btns"><button class="btn sm" onclick="copyPrompt('p100',this)">📋 コピー</button></div></div></section>
+<footer>AIエージェント ／ 🎁 このプレゼントは自由にお使いください。</footer></div>
+<pre id="pfull" style="display:none;"># 🎁 イーロン・マスクが使うプロンプト100選
+
+イーロン・マスク流の働き方——前提を疑う第一原理思考、複数の役割をAIに並列で任せるマルチエージェント運用、最小の形で試して直し続ける高速反復——を、そのままAIに貼れる100本の依頼文に落とし込みました。
+
+**受け取り方**: 各プロンプトのコピーボタンでコピーするか、このファイルをダウンロードしてください。
+
+**使い方**: Grok 4.5 / Grok Build / Claude Code の入力欄にそのまま貼るだけで使えます。[ ]の部分は自分の状況に置き換えてください。
+
+## 第一原理で考える
+
+### 1. 前提を疑って要件を本質まで分解する
+場面: 新しい企画や機能に着手する前
+
+```text
+[対象のタスク・企画]について、まず「本当に必要な条件は何か」をユーザーや目的の本質までさかのぼって分解してください。次に、慣習や過去のやり方を理由にしているだけの要素を別枠でリストアップし、それぞれ本当に必要かどうかを一つずつ問い直してから、最小構成の実行案を提案してください。
+```
+
+### 2. コスト構造を最小単位まで分解する
+場面: 開発・制作・運営のコストが膨らんでいると感じるとき
+
+```text
+[対象のプロジェクト]のコスト構造(時間・工数・外部サービス費用など)を、これ以上分解できない最小の要素まで洗い出してください。各要素について「削れる理由」「削れない理由」を明示し、合計を圧縮できる組み合わせを3パターン、優先順位付きで提案してください。
+```
+
+### 3. 「本当の制約」と「思い込みの制約」を仕分ける
+場面: 「これは無理」という壁にぶつかったとき
+
+```text
+いま[対象]について「できない理由」として挙がっている項目を一つずつ挙げてください。それぞれが物理的・技術的に動かせない制約なのか、単なる慣習やルール、思い込みなのかを判定し、後者だけを対象にした回避策を考えてください。
+```
+
+### 4. ゼロベースで仕様を作り直す
+場面: 既存の仕様や運用が複雑になりすぎたと感じるとき
+
+```text
+既存の[仕様書・運用ルール]を一度読み込んだうえで、過去の経緯を無視してゼロから設計し直すとしたら何が最小構成になるかを提案してください。現行との差分を一覧にし、削れる機能と残すべき機能をそれぞれ理由付きで示してください。
+```
+
+### 5. 「なぜ」を5回掘り下げて根本原因を特定する
+場面: 不具合や非効率の原因がはっきりしないとき
+
+```text
+[問題・症状]について「なぜそうなっているのか」を5段階掘り下げてください。各段階で得られた答えを次の問いの出発点にし、最後にたどり着いた根本原因と、それに対する対処案を提示してください。表面的な対症療法は、根本対処と分けて最後に補足として示してください。
+```
+
+### 6. 目的と手段を切り離して再定義する
+場面: やり方が目的化していると感じるとき
+
+```text
+[施策・業務]について、そもそもの目的(達成したい状態)を1文で定義し直してください。そのうえで、いま採用している手段がその目的に対して最短ルートかどうかを検証し、目的は変えずに手段だけを差し替える案を2〜3個出してください。
+```
+
+### 7. 会議・承認フローを「無くしても回るか」で検証する
+場面: 意思決定に時間がかかりすぎていると感じるとき
+
+```text
+[対象の業務プロセス]に含まれる会議・承認・確認の工程を一つずつ挙げてください。それぞれについて「その工程を無くした場合に何が壊れるか」を具体的に検証し、壊れないと判断できる工程だけを削った新しいフロー案を作ってください。
+```
+
+### 8. 価格・条件を慣習ではなく提供価値から組み直す
+場面: 料金体系や契約条件を見直すとき
+
+```text
+[商品・サービス]の現在の価格・条件が、業界の慣習と提供している価値のどちらを基準に決まっているかを切り分けてください。提供価値だけを基準にした場合の価格・条件を再設計し、現行との差分と、その差分が正当化できる理由を整理してください。
+```
+
+### 9. 採用・依頼要件を「本当に必要な能力」まで絞り込む
+場面: 新しい人やパートナーを探すとき
+
+```text
+[募集したい役割]の要件を、肩書きや経歴ではなく「その役割が実際に発揮すべき能力」だけを基準に書き直してください。慣習で入っている条件(学歴・年数など)は別枠に出し、それぞれ本当に必要かどうかを判定してください。
+```
+
+### 10. 指標・KPIを目的に直結する最小セットまで削る
+場面: 追っている指標が多すぎると感じるとき
+
+```text
+いま追っている指標を全部洗い出してください。それぞれについて、最終的な目的([目的])にどれだけ直結しているかを判定し、直結していない指標を削った最小セットを提案してください。削った指標を見なくても目的達成の進捗が追える理由もあわせて説明してください。
+```
+
+## マルチエージェントで並列化
+
+### 11. 複数の専門家視点を並列で走らせて統合する
+場面: 一つの企画・資料を多角的にチェックしたいとき
+
+```text
+[企画・資料]について、「[視点A]」「[視点B]」「[視点C]」の3つの専門家役をsubagentとして並列で走らせ、それぞれの立場から改善点を洗い出してください。最後に3つの意見を統合し、重複や矛盾を整理したうえで優先順位付きの改善リストにまとめてください。
+```
+
+### 12. 賛成派と反対派を戦わせて判断材料にする
+場面: 判断に迷う意思決定をするとき
+
+```text
+[検討中の案]について、賛成の立場で最大限支持するsubagentと、反対の立場で最大限反論するsubagentを並列で走らせてください。両者の主張を突き合わせ、どちらの論点がより具体的な根拠に基づいているかを整理し、最終判断の材料としてまとめてください。
+```
+
+### 13. 実装役とレビュー役を分離して並走させる
+場面: 制作物の品質を自分以外の目でも確認したいとき
+
+```text
+[制作物]について、作成を担当するsubagentと、それを厳しくレビューするsubagentを分けて動かしてください。レビュー担当には作成担当の意図を伝えず独立した視点でチェックさせ、指摘事項を反映した最終版を出してください。
+```
+
+### 14. 複数のペルソナで同時にコンテンツを検証する
+場面: 発信内容が狙った相手に届くか確認したいとき
+
+```text
+この[原稿・企画]を、[ペルソナA]・[ペルソナB]・[ペルソナC]という異なる読み手を演じるsubagentに並列で読ませてください。それぞれの立場から「分かりにくい箇所」「刺さらない箇所」を指摘させ、共通して挙がった課題を優先して直してください。
+```
+
+### 15. リサーチ班と検証班を分けて並列に走らせる
+場面: 情報収集と裏取りを同時に進めたいとき
+
+```text
+[調べたいテーマ]について、情報を集めるsubagentと、集まった情報の根拠・整合性を検証するsubagentを並列で走らせてください。検証班は事実と推測を区別したうえで疑わしい箇所にフラグを立て、両者の結果を突き合わせた最終レポートを作ってください。
+```
+
+### 16. 原稿・台本を専門分野別のsubagentで多角レビューする
+場面: 発信前の原稿を仕上げるとき
+
+```text
+この[原稿・台本]を、「構成」「表現の分かりやすさ」「事実関係」の3観点を担当する3つのsubagentに並列でレビューさせてください。各subagentの指摘を観点ごとに分けて一覧化し、優先して直すべき順に並べ替えてください。
+```
+
+### 17. 障害・不具合の原因候補を手分けして洗わせる
+場面: 原因がまだ絞り込めていない不具合が起きたとき
+
+```text
+[発生している不具合]について、考えられる原因カテゴリ([カテゴリ例])ごとにsubagentを割り当て、並列で調査させてください。各subagentには自分の担当領域だけを深掘りさせ、最後に全員の調査結果を突き合わせて最も可能性が高い原因を絞り込んでください。
+```
+
+### 18. 楽観シナリオと悲観シナリオを並列で試算する
+場面: 計画の前提が不確実なとき
+
+```text
+[計画・企画]について、楽観的な前提で試算するsubagentと、悲観的な前提で試算するsubagentを並列で走らせてください。両シナリオの差が生まれる要因を特定したうえで、現実的な着地点と、その着地点でも成立する計画かどうかを判定してください。
+```
+
+### 19. /goal で大規模な調査・資料作成を自律実行する
+場面: 未知の対象(リポジトリ・市場・競合)の全体像を短時間で把握したいとき
+
+```text
+/goal [対象]の全体像を調査し、構成・主要な要素・外部依存・改善の余地がありそうな箇所をレポートにまとめる。主要な領域ごとにsubagentを並列で割り当てて調査させ、最後に自分(メインエージェント)が結果を統合して1本のレポートにまとめる。ゴールを達成した、またはターン上限に達したら停止する。
+```
+
+### 20. 専門パネルを模した並列レビューを意思決定前に回す
+場面: 重い意思決定の前に多面的な検証をしたいとき
+
+```text
+[検討中の意思決定]について、異なる専門分野([分野A][分野B][分野C]など)を担当するsubagentのパネルを並列で編成してください。各subagentに独立して評価させたあと、意見が割れた論点だけを抽出し、その論点に絞って追加で深掘りさせてください。
+```
+
+## 高速反復と検証
+
+### 21. 最小構成で動くものを先に作らせてから磨く
+場面: 完璧な設計を先に固めようとして手が止まっているとき
+
+```text
+[作りたいもの]について、まずは動くだけの最小構成(不要な機能を全部省いたバージョン)を作ってください。完成後に、動かしてみて分かった問題点だけを踏まえて、次に改善すべき箇所を優先順位付きで提案してください。
+```
+
+### 22. 失敗ログから対症療法ではなく根本原因を直させる
+場面: エラーや失敗が繰り返し起きているとき
+
+```text
+この[エラーログ・失敗の記録]を読み、表面的な対処ではなく根本原因を特定してください。根本原因への修正案と、応急処置としての対症療法を分けて提示し、どちらを先に適用すべきかも理由つきで示してください。
+```
+
+### 23. 一晩で試せる最小の検証プランを立てる
+場面: アイデアの筋の良し悪しを早く見極めたいとき
+
+```text
+[アイデア]について、時間をかけずに検証できる最小の実験プランを立ててください。何を測定すれば「筋が良い/悪い」を判断できるか基準を先に決め、その基準に沿って結果の解釈方法まで含めて設計してください。
+```
+
+### 24. プロトタイプを複数パターン並行で作って比較する
+場面: どの方向性が良いか決めかねているとき
+
+```text
+[作りたいもの]について、方向性の異なるプロトタイプを3パターン並行で作ってください。それぞれの狙い・トレードオフを整理したうえで、[判断基準]に照らして比較し、次に進めるべき案を推薦してください。
+```
+
+### 25. 出た結論を別のやり方でも再現するか検証する
+場面: 一度の分析結果をそのまま信用してよいか不安なとき
+
+```text
+先ほど出した[結論・分析結果]について、異なる切り口・異なる方法で同じ結論に至るかを再検証してください。結果が一致した場合はその根拠を、食い違った場合はどちらがより信頼できるかを、理由とともに示してください。
+```
+
+### 26. テストを先に書かせてから実装させる
+場面: 実装の前に期待する挙動を明確にしておきたいとき
+
+```text
+[実装したい機能]について、実装より先に期待する挙動を表すテストを書いてください。テストが合意できたら、そのテストが通ることを目標に実装を進め、テストを満たさない実装は行わないでください。
+```
+
+### 27. リリース後の反応から次の修正案をすぐ出させる
+場面: 公開・実施した施策の反応が出始めたとき
+
+```text
+[施策・コンテンツ]についてここまでに得られた反応・数値を整理してください。良かった点・想定と違った点をそれぞれ特定し、次の修正で試すべき変更点を、優先順位付きで2〜3個提案してください。
+```
+
+### 28. 遠回りな手順を最短ルートに作り直させる
+場面: 一連の作業フローに無駄が多いと感じるとき
+
+```text
+[作業フロー]の各手順を洗い出し、それぞれが最終成果物にどう貢献しているかを判定してください。貢献度が低い、または省略できる手順を特定し、最短ルートで同じ成果を得られる新しいフロー案を作ってください。
+```
+
+### 29. 「動くけど遅い」状態のボトルネックだけを特定させる
+場面: 動作はしているが速度・効率に課題があるとき
+
+```text
+[対象の処理・作業]について、全体をやみくもに直すのではなく、最も時間や工数を消費しているボトルネックを特定してください。ボトルネック以外の箇所は変更せず、特定した箇所だけを改善する最小の修正案を出してください。
+```
+
+### 30. /loop で一定間隔ごとにテスト結果を確認し続ける
+場面: 実装を進めながらテストの状態を継続的に把握したいとき
+
+```text
+/loop 15m
+[対象プロジェクト]のテストを実行し、失敗しているテストがあれば要約して報告してください。失敗がなければ「異常なし」とだけ短く報告し、次の周回に進んでください。新しく失敗が発生した場合のみ、原因の見立ても添えてください。
+```
+
+## 自動化・仕組み化
+
+### 31. /goal で大規模調査を自律実行する
+場面: 手をつけられていない全体調査を一気に片付けたいとき
+
+```text
+/goal [対象]全体を調査し、構成・主要な処理や仕組みの流れ・外部依存・改善の余地がありそうな箇所をレポートにまとめる。各領域はsubagentを並列で割り当てて調査させ、最後に自分(メインエージェント)が結果を統合して1本のレポートにまとめる。ゴールを達成した、またはターン上限に達したら停止する。
+```
+
+### 32. /goal 複数タスクを並列subagentに割り振って自律的に進める
+場面: 独立した複数のタスクを一気に片付けたいとき
+
+```text
+/goal 次の[N]個のタスクを並列のsubagentに割り振って進める。
+1) [タスク1]
+2) [タスク2]
+3) [タスク3]
+各subagentの結果は個別に報告させ、最後に重複や矛盾がないかを自分で確認してから一つのレポートにまとめる。ゴールを達成した、またはターン上限に達したら停止する。
+```
+
+### 33. /goal 資料作成を章立てから完成まで自律実行する
+場面: 大型の資料・ドキュメントを一気通貫で作りたいとき
+
+```text
+/goal [テーマ]について、章立てを設計し、各章をsubagentに並列で執筆させ、最後に自分(メインエージェント)が全体のトーンと事実関係を統一して1本の資料にまとめる。誇張表現や未確認の断定がないかも最終チェックの対象に含める。ゴールを達成した、またはターン上限に達したら停止する。
+```
+
+### 34. /goal 定型業務フローをまるごと自律化する
+場面: 毎回同じ手順を繰り返している業務があるとき
+
+```text
+/goal [定型業務]の一連の手順を自律的に実行する。各ステップで何を判断基準にするかを先に整理し、判断に迷うステップだけ自分に確認を求める。それ以外は自律的に最後まで進め、完了後に実施内容の記録を残す。ゴールを達成した、またはターン上限に達したら停止する。
+```
+
+### 35. /loop で一定間隔ごとに監視を回し続ける
+場面: システムやサービスの異常にいち早く気づきたいとき
+
+```text
+/loop 30m
+[対象システム]の稼働状況・エラーログを確認してください。異常があれば内容を要約して報告し、想定される原因まで添えてください。異常がなければ「異常なし」とだけ短く報告し、次の周回に進んでください。
+```
+
+### 36. /loop で一定間隔ごとに定期リサーチを回し続ける
+場面: 特定分野の最新動向を継続的に追いたいとき
+
+```text
+/loop 1h
+[追いたいテーマ]について新しい動きがないか確認してください。新しい情報があれば要点を3行以内で報告し、なければ「更新なし」とだけ報告して次の周回に進んでください。重要度が高いと判断した情報だけ詳細を添えてください。
+```
+
+### 37. /loop で一定間隔ごとに定期レポートを生成し続ける
+場面: 数値や進捗を定点観測したいとき
+
+```text
+/loop 24h
+[対象の数値・指標]を確認し、前回との差分を中心に短いレポートを作成してください。大きな変化があった項目だけ理由の仮説も添え、変化が小さい項目は数値の記載のみにとどめてください。
+```
+
+### 38. /loop で一定間隔ごとに進捗確認を回し続ける
+場面: 進行中の複数タスクの停滞にすぐ気づきたいとき
+
+```text
+/loop 2h
+進行中の[タスク一覧]の状態を確認してください。前回の確認から進捗がないタスクがあれば理由を推測して報告し、進んでいるタスクは一言で状況だけ報告してください。
+```
+
+### 39. 繰り返し作業のルールをプロジェクト設定に落とし込む
+場面: 同じ指摘・同じやり直しを何度も繰り返しているとき
+
+```text
+これまでのやり取りで繰り返し発生している指摘・修正パターンを洗い出してください。それぞれについて、次回から自動的に守られるようルール化し、プロジェクトの設定ファイル(AGENTS.md/CLAUDE.md相当)に追記する形でまとめてください。
+```
+
+### 40. うまくいった手順をスキル化して再利用可能にする
+場面: 一度うまくいったやり方を毎回イチから説明し直しているとき
+
+```text
+今回うまくいった[作業・手順]の流れを振り返り、次回以降に再利用できる形(スキル)に落とし込んでください。前提条件・手順・注意点を整理し、/skillifyの要領で、次回は名前を呼ぶだけで同じ品質の結果が出るようにまとめてください。
+```
+
+## ディープリサーチと裏取り
+
+### 41. 一次情報と伝聞を分けて整理する
+場面: 情報の信頼度を見極めたいとき
+
+```text
+[調べたいテーマ]について集めた情報を、一次情報(本人・公式発表など)と伝聞・要約・又聞きに分けて整理してください。伝聞情報については、可能な限り元になった一次情報を探し、見つからない場合はその旨を明記してください。
+```
+
+### 42. 複数ソースを突き合わせて矛盾点を洗い出す
+場面: 情報源によって内容が食い違っていそうなとき
+
+```text
+[調べたいテーマ]について複数の情報源を集め、内容が一致している点と食い違っている点を分けて整理してください。食い違っている点については、それぞれの情報源の性質(公式/非公式、発信時期など)を踏まえてどちらが信頼できるかを検討してください。
+```
+
+### 43. 反対意見・懐疑的な意見もあわせて検討する
+場面: 一つの見方に偏っていないか確認したいとき
+
+```text
+[テーマ・主張]について、肯定的な情報だけでなく、懐疑的・批判的な意見も意図的に集めてください。両方の主張の根拠を並べて比較し、どちらがより具体的な事実に基づいているかを整理してください。
+```
+
+### 44. 数字の出典と前提条件を確認する
+場面: 資料やニュースに出てくる数字を引用したいとき
+
+```text
+[引用したい数字・統計]について、出典と、その数字がどんな前提条件・調査方法のもとで出されたものかを確認してください。前提条件が異なる別の数字と単純比較できない場合は、その旨を明記したうえで扱ってください。
+```
+
+### 45. 最新動向を要点だけに圧縮して報告する
+場面: 忙しい中で分野の動きを素早く把握したいとき
+
+```text
+[分野・トピック]の直近の動向を調べ、知っておくべき要点を3〜5個に圧縮して報告してください。重要度が低い枝葉の情報は省略し、判断や行動に関わる情報を優先してください。
+```
+
+### 46. 競合・類似事例を横並びで比較表にする
+場面: 自分たちの立ち位置を客観的に把握したいとき
+
+```text
+[比較したい対象]について、[比較軸]を基準にした比較表を作成してください。情報が確認できなかった項目は空欄のままにせず「未確認」と明記し、推測で埋めないでください。
+```
+
+### 47. 情報の鮮度をそろえて報告する
+場面: 情報が古いまま判断材料にされるのを防ぎたいとき
+
+```text
+[調べたテーマ]についてまとめる際、それぞれの情報がいつ時点のものかを明記してください。情報源によって鮮度が大きく異なる場合は、最新の情報を優先しつつ、古い情報は参考情報として区別してください。
+```
+
+### 48. 未確認情報には「未確認」と明示してまとめる
+場面: 裏取りが間に合っていない情報を扱うとき
+
+```text
+[調べたテーマ]について、確認が取れた事実と、確認が取れていない推測・伝聞を明確に分けてまとめてください。確認が取れていない項目は断定せず「未確認」と明記し、それらしい数字や固有名詞で穴埋めしないでください。
+```
+
+### 49. 専門用語をかみ砕きながら要約する
+場面: 専門外の相手にも分かるように伝えたいとき
+
+```text
+[専門的なテーマ・資料]を、専門用語を使わずに要約してください。どうしても必要な専門用語は、日常語での言い換えや簡単な比喩を添えて説明してください。
+```
+
+### 50. リサーチ結果から次に決めるべきことまで落とし込む
+場面: 調べただけで終わらせたくないとき
+
+```text
+ここまでのリサーチ結果を踏まえて、「次に何を決める必要があるか」「その決定に必要な追加情報は何か」を整理してください。情報収集で終わらせず、次のアクションにつながる形で結論を提示してください。
+```
+
+## 意思決定・優先順位・リスク
+
+### 51. 複数の選択肢をメリット・デメリットで並べる
+場面: 複数の選択肢の中から一つを選ぶとき
+
+```text
+[検討中の選択肢一覧]について、それぞれのメリット・デメリットを同じ基準で並べてください。基準が曖昧な項目は推測で埋めず、判断に必要だが不足している情報があれば明記してください。
+```
+
+### 52. 「今やらない場合に何が起きるか」を先に整理する
+場面: 着手を先延ばしにしがちな案件があるとき
+
+```text
+[先延ばしにしている案件]について、いま着手しない場合に1ヶ月後・3ヶ月後・半年後にそれぞれ何が起きうるかを整理してください。放置コストが明確になった場合は、優先度を上げるべきかどうかも判定してください。
+```
+
+### 53. 最悪のシナリオを具体化してから判断する
+場面: リスクを取るかどうか迷っているとき
+
+```text
+[検討中の意思決定]について、起こりうる最悪のシナリオを具体的に描写してください。そのシナリオが実際に起きた場合の対処可能性も評価したうえで、リスクを取る価値があるかどうかの判断材料を整理してください。
+```
+
+### 54. 優先順位を影響度×緊急度で機械的に並べ替える
+場面: タスクが多すぎて優先順位が主観的になっているとき
+
+```text
+[対象のタスク一覧]について、それぞれの影響度と緊急度を評価し、機械的な基準で優先順位を並べ替えてください。感覚的に優先したくなる項目があれば、その理由が影響度・緊急度のどちらに基づくものかも明示してください。
+```
+
+### 55. 決断を先延ばしにしている理由を言語化する
+場面: 決めるべきことをずっと決められずにいるとき
+
+```text
+[決めかねている件]について、なぜ今まで決断を先延ばしにしてきたのかを言語化してください。情報不足が理由なら足りない情報を、心理的な要因が理由ならその要因を具体的に挙げ、決断に必要な最後のピースを特定してください。
+```
+
+### 56. 撤退基準を先に決めてから着手する
+場面: 新しい取り組みを始める前
+
+```text
+[新しく始める取り組み]について、着手する前に「どうなったら撤退するか」という基準を具体的な数値や期限で決めてください。基準を曖昧にせず、後から都合よく解釈できない形で言語化してください。
+```
+
+### 57. 一度決めた方針への反対意見をあえて集める
+場面: 方針が固まった直後、思い込みで進めていないか確認したいとき
+
+```text
+すでに決定した[方針]について、あえて反対の立場から批判的な意見を集めてください。反論の中に見落としていた論点があれば、方針を修正すべきかどうかを再検討してください。
+```
+
+### 58. 小さく試してから広げる計画に分解する
+場面: いきなり大きく展開するのがリスクに感じるとき
+
+```text
+[展開したい施策]について、いきなり全体に広げるのではなく、小さく試してから段階的に広げる計画に分解してください。各段階での成功判定基準と、次の段階に進む条件をあらかじめ決めてください。
+```
+
+### 59. 判断に必要な情報が何かを先に洗い出す
+場面: 情報収集を始める前に何を集めるべきか整理したいとき
+
+```text
+[判断したいテーマ]について結論を出す前に、その判断に本当に必要な情報は何かを先に洗い出してください。すでに手元にある情報と、まだ足りていない情報を分け、足りていない情報をどう集めるかまで整理してください。
+```
+
+### 60. 「やめる」選択肢も同列で比較する
+場面: 続けることが前提になってしまっているとき
+
+```text
+[継続中の取り組み]について、「このまま続ける」「縮小する」「やめる」の3つの選択肢を同列に並べて比較してください。「続ける」が無条件の前提になっていないか確認し、それぞれの選択肢のメリット・デメリットを公平に評価してください。
+```
+
+## 経営・戦略・スピード
+
+### 61. 複数事業・プロジェクトの進捗を一枚で並べて比較する
+場面: 複数の取り組みを同時に把握したいとき
+
+```text
+[進行中の事業・プロジェクト一覧]について、進捗状況・課題・次のマイルストーンを同じフォーマットで一覧化してください。停滞している取り組みが一目で分かるように、進捗の遅れが大きい順に並べてください。
+```
+
+### 62. 意思決定スピードを落としているボトルネックを洗い出す
+場面: 複数の取り組みが軒並み遅れていると感じるとき
+
+```text
+[対象の組織・プロジェクト群]で意思決定が遅くなっている原因を洗い出してください。個別の事情ではなく複数の案件に共通しているボトルネックを特定し、その共通ボトルネックを解消する案を優先して提案してください。
+```
+
+### 63. 権限委譲できる判断とできない判断を仕分ける
+場面: 自分に判断が集中しすぎていると感じるとき
+
+```text
+いま自分(または特定の担当者)に集まっている判断を洗い出してください。それぞれについて、他のメンバーに委譲しても問題ない判断と、委譲すべきでない判断を仕分け、委譲可能な判断については委譲先と判断基準を提案してください。
+```
+
+### 64. リソース配分を「最も伸びる場所」基準で組み直す
+場面: 複数の取り組みにリソースを分散させているとき
+
+```text
+[対象の事業・プロジェクト群]への現在のリソース配分を整理してください。それぞれの伸びしろ・投資対効果を比較し、慣習ではなく「最も伸びる場所」を基準にした配分案を提案してください。
+```
+
+### 65. 撤退・縮小すべき事業候補を機械的に洗い出す
+場面: 複数の取り組みの中で見直しが必要なものを判定したいとき
+
+```text
+[対象の事業・プロジェクト一覧]について、成長性・収益性・戦略的重要度を基準にスコアリングしてください。スコアが低い候補を機械的に抽出し、それぞれ撤退・縮小・継続のどれが妥当かを理由とともに提案してください。
+```
+
+### 66. 会議体を削って意思決定を早める案を出す
+場面: 会議が多く意思決定が遅れていると感じるとき
+
+```text
+[対象組織]で定期的に行われている会議の一覧を整理してください。それぞれの会議の目的と、その目的が会議以外の手段(非同期の報告など)で達成できないかを検討し、削減・統合できる会議を提案してください。
+```
+
+### 67. 複数事業に共通する仕組みを一本化する案を出す
+場面: 似たような業務が事業ごとにバラバラに存在しているとき
+
+```text
+[対象の複数事業・複数チーム]で、それぞれ個別に運用されている似た仕組み(ツール・フォーマット・手順など)を洗い出してください。一本化できるものを特定し、一本化した場合のメリットと、一本化に伴うリスクを整理してください。
+```
+
+### 68. /goal 複数事業・複数プロジェクトの進行管理を自律的に回す
+場面: 複数の取り組みの状況把握を仕組み化したいとき
+
+```text
+/goal [対象の事業・プロジェクト一覧]について、それぞれの進捗・課題・次のアクションを継続的に把握する。各プロジェクトはsubagentを割り当てて並列に状況を確認させ、停滞や異常を検知したら要約して報告する。ゴールを達成した、またはターン上限に達したら停止する。
+```
+
+### 69. 新規参入の勝ち筋を第一原理から組み立てる
+場面: 新しい市場・領域への参入を検討しているとき
+
+```text
+[検討中の新市場・新領域]について、既存プレイヤーのやり方を前提にせず、第一原理から「勝つとしたらどんな条件が必要か」を組み立ててください。その条件を自分たちが満たせるか、満たすには何が必要かも整理してください。
+```
+
+### 70. 「前例主義」で止まっている案件を洗い出す
+場面: 過去に例がないという理由だけで進んでいない案件があるとき
+
+```text
+[対象組織]で、「前例がない」という理由で止まっている、または検討すら始まっていない案件を洗い出してください。それぞれについて、前例がないこと自体がリスクなのか、単に検討されていないだけなのかを切り分けてください。
+```
+
+## エンジニアリング・実装・レビュー
+
+### 71. Plan Modeでまず実装計画を立ててから着手する
+場面: 実装に入る前に方針を固めたいとき
+
+```text
+[実装したい機能]について、いきなりコードを書き始めず、まずPlan Modeで実装方針・変更範囲・想定されるリスクを整理した計画を作ってください。計画に合意できたら、その計画に沿って実装に進んでください。
+```
+
+### 72. 最大8並列のsubagentでモジュールごとに実装を分担する
+場面: 独立性の高い複数モジュールをまとめて実装したいとき
+
+```text
+[対象の実装タスク]を、独立して進められるモジュール単位に分割してください。分割した各モジュールをsubagentに並列(最大8並列)で割り当てて実装させ、完了後にモジュール間の整合性を自分で確認してください。
+```
+
+### 73. 実装役とレビュー役を分けて相互チェックする
+場面: 実装したコードの品質を客観的に確認したいとき
+
+```text
+[実装したコード]について、実装した内容を知らない前提でレビュー用のsubagentを立て、バグ・可読性・設計上の懸念を洗い出させてください。指摘事項を重大度別に分類し、優先して直すべき順に並べてください。
+```
+
+### 74. セキュリティ観点だけで専用レビューを走らせる
+場面: 実装後にセキュリティ面の抜けがないか確認したいとき
+
+```text
+[対象のコード・機能]について、セキュリティの観点だけに絞った専用レビューを行ってください。入力値の検証・認証認可・秘密情報の扱いなど、想定される懸念点を洗い出し、それぞれの深刻度と対処案を示してください。
+```
+
+### 75. パフォーマンス観点だけで専用レビューを走らせる
+場面: 動作は正しいが速度・負荷に不安があるとき
+
+```text
+[対象のコード・処理]について、パフォーマンスの観点だけに絞った専用レビューを行ってください。ボトルネックになりうる箇所を特定し、それぞれの改善優先度と、改善によって見込める効果を整理してください。
+```
+
+### 76. MCP経由で外部ツール連携する設計を提案する
+場面: 外部データ・外部サービスと連携する機能を作りたいとき
+
+```text
+[実現したい連携機能]について、MCPを介して外部ツール・外部データと連携する設計を提案してください。必要な権限・想定されるエラーケース・失敗時のフォールバック挙動もあわせて整理してください。
+```
+
+### 77. 既存コードの技術的負債を洗い出して優先順位をつける
+場面: 開発の足かせになっている負債を整理したいとき
+
+```text
+[対象のコードベース]を調査し、技術的負債(重複コード・古い依存関係・設計上の無理など)を洗い出してください。それぞれが開発速度や不具合発生にどの程度影響しているかを評価し、着手すべき優先順位をつけてください。
+```
+
+### 78. テストが薄い箇所を洗い出してテストから書く
+場面: 不具合が出やすい箇所を事前に固めたいとき
+
+```text
+[対象のコードベース]を調査し、テストのカバレッジが薄い、または重要度の割にテストが不足している箇所を洗い出してください。優先度が高い箇所から、実装より先にテストを書いてください。
+```
+
+### 79. コードレビューコメントを重大度別に仕分ける
+場面: レビュー指摘が多く何から直すべきか分からないとき
+
+```text
+このコードレビューの指摘一覧を、「今すぐ直すべきもの」「次のリリースまでに直すもの」「余裕があれば直すもの」の3段階に仕分けてください。仕分けの判断基準(不具合につながるか、可読性の問題かなど)も明記してください。
+```
+
+### 80. AGENTS.mdに開発ルールを落とし込んで自動で守らせる
+場面: 同じ指摘を毎回繰り返しているとき
+
+```text
+これまでの開発で繰り返し指摘してきたルール・注意点(命名規則、禁止パターン、レビュー基準など)を洗い出してください。それらをAGENTS.md(またはプロジェクトの設定ファイル)に反映する形でまとめ、次回以降のセッションで自動的に守られるようにしてください。
+```
+
+## 発信・コミュニケーション・交渉
+
+### 81. 率直な下書きと丸めた下書きを並べて比較する
+場面: 発信文の言い回しに迷っているとき
+
+```text
+[伝えたい内容]について、率直な物言いで書いた下書きと、表現を丸めて配慮した下書きの両方を作ってください。それぞれのメリット・デメリット(伝わりやすさ、角の立ちにくさなど)を整理し、状況に応じてどちらを使うべきか提案してください。
+```
+
+### 82. 相手の反論を先に想定してから返信文を作る
+場面: 意見が対立しそうな相手に返信するとき
+
+```text
+[相手からの連絡・意見]について、相手が返信に対して想定しうる反論を先に洗い出してください。その反論を踏まえたうえで、無用な対立を避けつつこちらの意図が正確に伝わる返信文を作ってください。
+```
+
+### 83. 交渉前に相手の狙いと代替案を整理する
+場面: 交渉や商談に臨む前
+
+```text
+[交渉相手]との交渉に臨む前に、相手が本当に得たいものは何か、交渉が決裂した場合に相手が取りうる代替案は何かを整理してください。そのうえで、こちらが譲れる条件と譲れない条件を切り分けてください。
+```
+
+### 84. 長文の連絡を要点3つに圧縮する
+場面: 長い経緯を短く共有し直したいとき
+
+```text
+この[長文の連絡・経緯]を、相手が最初に読むべき要点3つに圧縮してください。詳細を知りたい相手のために、要点のあとに補足として元の内容への参照箇所を添えてください。
+```
+
+### 85. 批判的なコメントへの返信を複数トーンで作って選ぶ
+場面: 批判的な反応への対応に迷っているとき
+
+```text
+[受け取った批判的なコメント・意見]について、「毅然と反論する」「一部認めつつ説明する」「感謝を示しつつ受け流す」の3トーンで返信文を作ってください。それぞれ使った場合に想定される反応の違いも添えてください。
+```
+
+### 86. 発信文の誇張・断定しすぎな表現を検出する
+場面: 外部に出す文章を公開する前
+
+```text
+この[発信文・原稿]の中から、誇張表現・根拠のない断定・言い切りすぎている箇所を検出してください。検出した箇所について、根拠を示すか、表現を弱めるかのどちらかで修正案を提示してください。
+```
+
+### 87. 発表資料の一番伝えたい1文を先に決める
+場面: プレゼン資料や発表原稿を作り始めるとき
+
+```text
+[発表テーマ]について、聞き手に一番持ち帰ってほしい1文をまず決めてください。その1文が伝わることを目的に、資料全体の構成をその1文から逆算して組み立ててください。
+```
+
+### 88. チーム向け説明を専門用語なしで作り直す
+場面: 専門知識のないメンバーにも意図を伝えたいとき
+
+```text
+この[専門的な説明・仕様]を、専門用語を一切使わずにチーム全体に説明できる形に作り直してください。どうしても必要な概念は、身近な例に置き換えて説明してください。
+```
+
+### 89. 会議の決定事項とネクストアクションだけを抽出する
+場面: 会議の記録から実行すべきことだけを取り出したいとき
+
+```text
+この[会議の記録・議事メモ]から、決定した事項と、次に誰が何をいつまでにやるかというネクストアクションだけを抽出してください。議論の過程や雑談は省略し、実行に関わる情報だけに絞ってください。
+```
+
+### 90. 反対されそうな提案は反論をつぶした状態で作る
+場面: 通しにくい提案を通したいとき
+
+```text
+[通したい提案]について、想定される反対意見をあらかじめ洗い出してください。それぞれの反対意見に対する回答をあらかじめ提案本文に組み込み、反論の余地を減らした状態の提案書を作ってください。
+```
+
+## 生産性・時間・自己マネジメント
+
+### 91. 1日のタスクを影響度順に並べ替える
+場面: 1日の始まりにやることを整理するとき
+
+```text
+今日やる予定の[タスク一覧]を、最終的な目標への影響度が大きい順に並べ替えてください。影響度が低いタスクについては、後回しにしてよいか、そもそもやらなくてよいかも判定してください。
+```
+
+### 92. やらなくていい作業を先に洗い出す
+場面: タスクを増やす前に減らす余地を確認したいとき
+
+```text
+いま抱えている[タスク一覧]の中から、成果に直結していない、または誰かの確認待ちのまま止まっている作業を洗い出してください。それぞれについて「やめる」「保留する」「圧縮する」のどれが適切かを判定してください。
+```
+
+### 93. 会議時間を半分にする代替案を出す
+場面: 会議に時間を取られすぎていると感じるとき
+
+```text
+[定例で行っている会議]について、現在の時間配分と目的を整理してください。目的を損なわずに時間を半分にする代替案(事前共有・非同期化・参加者の絞り込みなど)を具体的に提案してください。
+```
+
+### 94. 集中すべき1つを決めて他をいったん保留する
+場面: 複数のことに同時に手をつけて手が止まっているとき
+
+```text
+いま同時進行している[タスク一覧]の中から、最も優先すべき1つを選んでください。それ以外のタスクは、いつまで保留してよいか、保留する間に発生しうるリスクは何かを整理したうえで、明確に脇に置いてください。
+```
+
+### 95. 週の振り返りをうまくいった理由・いかなかった理由で整理する
+場面: 週末や月末に振り返りをするとき
+
+```text
+今週の[取り組み・成果]について、うまくいったこととその理由、うまくいかなかったこととその理由をそれぞれ整理してください。来週に活かせる具体的な行動の変更点を1〜2個に絞って提案してください。
+```
+
+### 96. タスクの見積もりが甘くなる原因を洗い出す
+場面: 見積もりと実際の所要時間がいつもずれるとき
+
+```text
+過去の[タスク・プロジェクトの記録]を振り返り、見積もり時間と実際にかかった時間の差が大きかったものを洗い出してください。差が生まれた共通原因を特定し、次回の見積もりで補正すべきポイントを提案してください。
+```
+
+### 97. 割り込みタスクを今すぐ・後で・捨てるに仕分ける
+場面: 予定外の依頼や連絡が次々に来るとき
+
+```text
+今日入ってきた[割り込みタスク・連絡一覧]を、「今すぐ対応すべきもの」「後でまとめて対応してよいもの」「対応しなくてよいもの」の3つに仕分けてください。仕分けの判断基準も一言で添えてください。
+```
+
+### 98. 1日の使い方をログから分析してムダを指摘する
+場面: 時間の使い方を客観的に見直したいとき
+
+```text
+この[作業ログ・カレンダーの記録]をもとに、1日の時間の使い方を分析してください。目的に対して時間対効果が低いと考えられる時間の使い方を指摘し、削るか圧縮するかの具体的な提案をしてください。
+```
+
+### 99. 委任できるのに抱えているタスクを洗い出す
+場面: 自分の作業量が増えすぎていると感じるとき
+
+```text
+いま自分が抱えている[タスク一覧]の中から、他のメンバーやAIエージェントに委任できるものを洗い出してください。委任する場合に必要な情報や判断基準を整理し、委任した場合のリスクも合わせて示してください。
+```
+
+### 100. /loop で一定間隔ごとにタスク・受信箱を確認し続ける
+場面: 対応漏れに気づかないまま時間が経つのを防ぎたいとき
+
+```text
+/loop 1h
+[タスク一覧・受信箱]を確認し、対応期限が近い、または返信が止まっている項目があれば要約して報告してください。特に急ぎの対応が必要なものがなければ「対応漏れなし」とだけ報告し、次の周回に進んでください。
+```
+</pre><script>function copyTextWithFallback(t){function f(){try{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();return ok;}catch(e){return false;}}if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t).then(()=>true).catch(f);}return Promise.resolve(f());}
+function showCopyResult(b,ok){const o=b.textContent;b.textContent=ok?'✔ コピーしました！':'✖ コピー不可 ↓DLを';setTimeout(()=>{b.textContent=o;},ok?1600:3200);}
+async function copyPrompt(id,b){const ok=await copyTextWithFallback(document.getElementById(id).textContent);showCopyResult(b,ok);}
+function downloadText(id,fn,b){try{const t=document.getElementById(id).textContent;const bl=new Blob([t],{type:'text/plain;charset=utf-8'});const u=URL.createObjectURL(bl);const a=document.createElement('a');a.href=u;a.download=fn;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);}catch(e){if(b){const o=b.textContent;b.textContent='✖ 保存不可';setTimeout(()=>{b.textContent=o;},3000);}}}</script></body></html>
